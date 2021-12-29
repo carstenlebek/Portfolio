@@ -12,7 +12,7 @@ const theme = {
       body: {
         bg: "#eae7dc",
         color: "#000",
-        fontWeight: 400,
+        fontWeight: 500,
       },
     },
   },

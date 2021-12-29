@@ -1,5 +1,6 @@
 import { Button, Flex, Heading } from "@chakra-ui/react"
 import React, { useState, useEffect } from "react"
+import { isMobile } from "react-device-detect"
 
 export default function Header() {
   let listener = null
@@ -37,7 +38,9 @@ export default function Header() {
       transition={"all 0.3s ease-in"}
     >
       <Heading>Carsten Lebek</Heading>
-      <Button colorScheme={"red"}>Hire me!</Button>
+      {!isMobile && (
+        <Button colorScheme={"red"}>Lass und zusammenarbeiten!</Button>
+      )}
     </Flex>
   )
 }

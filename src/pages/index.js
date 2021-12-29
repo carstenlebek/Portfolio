@@ -3,11 +3,13 @@ import {
   Button,
   ButtonGroup,
   chakra,
+  Container,
   Flex,
   Heading,
   HStack,
   Icon,
   SimpleGrid,
+  Stack,
   Text,
   VStack,
 } from "@chakra-ui/react"
@@ -144,44 +146,62 @@ export default function Home() {
         backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
       >
         <VStack spacing={"4"} align={"flex-start"}>
-          <Heading as="h1" size={"4xl"}>
+          <Heading
+            as="h1"
+            size={"4xl"}
+            textAlign={{ base: "center", md: "left" }}
+            w="full"
+          >
             Freelance
             <br />
             Developer
           </Heading>
-          <Text>
-            Helping people turn their ideas into sites that work. <br />
-            Professional and Cost-Effective.
-            <br />
-            Always.
-          </Text>
-          <Flex w="full" gap="4">
+          <Container
+            maxW="lg"
+            pl="0"
+            textAlign={{ base: "center", md: "left" }}
+          >
+            <Text>
+              Ich helfe Menschen Ihre Ideen in Seiten umzusetzen, die
+              funktionieren.
+              <br />
+              Professionell und kosteneffektiv.
+              <br />
+              Immer.
+            </Text>
+          </Container>
+          <Flex w="full" gap="4" wrap={{ base: "wrap", md: "nowrap" }}>
             <VStack w="full">
               <Button isFullWidth colorScheme={"red"}>
-                Hire me!
+                Lass und zusammenarbeiten!
               </Button>
               <chakra.a w="full" href="#services">
                 <Button isFullWidth colorScheme={"red"} variant={"outline"}>
-                  View services
+                  Meine Leistungen
                 </Button>
               </chakra.a>
             </VStack>
-            <VStack>
+            <Stack
+              direction={{ base: "row", md: "column" }}
+              align={"center"}
+              justify={"center"}
+              w={{ base: "full", md: "auto" }}
+            >
               <Button
                 colorScheme={"red"}
                 variant={"ghost"}
                 aria-label="Link zum Xing Profil"
               >
-                <FaXing size={"1.6rem"} />
+                <FaXing size={"1.8rem"} />
               </Button>
               <Button
                 colorScheme={"red"}
                 variant={"ghost"}
                 aria-label="Link zum Github Profil"
               >
-                <FaGithub size={"1.6rem"} />
+                <FaGithub size={"1.8rem"} />
               </Button>
-            </VStack>
+            </Stack>
           </Flex>
         </VStack>
         <Box maxW="xl">
@@ -196,7 +216,9 @@ export default function Home() {
         bg="sbg"
       >
         <VStack maxW="md" spacing={"16"} px="4">
-          <Heading size={"2xl"}>I get you results</Heading>
+          <Heading size={"2xl"} whiteSpace={{ base: "normal", md: "nowrap" }}>
+            Ich bringe dir Ergebnisse.
+          </Heading>
           <VStack align={"flex-start"}>
             <Text>
               I build sites with amazing looks and fast load-times that do one
