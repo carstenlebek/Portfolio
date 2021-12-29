@@ -292,6 +292,7 @@ export default function Home() {
         <Heading size="2xl">Zertifikationen</Heading>
         <Flex gap={"8"} wrap={"wrap"} justify={"center"} maxW="1200px">
           <chakra.a
+            rel="noreferrer"
             mt="6px"
             pr="16px"
             pb="12px"
@@ -306,6 +307,7 @@ export default function Home() {
             />
           </chakra.a>
           <chakra.a
+            rel="noreferrer"
             mt="6px"
             pb="12px"
             pr="16px"
@@ -320,6 +322,7 @@ export default function Home() {
             />
           </chakra.a>
           <chakra.a
+            rel="noreferrer"
             mt="6px"
             pb="12px"
             pr="16px"
@@ -366,6 +369,7 @@ export default function Home() {
           >
             <chakra.a
               href="https://ofg-studium.de"
+              rel="noreferrer"
               target="_blank"
               title="Online Schule für Gestaltung - Webdesign"
               outline={"medium none"}

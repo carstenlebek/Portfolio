@@ -13,6 +13,7 @@ const theme = {
         bg: "#fefefe",
         color: "#1A1423",
         fontWeight: 500,
+        overflowX: "hidden",
       },
     },
   },
