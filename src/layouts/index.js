@@ -6,10 +6,10 @@ import { AppProvider } from "./Context"
 import smoothscroll from "smoothscroll-polyfill"
 
 const Layout = ({ children }) => {
-  const browserWindow = window
+  const isBrowser = typeof window !== "undefined"
 
   useEffect(() => {
-    if (browserWindow) {
+    if (isBrowser) {
       smoothscroll.polyfill()
     }
   }, [])
