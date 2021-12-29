@@ -208,7 +208,7 @@ export default function Home() {
           <chakra.img
             minH={{ base: "sm", md: "xl" }}
             minW="sm"
-            maxW="90vw"
+            maxW={{ base: "sm", md: "none" }}
             src={Hero}
             alt="Hero"
             id="freepik_stories-static-assets"
