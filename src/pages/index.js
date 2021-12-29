@@ -201,9 +201,9 @@ export default function Home() {
             <Text>
               I build sites with amazing looks and fast load-times that do one
               thing:{" "}
-              <Text color={"red"} display={"inline"} fontWeight={"bold"}>
+              <chakra.span color={"red"} display={"inline"} fontWeight={"bold"}>
                 Get you results.
-              </Text>
+              </chakra.span>
             </Text>
             <Text>
               Whatever you have in mind, you should know - I build with a
