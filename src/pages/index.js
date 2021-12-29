@@ -46,13 +46,14 @@ import ShAd from "./../assets/images/sh_ad.png"
 import ShBf from "./../assets/images/sh_bf.png"
 import ShPf from "./../assets/images/sh_pf.png"
 
-import WebsiteImage from "./../assets/images/undraw_personal_website_re_c8dv.svg"
-import SeoImage from "./../assets/images/undraw_building_websites_i78t.svg"
-import FeaturesImage from "./../assets/images/undraw_scrum_board_re_wk7v.svg"
-import OnlineShopImage from "./../assets/images/undraw_web_shopping_re_owap.svg"
+import Hero from "./../assets/images/hero.svg"
+
+import WebsiteImage from "./../assets/images/website.svg"
+import SeoImage from "./../assets/images/seo.svg"
+import FeaturesImage from "./../assets/images/features.svg"
+import OnlineShopImage from "./../assets/images/onlineshop.svg"
 
 export default function Home() {
-
   const tools = [
     {
       heading: "Front-End",
@@ -139,7 +140,7 @@ export default function Home() {
         justify={"center"}
         minH={{ base: 0, md: "90vh" }}
         wrap={"wrap"}
-        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
+        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2f5f5f5' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
       >
         <VStack spacing={"4"} align={"flex-start"}>
           <Heading
@@ -201,7 +202,13 @@ export default function Home() {
           </Flex>
         </VStack>
         <Box maxW="xl">
-          <img src={HeroImage} alt="Hero"></img>
+          <chakra.img
+            minH="xl"
+            src={Hero}
+            alt="Hero"
+            id="freepik_stories-static-assets"
+            className="animated"
+          ></chakra.img>
         </Box>
       </Flex>
       <Flex
@@ -211,7 +218,7 @@ export default function Home() {
         py={{ base: "12" }}
         bg="sbg"
       >
-        <VStack maxW="md" spacing={"16"} px="4">
+        <VStack maxW="md" spacing={"16"} px="4" color={"textSecondary"}>
           <Heading size={"2xl"} whiteSpace={{ base: "normal", md: "nowrap" }}>
             Ich bringe dir Ergebnisse.
           </Heading>
@@ -238,7 +245,7 @@ export default function Home() {
       <VStack
         py={{ base: "12", md: "40" }}
         spacing={"16"}
-        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
+        // backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
       >
         <Heading size="2xl">My Toolbox</Heading>
         {tools.map((area, index) => (
@@ -259,8 +266,9 @@ export default function Home() {
                   rounded={"md"}
                   w="32"
                   h="32"
+                  color={"textSecondary"}
                 >
-                  <Icon as={tool.icon} color={"black"} w="12" h="12"></Icon>
+                  <Icon as={tool.icon} w="12" h="12"></Icon>
                   <Text>{tool.name}</Text>
                 </Flex>
               ))}
@@ -271,8 +279,9 @@ export default function Home() {
       <VStack
         py={{ base: "4", md: "80" }}
         spacing={"16"}
-        // backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232c2f33' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
+        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232c2f33' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
         bg={"sbg"}
+        color={"textSecondary"}
       >
         <Heading size="2xl">Zertifikationen</Heading>
         <Flex gap={"8"} wrap={"wrap"} justify={"center"} maxW="1200px">
@@ -377,6 +386,7 @@ export default function Home() {
           </SimpleGrid>
         ))}
       </VStack>
+      <a href="https://storyset.com/web">Web illustrations by Storyset</a>
     </>
   )
 }

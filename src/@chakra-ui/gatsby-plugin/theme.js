@@ -10,16 +10,17 @@ const theme = {
         scrollBehavior: "smooth",
       },
       body: {
-        bg: "#eae7dc",
-        color: "#000",
+        bg: "#fefefe",
+        color: "#1A1423",
         fontWeight: 500,
       },
     },
   },
   colors: {
     primary: "e85a4f",
-    bg: "#eae7dc",
-    sbg: "#d8c3a5",
+    bg: "#fefefe",
+    sbg: "#1A1423",
+    textSecondary: "#fefefe",
   },
 }
 
