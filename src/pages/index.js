@@ -129,7 +129,7 @@ export default function Home() {
       <Flex
         paddingX={{ base: "4", md: "20" }}
         paddingY="20"
-        gap={{ base: "12", md: "20" }}
+        gap={{ base: "0", md: "20" }}
         align={"center"}
         justify={"center"}
         minH={{ base: 0, md: "90vh" }}
