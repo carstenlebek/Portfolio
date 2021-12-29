@@ -200,7 +200,10 @@ export default function Home() {
           <VStack align={"flex-start"}>
             <Text>
               I build sites with amazing looks and fast load-times that do one
-              thing: <Text color={"red"}>Get you results.</Text>
+              thing:{" "}
+              <Text color={"red"} display={"inline"} fontWeight={"bold"}>
+                Get you results.
+              </Text>
             </Text>
             <Text>
               Whatever you have in mind, you should know - I build with a
@@ -262,7 +265,12 @@ export default function Home() {
             href="https://www.freecodecamp.org/certification/carstenlebek/javascript-algorithms-and-data-structures"
             aria-label="FreeCodeCamp - Javascript algorithms and data structures"
           >
-            <chakra.img src={JsAad} height={69} width={273} />
+            <chakra.img
+              src={JsAad}
+              height={69}
+              width={273}
+              alt="FreeCodeCamp - Javascript algorithms and data structures"
+            />
           </chakra.a>
           <chakra.a
             mt="6px"
@@ -271,7 +279,12 @@ export default function Home() {
             href="https://www.freecodecamp.org/certification/carstenlebek/front-end-development-libraries"
             aria-label="FreeCodeCamp - Front end development libraries"
           >
-            <chakra.img src={Fedl} height={69} width={273} />
+            <chakra.img
+              src={Fedl}
+              height={69}
+              width={273}
+              alt="FreeCodeCamp - Front end development libraries"
+            />
           </chakra.a>
           <chakra.a
             mt="6px"
@@ -280,7 +293,12 @@ export default function Home() {
             href="https://www.freecodecamp.org/certification/carstenlebek/back-end-development-and-apis"
             aria-label="FreeCodeCamp - Back end development and apis"
           >
-            <chakra.img src={Bedaa} height={69} width={273} />
+            <chakra.img
+              src={Bedaa}
+              height={69}
+              width={273}
+              alt="FreeCodeCamp - Back end development and apis"
+            />
           </chakra.a>
           <chakra.img
             src={ShAd}
