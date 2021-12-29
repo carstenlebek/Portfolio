@@ -206,7 +206,7 @@ export default function Home() {
         </VStack>
         <Box maxW="xl">
           <chakra.img
-            minH="xl"
+            minH={{ base: "sm", md: "xl" }}
             minW="sm"
             maxW="90vw"
             src={Hero}
