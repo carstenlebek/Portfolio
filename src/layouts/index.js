@@ -1,12 +1,19 @@
 import { Box } from "@chakra-ui/react"
-import React from "react"
+import React, { useEffect } from "react"
 import Header from "../components/header"
 import Seo from "../components/seo"
 import { AppProvider } from "./Context"
 import smoothscroll from "smoothscroll-polyfill"
 
 const Layout = ({ children }) => {
-//   smoothscroll.polyfill()
+  const browserWindow = window
+
+  useEffect(() => {
+    if (browserWindow) {
+      smoothscroll.polyfill()
+    }
+  }, [])
+
   return (
     <AppProvider>
       <Seo />
