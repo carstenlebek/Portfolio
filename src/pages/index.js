@@ -125,13 +125,7 @@ export default function Home() {
 
   return (
     <>
-      <Helmet>
-        <script
-          type="text/javascript"
-          src="https://ofg-studium.de/images/certificate/utils/cert.php?x=06bf589a-070c-11eb-84eb-005056a71e55"
-          defer
-        ></script>
-      </Helmet>
+      <Helmet></Helmet>
       <Flex
         paddingX={{ base: "4", md: "20" }}
         paddingY="20"
@@ -239,7 +233,9 @@ export default function Home() {
               style.
             </Text>
           </VStack>
-          <Button colorScheme={"red"}>See past work</Button>
+          <Button colorScheme={"red"} size={"lg"}>
+            See past work
+          </Button>
         </VStack>
       </Flex>
       <VStack
@@ -354,7 +350,27 @@ export default function Home() {
             mr="16px"
             alt="Shopfy - Business fundamentals"
           />
-          <div id="ofgcert"></div>
+          <chakra.div
+            backgroundImage='url("https://ofg-studium.de/images/certificate/certificate_webdesign_21142.png")'
+            backgroundRepeat={"no-repeat"}
+          >
+            <chakra.a
+              href="https://ofg-studium.de"
+              target="_blank"
+              title="Online Schule für Gestaltung - Webdesign"
+              outline={"medium none"}
+            >
+              <chakra.img
+                id="certi"
+                h="88px"
+                w="291px"
+                border="0"
+                title="Online Schule für Gestaltung - Webdesign"
+                alt="Online Schule für Gestaltung - Webdesign / Professionelle Webseiten erstellen"
+                src="https://ofg-studium.de/images/certificate/utils/Zertifikat.gif"
+              />
+            </chakra.a>
+          </chakra.div>
         </Flex>
       </VStack>
       <VStack
