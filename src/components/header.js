@@ -1,8 +1,7 @@
-import { Button, Flex, Heading, useBreakpointValue } from "@chakra-ui/react"
+import { Button, Flex, Heading } from "@chakra-ui/react"
 import React, { useState, useEffect } from "react"
 
 export default function Header() {
-  const isMobile = useBreakpointValue({ base: true, md: false })
   let listener = null
   const [scrollState, setScrollState] = useState(false)
 
@@ -38,9 +37,9 @@ export default function Header() {
       transition={"all 0.3s ease-in"}
     >
       <Heading>Carsten Lebek</Heading>
-      {!isMobile && (
-        <Button colorScheme={"red"}>Lass und zusammenarbeiten!</Button>
-      )}
+      <Button colorScheme={"red"} display={{ base: "none", md: "inline-flex" }}>
+        Lass und zusammenarbeiten!
+      </Button>
     </Flex>
   )
 }

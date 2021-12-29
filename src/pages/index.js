@@ -363,14 +363,19 @@ export default function Home() {
             columns={{ base: 1, md: 2 }}
             maxW="1200px"
             gap="20"
-            style={{ direction: isMobile ? "ltr" : index % 2 ? "rtl" : "ltr" }}
             alignItems={"center"}
           >
-            <VStack flex="1" textAlign={"left"} style={{ direction: "ltr" }}>
+            <VStack flex="1" textAlign={"left"} order={"2"}>
               <Heading w="full">{way.heading}</Heading>
               <Text>{way.description}</Text>
             </VStack>
-            <chakra.img src={way.image} flex="1" alt={way.description} />
+            <chakra.img
+              src={way.image}
+              flex="1"
+              alt={way.description}
+              order={{ base: 2, md: index % 2 ? 1 : 2 }}
+              // gridColumn={index % 2 ? 1 : 2}
+            />
           </SimpleGrid>
         ))}
       </VStack>
