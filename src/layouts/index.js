@@ -3,8 +3,10 @@ import React from "react"
 import Header from "../components/header"
 import Seo from "../components/seo"
 import { AppProvider } from "./Context"
+import smoothscroll from "smoothscroll-polyfill"
 
 const Layout = ({ children }) => {
+  smoothscroll.polyfill()
   return (
     <AppProvider>
       <Seo />
