@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    // `gatsby-plugin-sitemap`,
     `gatsby-plugin-layout`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
