@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `Carsten Lebek - Webdeveloper aus Wuppertal`,
+    description: "Freelancer Webentwickler aus Wuppertal",
+    author: "Carsten Lebek",
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     // `gatsby-plugin-sitemap`,

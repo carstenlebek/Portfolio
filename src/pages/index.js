@@ -130,6 +130,7 @@ export default function Home() {
         <script
           type="text/javascript"
           src="https://ofg-studium.de/images/certificate/utils/cert.php?x=06bf589a-070c-11eb-84eb-005056a71e55"
+          defer
         ></script>
       </Helmet>
       <Flex
@@ -166,10 +167,18 @@ export default function Home() {
               </chakra.a>
             </VStack>
             <VStack>
-              <Button colorScheme={"red"} variant={"ghost"}>
+              <Button
+                colorScheme={"red"}
+                variant={"ghost"}
+                aria-label="Link zum Xing Profil"
+              >
                 <FaXing size={"1.6rem"} />
               </Button>
-              <Button colorScheme={"red"} variant={"ghost"}>
+              <Button
+                colorScheme={"red"}
+                variant={"ghost"}
+                aria-label="Link zum Github Profil"
+              >
                 <FaGithub size={"1.6rem"} />
               </Button>
             </VStack>
@@ -251,6 +260,7 @@ export default function Home() {
             pr="16px"
             pb="12px"
             href="https://www.freecodecamp.org/certification/carstenlebek/javascript-algorithms-and-data-structures"
+            aria-label="FreeCodeCamp - Javascript algorithms and data structures"
           >
             <chakra.img src={JsAad} height={69} width={273} />
           </chakra.a>
@@ -259,6 +269,7 @@ export default function Home() {
             pb="12px"
             pr="16px"
             href="https://www.freecodecamp.org/certification/carstenlebek/front-end-development-libraries"
+            aria-label="FreeCodeCamp - Front end development libraries"
           >
             <chakra.img src={Fedl} height={69} width={273} />
           </chakra.a>
@@ -267,6 +278,7 @@ export default function Home() {
             pb="12px"
             pr="16px"
             href="https://www.freecodecamp.org/certification/carstenlebek/back-end-development-and-apis"
+            aria-label="FreeCodeCamp - Back end development and apis"
           >
             <chakra.img src={Bedaa} height={69} width={273} />
           </chakra.a>
@@ -277,6 +289,7 @@ export default function Home() {
             mt="6px"
             mb="12px"
             mr="16px"
+            alt="Shopify - App development"
           />
           <chakra.img
             src={ShPf}
@@ -285,6 +298,7 @@ export default function Home() {
             mt="6px"
             mb="12px"
             mr="16px"
+            alt="Shopfy - Product fundamentals"
           />
           <chakra.img
             src={ShBf}
@@ -293,6 +307,7 @@ export default function Home() {
             mt="6px"
             mb="12px"
             mr="16px"
+            alt="Shopfy - Business fundamentals"
           />
           <div id="ofgcert"></div>
         </Flex>
@@ -317,7 +332,7 @@ export default function Home() {
               <Heading w="full">{way.heading}</Heading>
               <Text>{way.description}</Text>
             </VStack>
-            <chakra.img src={way.image} flex="1" />
+            <chakra.img src={way.image} flex="1" alt={way.description} />
           </SimpleGrid>
         ))}
       </VStack>
