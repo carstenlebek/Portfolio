@@ -208,6 +208,7 @@ export default function Home() {
           <chakra.img
             minH="xl"
             minW="sm"
+            maxW="90vw"
             src={Hero}
             alt="Hero"
             id="freepik_stories-static-assets"
