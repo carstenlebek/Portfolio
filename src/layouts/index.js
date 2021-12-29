@@ -6,7 +6,7 @@ import { AppProvider } from "./Context"
 import smoothscroll from "smoothscroll-polyfill"
 
 const Layout = ({ children }) => {
-  smoothscroll.polyfill()
+//   smoothscroll.polyfill()
   return (
     <AppProvider>
       <Seo />
