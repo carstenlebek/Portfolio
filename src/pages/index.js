@@ -1,22 +1,20 @@
 import {
   Box,
   Button,
-  ButtonGroup,
   chakra,
   Container,
   Flex,
   Heading,
-  HStack,
   Icon,
   SimpleGrid,
   Stack,
   Text,
+  useBreakpointValue,
   VStack,
 } from "@chakra-ui/react"
-import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { FaBeer, FaLinkedin, FaXing, FaGithub } from "react-icons/fa"
+import { FaXing, FaGithub } from "react-icons/fa"
 import {
   SiCss3,
   SiGatsby,
@@ -39,9 +37,7 @@ import {
   SiVisualstudiocode,
   SiHeroku,
   SiNextdotjs,
-  SiFreecodecamp,
 } from "react-icons/si"
-import { isMobile } from "react-device-detect"
 
 import HeroImage from "./../assets/images/undraw_programming_re_kg9v.svg"
 import JsAad from "./../assets/images/fcc_js_aads_badge.png"
@@ -57,6 +53,8 @@ import FeaturesImage from "./../assets/images/undraw_scrum_board_re_wk7v.svg"
 import OnlineShopImage from "./../assets/images/undraw_web_shopping_re_owap.svg"
 
 export default function Home() {
+  const isMobile = useBreakpointValue({ base: true, md: false })
+
   const tools = [
     {
       heading: "Front-End",
@@ -143,7 +141,7 @@ export default function Home() {
         justify={"center"}
         minH={{ base: 0, md: "90vh" }}
         wrap={"wrap"}
-        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
+        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
       >
         <VStack spacing={"4"} align={"flex-start"}>
           <Heading
@@ -242,7 +240,7 @@ export default function Home() {
       <VStack
         py={{ base: "12", md: "40" }}
         spacing={"16"}
-        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
+        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
       >
         <Heading size="2xl">My Toolbox</Heading>
         {tools.map((area, index) => (

@@ -1,8 +1,8 @@
-import { Button, Flex, Heading } from "@chakra-ui/react"
+import { Button, Flex, Heading, useBreakpointValue } from "@chakra-ui/react"
 import React, { useState, useEffect } from "react"
-import { isMobile } from "react-device-detect"
 
 export default function Header() {
+  const isMobile = useBreakpointValue({ base: true, md: false })
   let listener = null
   const [scrollState, setScrollState] = useState(false)
 
