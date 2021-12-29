@@ -207,7 +207,7 @@ export default function Home() {
         <Box maxW="xl">
           <chakra.img
             minH="xl"
-            minW="md"
+            minW="sm"
             src={Hero}
             alt="Hero"
             id="freepik_stories-static-assets"
