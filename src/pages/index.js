@@ -9,7 +9,6 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  useBreakpointValue,
   VStack,
 } from "@chakra-ui/react"
 import React from "react"
@@ -53,7 +52,6 @@ import FeaturesImage from "./../assets/images/undraw_scrum_board_re_wk7v.svg"
 import OnlineShopImage from "./../assets/images/undraw_web_shopping_re_owap.svg"
 
 export default function Home() {
-  const isMobile = useBreakpointValue({ base: true, md: false })
 
   const tools = [
     {
