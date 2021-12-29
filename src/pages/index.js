@@ -38,6 +38,15 @@ import {
   SiNextdotjs,
 } from "react-icons/si"
 
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll"
+
 import HeroImage from "./../assets/images/undraw_programming_re_kg9v.svg"
 import JsAad from "./../assets/images/fcc_js_aads_badge.png"
 import Fedl from "./../assets/images/fcc_fedl.png"
@@ -166,11 +175,11 @@ export default function Home() {
               <Button isFullWidth colorScheme={"red"}>
                 Lass und zusammenarbeiten!
               </Button>
-              <chakra.a w="full" href="#services">
+              <Link to="services" w="full" style={{ width: "100%" }}>
                 <Button isFullWidth colorScheme={"red"} variant={"outline"}>
                   Meine Leistungen
                 </Button>
-              </chakra.a>
+              </Link>
             </VStack>
             <Stack
               direction={{ base: "row", md: "column" }}
