@@ -79,7 +79,11 @@ export default function Header({ location }) {
           smooth={true}
           style={{ flex: 1, cursor: "pointer" }}
         >
-          <Heading textAlign={{ base: "center", md: "left" }} w="full">
+          <Heading
+            textAlign={{ base: "center", md: "left" }}
+            w="full"
+            display={{ base: "none", md: "flex" }}
+          >
             Carsten Lebek
           </Heading>
         </SmoothLink>
@@ -89,6 +93,7 @@ export default function Header({ location }) {
           flex={1}
           href="/#top"
           textAlign={{ base: "center", md: "left" }}
+          display={{ base: "none", md: "flex" }}
         >
           Carsten Lebek
         </Heading>
@@ -147,6 +152,7 @@ export default function Header({ location }) {
           px="2"
           gap="2"
           display={{ base: "grid", md: "none" }}
+          color={"red.500"}
         >
           {location.pathname === "/" ? (
             <SmoothLink

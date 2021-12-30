@@ -217,8 +217,8 @@ export default function Home({ data }) {
         id="top"
         position={"relative"}
         paddingX={{ base: "4", md: "20" }}
-        paddingY="28"
-        gap={{ base: "0", md: "20" }}
+        paddingY="20"
+        gap={{ base: "8", md: "20" }}
         align={"center"}
         justify={"center"}
         minH={{ base: 0, md: "90vh" }}
