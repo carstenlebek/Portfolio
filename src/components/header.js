@@ -22,6 +22,7 @@ import {
 import {
   FaCertificate,
   FaEnvelope,
+  FaHome,
   FaProjectDiagram,
   FaTools,
   FaUser,
@@ -140,7 +141,38 @@ export default function Header({ location }) {
         bg="bg"
         shadow={"dark-lg"}
       >
-        <SimpleGrid columns={navItems.length + 1} p="1" gap="2">
+        <SimpleGrid columns={navItems.length + 1} py="2" px="2" gap="2">
+          {location.pathname === "/" ? (
+            <SmoothLink
+              to={"top"}
+              w="full"
+              smooth={true}
+              style={{ width: "100%", cursor: "pointer" }}
+            >
+              <VStack py="2" rounded={"md"} spacing={1}>
+                <Icon w={6} h={6} as={FaHome} />
+                <Text fontWeight={"bold"} fontSize={"xx-small"}>
+                  Home
+                </Text>
+              </VStack>
+            </SmoothLink>
+          ) : (
+            <Link
+              p="2"
+              href={"/#top"}
+              _hover={{
+                textDecoration: "none",
+                color: "red.500",
+              }}
+            >
+              <VStack py="2" rounded={"md"} spacing={1}>
+                <Icon w={6} h={6} as={FaHome} />
+                <Text fontWeight={"bold"} fontSize={"xx-small"}>
+                  Home
+                </Text>
+              </VStack>
+            </Link>
+          )}
           {navItems.map((item, index) => (
             <div key={index}>
               {location.pathname === "/" ? (
@@ -152,7 +184,7 @@ export default function Header({ location }) {
                 >
                   <VStack key={index} py="2" rounded={"md"} spacing={1}>
                     <Icon w={6} h={6} as={item.icon} />
-                    <Text fontWeight={"bold"} fontSize={"xs"}>
+                    <Text fontWeight={"bold"} fontSize={"xx-small"}>
                       {item.name}
                     </Text>
                   </VStack>
@@ -168,7 +200,7 @@ export default function Header({ location }) {
                 >
                   <VStack key={index} py="2" rounded={"md"} spacing={1}>
                     <Icon w={6} h={6} as={item.icon} />
-                    <Text fontWeight={"bold"} fontSize={"xs"}>
+                    <Text fontWeight={"bold"} fontSize={"xx-small"}>
                       {item.name}
                     </Text>
                   </VStack>
@@ -176,12 +208,6 @@ export default function Header({ location }) {
               )}
             </div>
           ))}
-          <VStack py="2" rounded={"md"} spacing={1}>
-            <Icon w={6} h={6} as={FaEnvelope} />
-            <Text fontWeight={"bold"} fontSize={"xs"}>
-              Kontakt
-            </Text>
-          </VStack>
         </SimpleGrid>
       </Box>
     </Flex>
