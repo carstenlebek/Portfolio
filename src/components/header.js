@@ -27,6 +27,7 @@ export default function Header() {
     { name: "Über mich", url: "#about-me" },
     { name: "Tools", url: "#toolbox" },
     { name: "Zertifikationen", url: "#certifications" },
+    { name: "Projekte", url: "#projects" },
   ]
 
   return (
@@ -35,7 +36,7 @@ export default function Header() {
       justify={"space-between"}
       paddingX={{ base: "4", lg: "8" }}
       paddingY={{ base: "4", lg: "4" }}
-      position={"fixed"}
+      position={{ base: "absolute", md: "fixed" }}
       top="0"
       w="full"
       bg={scrollState ? "bg" : "transparent"}
@@ -43,7 +44,12 @@ export default function Header() {
       zIndex={1000}
       transition={"all 0.3s ease-in"}
     >
-      <Heading flex={1} as={"a"} href="/#top">
+      <Heading
+        flex={1}
+        as={"a"}
+        href="/#top"
+        textAlign={{ base: "center", md: "left" }}
+      >
         Carsten Lebek
       </Heading>
       <HStack spacing={"4"} px="8" display={{ base: "none", md: "flex" }}>
