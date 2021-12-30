@@ -75,8 +75,15 @@ function Seo({ description, lang, meta, title }) {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
-        rel="stylesheet"
+        rel="preload"
+        onload="this.onload=null;this.rel='stylesheet'"
       ></link>
+      <noscript>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
+        />
+      </noscript>
     </Helmet>
   )
 }
