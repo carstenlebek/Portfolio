@@ -85,6 +85,7 @@ function Seo({ description, lang, meta, title }) {
           href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
         />`}
       </noscript>
+      
     </Helmet>
   )
 }
