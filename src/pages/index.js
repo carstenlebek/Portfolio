@@ -233,15 +233,12 @@ export default function Home({ data }) {
               size={"4xl"}
               textAlign={{ base: "left", md: "left" }}
               w="full"
+              fontWeight={900}
             >
               Carsten Lebek.
             </Heading>
           </Container>
-          <Container
-            maxW="lg"
-            pl="0"
-            textAlign={{ base: "left", md: "left" }}
-          >
+          <Container maxW="lg" pl="0" textAlign={{ base: "left", md: "left" }}>
             <Text>
               Ich bin ein Webdeveloper und habe mich auf Shopify spezialisiert.
               <br />

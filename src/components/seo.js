@@ -72,20 +72,19 @@ function Seo({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://use.typekit.net" crossorigin />
       <link
         rel="stylesheet"
         media="print"
         onload="this.onload=null;this.removeAttribute('media');"
-        href="https://fonts.googleapis.com/css?family=Raleway:300,400,500&amp;display=swap"
+        href="https://use.typekit.net/bdt2gep.css"
       ></link>
       <noscript>
         {`<link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Raleway:300,400,500&amp;display=swap"
+          href="https://use.typekit.net/bdt2gep.css"
         />`}
       </noscript>
-
     </Helmet>
   )
 }

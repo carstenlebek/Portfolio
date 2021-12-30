@@ -2,8 +2,8 @@ import { extendTheme } from "@chakra-ui/react"
 const theme = {
   fonts: {
     heading:
-      "Raleway ,'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
-    body: "Raleway, 'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
+      "'neue-haas-grotesk-display' ,'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
+    body: "'Open Sans', 'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
   },
   styles: {
     global: {
@@ -13,8 +13,11 @@ const theme = {
       body: {
         bg: "#fefefe",
         color: "#1A1423",
-        fontWeight: 500,
+        fontWeight: 400,
         overflowX: "hidden",
+      },
+      h1: {
+        fontWeight: 900,
       },
     },
   },
