@@ -39,16 +39,12 @@ module.exports = {
         isUsingColorMode: false,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Concert One`,
-          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles,
-          `quicksand\:300,400,500`,
-        ],
-        display: "swap",
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`quicksand\:300,400,500`],
+    //     display: "swap",
+    //   },
+    // },
   ],
 }

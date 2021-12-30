@@ -71,7 +71,13 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
+        rel="stylesheet"
+      ></link>
+    </Helmet>
   )
 }
 

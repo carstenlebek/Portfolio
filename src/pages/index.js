@@ -46,6 +46,7 @@ import {
 import { Link, animateScroll as scroll } from "react-scroll"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
+
 import Hero from "./../assets/images/hero.svg"
 
 import WebsiteImage from "./../assets/images/website.svg"
