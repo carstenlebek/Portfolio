@@ -141,7 +141,13 @@ export default function Header({ location }) {
         bg="bg"
         shadow={"dark-lg"}
       >
-        <SimpleGrid columns={navItems.length + 1} py="2" px="2" gap="2">
+        <SimpleGrid
+          columns={navItems.length + 1}
+          py="2"
+          px="2"
+          gap="2"
+          display={{ base: "grid", md: "none" }}
+        >
           {location.pathname === "/" ? (
             <SmoothLink
               to={"top"}
