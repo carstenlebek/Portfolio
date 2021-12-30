@@ -46,7 +46,7 @@ export default function Header() {
       <Heading flex={1} as={"a"} href="/#top">
         Carsten Lebek
       </Heading>
-      <HStack spacing={"4"} px="8">
+      <HStack spacing={"4"} px="8" display={{ base: "none", md: "flex" }}>
         {navItems.map((item, index) => (
           <Box key={index}>
             <Link

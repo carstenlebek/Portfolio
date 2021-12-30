@@ -252,11 +252,12 @@ export default function Home() {
         justify={"center"}
         align={"center"}
         minH={{ base: "none", md: "3xl" }}
-        py={{ base: "32" }}
+        py={{ base: "16",md: "32" }}
         bg="sbg"
         gap="8"
         id="about-me"
         position={"relative"}
+        wrap={"wrap"}
       >
         <VStack maxW="md" spacing={"6"} px="4" color={"textSecondary"}>
           <Heading
@@ -299,9 +300,9 @@ export default function Home() {
           </Button>
         </VStack>
         <Box
-          maxW="md"
-          minH="md"
-          minW="md"
+          maxW={{ base: "80vw", md: "md" }}
+          // minH="md"
+          // minW="md"
           position="relative"
           zIndex="2"
           transition="all 0.5s ease-out"
@@ -360,7 +361,7 @@ export default function Home() {
         </chakra.div>
       </Box>
       <VStack
-        py={{ base: "12", md: "32" }}
+        py={{ base: "28", md: "32" }}
         spacing={"16"}
         // backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
         id="toolbox"
@@ -430,7 +431,7 @@ export default function Home() {
         </chakra.div>
       </Box>
       <VStack
-        py={{ base: "4", md: "80" }}
+        py={{ base: "28", md: "80" }}
         bg={"sbg"}
         spacing={"16"}
         backgroundImage={`url("data:image/svg+xml,%3Csvg width='104' height='52' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
