@@ -273,9 +273,9 @@ export default function Home() {
               <Button isFullWidth colorScheme={"red"}>
                 Lass und zusammenarbeiten!
               </Button>
-              <Link to="services" w="full" style={{ width: "100%" }}>
+              <Link to="projects" w="full" style={{ width: "100%" }}>
                 <Button isFullWidth colorScheme={"red"} variant={"outline"}>
-                  Meine Leistungen
+                  Projekte
                 </Button>
               </Link>
             </VStack>
