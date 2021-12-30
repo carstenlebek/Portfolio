@@ -44,6 +44,7 @@ import {
 } from "react-icons/si"
 
 import { Link, animateScroll as scroll } from "react-scroll"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
 import HeroImage from "./../assets/images/undraw_programming_re_kg9v.svg"
 import JsAad from "./../assets/images/fcc_js_aads_badge.png"
@@ -68,8 +69,11 @@ import Aposto from "./../assets/images/aposto.png"
 import CreatorHub from "./../assets/images/creatorhub.png"
 import Deepi18n from "./../assets/images/deepi18n.png"
 import Allkokos from "./../assets/images/allkokos.png"
+import { graphql } from "gatsby"
 
-export default function Home() {
+export default function Home({ data }) {
+  console.log(data)
+
   const tools = [
     {
       heading: "Front-End",
@@ -142,7 +146,7 @@ export default function Home() {
 
   const projects = [
     {
-      image: RsCards,
+      image: "rscards",
       type: "Onlineshop",
       title: "RSCards.de",
       description:
@@ -160,7 +164,7 @@ export default function Home() {
       ],
     },
     {
-      image: CreatorHub,
+      image: "creatorhub",
       type: "Shopify App",
       title: "CreatorHub",
       description:
@@ -181,7 +185,7 @@ export default function Home() {
       ],
     },
     {
-      image: Deepi18n,
+      image: "deepi18n",
       type: "Web App",
       title: "deepi18n",
       description:
@@ -191,7 +195,7 @@ export default function Home() {
       stack: ["React.js", "Next.js", "Chakra Ui", "AWS S3"],
     },
     {
-      image: KrasserStecher,
+      image: "krasserstecher",
       type: "Onlineshop",
       title: "Krasserstecher.de",
       description:
@@ -201,7 +205,7 @@ export default function Home() {
       stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
     },
     {
-      image: Aposto,
+      image: "aposto",
       type: "Onlineshop",
       title: "Aposto Wuppertal",
       description:
@@ -211,7 +215,7 @@ export default function Home() {
       stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
     },
     {
-      image: Allkokos,
+      image: "allkokos",
       type: "Onlineshop",
       title: "Allkokos.de",
       description:
@@ -221,6 +225,8 @@ export default function Home() {
       stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
     },
   ]
+
+  const images = data.allFile.nodes
 
   return (
     <>
@@ -762,69 +768,98 @@ export default function Home() {
           align={"stretch"}
           wrap={"wrap"}
         >
-          {projects.map((project, index) => (
-            <Flex
-              key={index}
-              maxW="sm"
-              bg="sbg"
-              color="textSecondary"
-              flex={"1 1 300px"}
-              rounded={"lg"}
-              shadow={"md"}
-              justify={"flex-start"}
-              align={"stretch"}
-              direction={"column"}
-            >
-              <Box>
-                <chakra.img
-                  src={project.image}
-                  alt={`Projekt ${project.title}`}
-                  roundedTop={"lg"}
-                ></chakra.img>
-              </Box>
-              <VStack
-                w="full"
-                h="full"
-                px="6"
-                pt="8"
-                pb="4"
-                spacing={4}
-                alignItems={"flex-start"}
+          {projects.map((project, index) => {
+            const image = getImage(
+              images.find(image => image.name === project.image)
+            )
+
+            return (
+              <Flex
+                key={index}
+                maxW="sm"
+                bg="sbg"
+                color="textSecondary"
+                flex={"1 1 300px"}
+                rounded={"lg"}
+                shadow={"md"}
+                justify={"flex-start"}
+                align={"stretch"}
+                direction={"column"}
               >
-                <Box>
-                  <Text fontSize="xs">{project.type}</Text>
-                  <Heading w="full">{project.title}</Heading>
+                <Box roundedTop={"lg"}>
+                  <GatsbyImage
+                    image={image}
+                    style={{ borderRadius: "0.5rem 0.5rem 0 0" }}
+                  />
                 </Box>
-                <Flex direction={"row"} wrap={"wrap"} gap={2}>
-                  {project.stack.map((item, index) => (
-                    <Badge key={index}>{item}</Badge>
-                  ))}
-                </Flex>
-                <Text wordBreak={"break-word"} whiteSpace={"pre-wrap"} flex={1}>
-                  {project.description}
-                </Text>
-                <VStack spacing={1} w="full">
-                  <Button colorScheme={"red"} isFullWidth>
-                    Mehr dazu
-                  </Button>
-                  <Button
-                    colorScheme={"red"}
-                    variant={"ghost"}
-                    as="a"
-                    target={"_blank"}
-                    href={project.url}
-                    rightIcon={<FaExternalLinkAlt />}
-                    isFullWidth
+                <VStack
+                  w="full"
+                  h="full"
+                  px="6"
+                  pt="8"
+                  pb="4"
+                  spacing={4}
+                  alignItems={"flex-start"}
+                >
+                  <Box>
+                    <Text fontSize="xs">{project.type}</Text>
+                    <Heading w="full">{project.title}</Heading>
+                  </Box>
+                  <Flex direction={"row"} wrap={"wrap"} gap={2}>
+                    {project.stack.map((item, index) => (
+                      <Badge key={index}>{item}</Badge>
+                    ))}
+                  </Flex>
+                  <Text
+                    wordBreak={"break-word"}
+                    whiteSpace={"pre-wrap"}
+                    flex={1}
                   >
-                    Zum Projekt
-                  </Button>
+                    {project.description}
+                  </Text>
+                  <VStack spacing={1} w="full">
+                    <Button colorScheme={"red"} isFullWidth>
+                      Mehr dazu
+                    </Button>
+                    <Button
+                      colorScheme={"red"}
+                      variant={"ghost"}
+                      as="a"
+                      target={"_blank"}
+                      rel="noreferrer"
+                      href={project.url}
+                      rightIcon={<FaExternalLinkAlt />}
+                      isFullWidth
+                    >
+                      Zum Projekt
+                    </Button>
+                  </VStack>
                 </VStack>
-              </VStack>
-            </Flex>
-          ))}
+              </Flex>
+            )
+          })}
         </Flex>
       </Flex>
       <a href="https://storyset.com/web">Web illustrations by Storyset</a>
     </>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    allFile {
+      nodes {
+        childImageSharp {
+          gatsbyImageData(
+            height: 200
+            layout: FIXED
+            placeholder: BLURRED
+            width: 384
+            formats: [AUTO, WEBP, AVIF]
+          )
+        }
+        name
+      }
+    }
+  }
+`
