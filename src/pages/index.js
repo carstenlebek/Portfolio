@@ -543,125 +543,64 @@ export default function Home({ data }) {
         id="certifications"
       >
         <Heading size="2xl">Zertifikationen</Heading>
-        <Flex gap={"8"} wrap={"wrap"} justify={"center"} maxW="1200px">
+        <Flex gap={"12"} wrap={"wrap"} justify={"center"} maxW="1200px">
           <chakra.a
             rel="noreferrer"
             mt="6px"
-            pr="16px"
-            pb="12px"
             href="https://www.freecodecamp.org/certification/carstenlebek/javascript-algorithms-and-data-structures"
             aria-label="FreeCodeCamp - Javascript algorithms and data structures"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
           >
-            <chakra.img
-              src={JsAad}
-              height={69}
-              width={273}
-              alt="FreeCodeCamp - Javascript algorithms and data structures"
-              shadow={"md"}
-              rounded={"lg"}
-              transition={"all 0.3s ease-out"}
-              _hover={{
-                shadow: "dark-lg",
-                transform: "scale(1.05)",
-              }}
-            />
+            <Box>
+              <StaticImage
+                src="../assets/images/fcc_js_aads_badge.png"
+                width={273}
+                height={69}
+                alt="FreeCodeCamp - Javascript algorithms and data structures"
+                placeholder="blurred"
+                layout="fixed"
+                formats={["auto", "webp", "avif"]}
+                quality={90}
+              />
+            </Box>
           </chakra.a>
           <chakra.a
             rel="noreferrer"
             mt="6px"
-            pb="12px"
-            pr="16px"
             href="https://www.freecodecamp.org/certification/carstenlebek/front-end-development-libraries"
             aria-label="FreeCodeCamp - Front end development libraries"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
           >
-            <chakra.img
-              src={Fedl}
-              height={69}
-              width={273}
-              alt="FreeCodeCamp - Front end development libraries"
-              shadow={"md"}
-              rounded={"lg"}
-              transition={"all 0.3s ease-out"}
-              _hover={{
-                shadow: "dark-lg",
-                transform: "scale(1.05)",
-              }}
-            />
+            <Box>
+              <StaticImage
+                src="../assets/images/fcc_fedl.png"
+                width={273}
+                height={69}
+                alt="FreeCodeCamp - Front end development libraries"
+                placeholder="blurred"
+                layout="fixed"
+                formats={["auto", "webp", "avif"]}
+                quality={90}
+              />
+            </Box>
           </chakra.a>
           <chakra.a
             rel="noreferrer"
             mt="6px"
-            pb="12px"
-            pr="16px"
             href="https://www.freecodecamp.org/certification/carstenlebek/back-end-development-and-apis"
             aria-label="FreeCodeCamp - Back end development and apis"
-          >
-            <chakra.img
-              src={Bedaa}
-              height={69}
-              width={273}
-              alt="FreeCodeCamp - Back end development and apis"
-              shadow={"md"}
-              rounded={"lg"}
-              transition={"all 0.3s ease-out"}
-              _hover={{
-                shadow: "dark-lg",
-                transform: "scale(1.05)",
-              }}
-            />
-          </chakra.a>
-          <chakra.img
-            src={ShAd}
-            height={69}
-            width={273}
-            mt="6px"
-            mb="12px"
-            mr="16px"
-            alt="Shopify - App development"
-            shadow={"md"}
-            rounded={"lg"}
-            transition={"all 0.3s ease-out"}
-            _hover={{
-              shadow: "dark-lg",
-              transform: "scale(1.05)",
-            }}
-          />
-          <chakra.img
-            src={ShPf}
-            height={69}
-            width={273}
-            mt="6px"
-            mb="12px"
-            mr="16px"
-            alt="Shopfy - Product fundamentals"
-            shadow={"md"}
-            rounded={"lg"}
-            transition={"all 0.3s ease-out"}
-            _hover={{
-              shadow: "dark-lg",
-              transform: "scale(1.05)",
-            }}
-          />
-          <chakra.img
-            src={ShBf}
-            height={69}
-            width={273}
-            mt="6px"
-            mb="12px"
-            mr="16px"
-            alt="Shopfy - Business fundamentals"
-            shadow={"md"}
-            rounded={"lg"}
-            transition={"all 0.3s ease-out"}
-            _hover={{
-              shadow: "dark-lg",
-              transform: "scale(1.05)",
-            }}
-          />
-          {/* TODO: CROP OFG IMAGE WITH CSS */}
-          <chakra.div
-            backgroundImage='url("https://ofg-studium.de/images/certificate/certificate_webdesign_21142.png")'
-            backgroundRepeat={"no-repeat"}
             shadow={"md"}
             rounded={"lg"}
             transition={"all 0.3s ease-out"}
@@ -670,24 +609,118 @@ export default function Home({ data }) {
               transform: "scale(1.05)",
             }}
           >
-            <chakra.a
-              href="https://ofg-studium.de"
-              rel="noreferrer"
-              target="_blank"
-              title="Online Schule für Gestaltung - Webdesign"
-              outline={"medium none"}
-            >
-              <chakra.img
-                id="certi"
-                h="88px"
-                w="291px"
-                border="0"
-                title="Online Schule für Gestaltung - Webdesign"
-                alt="Online Schule für Gestaltung - Webdesign / Professionelle Webseiten erstellen"
-                src="https://ofg-studium.de/images/certificate/utils/Zertifikat.gif"
+            <Box>
+              <StaticImage
+                src="../assets/images/fcc_bedaa.png"
+                width={273}
+                height={69}
+                alt="FreeCodeCamp - Back end development and apis"
+                placeholder="blurred"
+                layout="fixed"
+                formats={["auto", "webp", "avif"]}
+                quality={90}
               />
-            </chakra.a>
-          </chakra.div>
+            </Box>
+          </chakra.a>
+          <Box
+            height={69}
+            width={273}
+            mt="6px"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
+          >
+            <StaticImage
+              src="../assets/images/sh_bf.png"
+              width={273}
+              height={69}
+              alt="Shopify - Business fundamentals"
+              placeholder="blurred"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              quality={90}
+            />
+          </Box>
+          <Box
+            height={69}
+            width={273}
+            mt="6px"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
+          >
+            <StaticImage
+              src="../assets/images/sh_ad.png"
+              width={273}
+              height={69}
+              alt="Shopify - App Development"
+              placeholder="blurred"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              quality={90}
+            />
+          </Box>
+          <Box
+            height={69}
+            width={273}
+            mt="6px"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
+          >
+            <StaticImage
+              src="../assets/images/sh_pf.png"
+              width={273}
+              height={69}
+              alt="Shopify - Product fundamentals"
+              placeholder="blurred"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              quality={90}
+            />
+          </Box>
+          <Box
+            as={"a"}
+            href="https://ofg-studium.de"
+            rel="noreferrer"
+            target={"_blank"}
+            title="Online Schule für Gestaltung - Webdesign"
+            height={"64px"}
+            width={"259px"}
+            mt="6px"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
+          >
+            <StaticImage
+              src="https://ofg-studium.de/images/certificate/certificate_webdesign_21142.png"
+              width={273}
+              height={69}
+              alt="Online Schule für Gestaltung - Webdesign / Professionelle Webseiten erstellen"
+              placeholder="blurred"
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              quality={100}
+              style={{ height: 64, width: 259 }}
+              imgStyle={{ height: 69, width: 273 }}
+            />
+          </Box>
         </Flex>
       </VStack>
       <Box position={"relative"}>
@@ -790,6 +823,7 @@ export default function Home({ data }) {
                   <GatsbyImage
                     image={image}
                     style={{ borderRadius: "0.5rem 0.5rem 0 0" }}
+                    alt={project.title}
                   />
                 </Box>
                 <VStack
