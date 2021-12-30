@@ -723,6 +723,7 @@ export default function Home() {
       <Flex
         direction={"column"}
         py="40"
+        px="4"
         gap={12}
         align={"center"}
         justify={"center"}
