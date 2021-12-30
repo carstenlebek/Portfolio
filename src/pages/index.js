@@ -46,14 +46,6 @@ import {
 import { Link, animateScroll as scroll } from "react-scroll"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
-import HeroImage from "./../assets/images/undraw_programming_re_kg9v.svg"
-import JsAad from "./../assets/images/fcc_js_aads_badge.png"
-import Fedl from "./../assets/images/fcc_fedl.png"
-import Bedaa from "./../assets/images/fcc_bedaa.png"
-import ShAd from "./../assets/images/sh_ad.png"
-import ShBf from "./../assets/images/sh_bf.png"
-import ShPf from "./../assets/images/sh_pf.png"
-
 import Hero from "./../assets/images/hero.svg"
 
 import WebsiteImage from "./../assets/images/website.svg"
@@ -61,14 +53,6 @@ import SeoImage from "./../assets/images/seo.svg"
 import FeaturesImage from "./../assets/images/features.svg"
 import OnlineShopImage from "./../assets/images/onlineshop.svg"
 
-import ProfilePicture from "./../assets/images/Hintergrund.png"
-
-import RsCards from "./../assets/images/rscards.jpg"
-import KrasserStecher from "./../assets/images/krasserstecher.png"
-import Aposto from "./../assets/images/aposto.png"
-import CreatorHub from "./../assets/images/creatorhub.png"
-import Deepi18n from "./../assets/images/deepi18n.png"
-import Allkokos from "./../assets/images/allkokos.png"
 import { graphql } from "gatsby"
 
 export default function Home({ data }) {
