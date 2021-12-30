@@ -689,7 +689,7 @@ export default function Home() {
           </chakra.svg>
         </chakra.div>
       </Box>
-      <VStack
+      {/* <VStack
         spacing={"16"}
         py={{ base: "12", md: "40" }}
         px={"4"}
@@ -719,7 +719,7 @@ export default function Home() {
             />
           </SimpleGrid>
         ))}
-      </VStack>
+      </VStack> */}
       <Flex
         direction={"column"}
         py="40"
