@@ -430,11 +430,17 @@ export default function Home({ data }) {
             transition: "all 0.5s ease-out",
           }}
         >
-          <chakra.img
-            src={ProfilePicture}
-            alt="Ein Bild von mir"
-            rounded={"lg"}
-          ></chakra.img>
+          <StaticImage
+            src="../assets/images/Hintergrund.png"
+            alt="Carsten Lebek"
+            placeholder="blurred"
+            layout="fixed"
+            formats={["auto", "webp", "avif"]}
+            quality={90}
+            width={450}
+            height={450}
+            imgStyle={{ borderRadius: "0.5rem" }}
+          />
         </Box>
       </Flex>
       <Box position={"relative"}>
