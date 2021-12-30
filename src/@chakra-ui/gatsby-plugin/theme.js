@@ -7,7 +7,7 @@ const theme = {
   styles: {
     global: {
       html: {
-        scrollBehavior: "smooth",
+        // scrollBehavior: "smooth",
       },
       body: {
         bg: "#fefefe",

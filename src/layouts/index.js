@@ -4,13 +4,12 @@ import Header from "../components/header"
 import Seo from "../components/seo"
 import { AppProvider } from "./Context"
 
-const Layout = ({ children }) => {
-
+const Layout = ({ children, location }) => {
   return (
     <AppProvider>
       <Seo />
       <Box position={"relative"}>
-        <Header />
+        <Header location={location} />
         {children}
       </Box>
     </AppProvider>

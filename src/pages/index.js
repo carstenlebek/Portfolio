@@ -16,7 +16,8 @@ import {
 } from "@chakra-ui/react"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { FaXing, FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+import { TiWaves } from "react-icons/ti"
 import {
   SiCss3,
   SiGatsby,
@@ -39,18 +40,10 @@ import {
   SiVisualstudiocode,
   SiHeroku,
   SiNextdotjs,
-  SiXing,
   SiLinkedin,
 } from "react-icons/si"
 
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll"
+import { Link, animateScroll as scroll } from "react-scroll"
 
 import HeroImage from "./../assets/images/undraw_programming_re_kg9v.svg"
 import JsAad from "./../assets/images/fcc_js_aads_badge.png"
@@ -93,7 +86,7 @@ export default function Home() {
         { name: "ChakraUI", icon: SiChakraui },
         { name: "Tailwind", icon: SiTailwindcss },
         { name: "GraphQL", icon: SiGraphql },
-        { name: "Liquid", icon: SiShopify },
+        { name: "Liquid", icon: TiWaves },
       ],
     },
     {
@@ -109,6 +102,7 @@ export default function Home() {
     {
       heading: "General",
       tools: [
+        { name: "Shopify", icon: SiShopify },
         { name: "Github", icon: SiGithub },
         { name: "Vercel", icon: SiVercel },
         { name: "Heroku", icon: SiHeroku },
@@ -273,7 +267,12 @@ export default function Home() {
               <Button isFullWidth colorScheme={"red"}>
                 Lass und zusammenarbeiten!
               </Button>
-              <Link to="projects" w="full" style={{ width: "100%" }}>
+              <Link
+                to="projects"
+                w="full"
+                smooth={true}
+                style={{ width: "100%" }}
+              >
                 <Button isFullWidth colorScheme={"red"} variant={"outline"}>
                   Projekte
                 </Button>
@@ -392,9 +391,11 @@ export default function Home() {
               </chakra.span>
             </Text>
           </VStack>
-          <Button colorScheme={"red"} size={"lg"} isFullWidth>
-            Meine Projekte
-          </Button>
+          <Link to="projects" w="full" smooth={true} style={{ width: "100%" }}>
+            <Button colorScheme={"red"} size={"lg"} isFullWidth>
+              Meine Projekte
+            </Button>
+          </Link>
         </VStack>
         <Box
           maxW={{ base: "80vw", md: "md" }}
