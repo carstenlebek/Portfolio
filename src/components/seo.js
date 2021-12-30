@@ -72,11 +72,12 @@ function Seo({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link
+        rel="stylesheet"
+        media="print"
+        onload="this.onload=null;this.removeAttribute('media');"
         href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
-        rel="preload"
-        onload="this.onload=null;this.rel='stylesheet'"
       ></link>
       <noscript>
         {`<link

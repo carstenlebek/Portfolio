@@ -417,7 +417,7 @@ export default function Home({ data }) {
             src="../assets/images/Hintergrund.png"
             alt="Carsten Lebek"
             placeholder="blurred"
-            layout="fixed"
+            layout="constrained"
             formats={["auto", "webp", "avif"]}
             quality={90}
             width={450}
