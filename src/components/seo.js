@@ -79,10 +79,10 @@ function Seo({ description, lang, meta, title }) {
         onload="this.onload=null;this.rel='stylesheet'"
       ></link>
       <noscript>
-        <link
+        {`<link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
-        />
+        />`}
       </noscript>
     </Helmet>
   )
