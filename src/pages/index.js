@@ -73,6 +73,8 @@ import RsCards from "./../assets/images/rscards.jpg"
 import KrasserStecher from "./../assets/images/krasserstecher.png"
 import Aposto from "./../assets/images/aposto.png"
 import CreatorHub from "./../assets/images/creatorhub.png"
+import Deepi18n from "./../assets/images/deepi18n.png"
+import Allkokos from "./../assets/images/allkokos.png"
 
 export default function Home() {
   const tools = [
@@ -168,7 +170,7 @@ export default function Home() {
       type: "Shopify App",
       title: "CreatorHub",
       description:
-        "CreatorHub gibt Shopbetreibern eine einfache Möglichkeit Influencer zu verwalten. Außerdem bringt die Influencer Marketing in das Frontend und verbessert so die Customer Experience.",
+        "CreatorHub gibt Shopbetreibern eine einfache Möglichkeit Influencer zu verwalten. Außerdem bringt die App Influencer Marketing in das Frontend und verbessert so die Customer Experience.",
       slug: "creatorhub",
       url: "https://apps.shopify.com/creator-code",
       stack: [
@@ -183,6 +185,16 @@ export default function Home() {
         "GraphQL",
         "Liquid",
       ],
+    },
+    {
+      image: Deepi18n,
+      type: "Web App",
+      title: "deepi18n",
+      description:
+        "Deepi18n ermöglicht es Webseiten oder Apps in einem Schritt in bis zu 25 Sprachen zu übersetzen. Zur Übersetzung wird die DeepL API genutzt.",
+      slug: "deepi18n",
+      url: "https://deep-i18n.vercel.app/",
+      stack: ["React.js", "Next.js", "Chakra Ui", "AWS S3"],
     },
     {
       image: KrasserStecher,
@@ -202,6 +214,16 @@ export default function Home() {
         "Leckere Pizza und Pasta kann man im auf Shopify basierenden Shop vom Aposto Wuppertal bestellen. \r\nDer Shop wurde als Alternative zu Lieferando erstellt.",
       slug: "aposto-wuppertal",
       url: "https://apostowuppertal.de",
+      stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
+    },
+    {
+      image: Allkokos,
+      type: "Onlineshop",
+      title: "Allkokos.de",
+      description:
+        "Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos.de. Der Fokus bei diesem Projekt lag auf der Conversion Optimierung der Produktseite des Kleintiereinstreus.",
+      slug: "allkokos",
+      url: "https://allkokos.de/products/kleintiereinstreu",
       stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
     },
   ]
