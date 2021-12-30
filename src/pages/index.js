@@ -856,6 +856,7 @@ export const pageQuery = graphql`
             placeholder: BLURRED
             width: 384
             formats: [AUTO, WEBP, AVIF]
+            quality: 90
           )
         }
         name
