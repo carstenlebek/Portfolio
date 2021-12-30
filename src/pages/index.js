@@ -37,6 +37,8 @@ import {
   SiVisualstudiocode,
   SiHeroku,
   SiNextdotjs,
+  SiXing,
+  SiLinkedin,
 } from "react-icons/si"
 
 import {
@@ -196,13 +198,17 @@ export default function Home() {
                 colorScheme={"red"}
                 variant={"ghost"}
                 aria-label="Link zum Xing Profil"
+                as={"a"}
+                href="https://www.linkedin.com/in/carsten-lebek-634899229/"
               >
-                <FaXing size={"1.8rem"} />
+                <SiLinkedin size={"1.8rem"} />
               </Button>
               <Button
                 colorScheme={"red"}
                 variant={"ghost"}
                 aria-label="Link zum Github Profil"
+                as={"a"}
+                href="https://github.com/carstenlebek"
               >
                 <FaGithub size={"1.8rem"} />
               </Button>
@@ -252,7 +258,7 @@ export default function Home() {
         justify={"center"}
         align={"center"}
         minH={{ base: "none", md: "3xl" }}
-        py={{ base: "16",md: "32" }}
+        py={{ base: "16", md: "32" }}
         bg="sbg"
         gap="8"
         id="about-me"
