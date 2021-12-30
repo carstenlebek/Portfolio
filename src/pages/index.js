@@ -3,6 +3,7 @@ import {
   Button,
   chakra,
   Container,
+  Divider,
   Flex,
   Heading,
   Icon,
@@ -61,6 +62,8 @@ import WebsiteImage from "./../assets/images/website.svg"
 import SeoImage from "./../assets/images/seo.svg"
 import FeaturesImage from "./../assets/images/features.svg"
 import OnlineShopImage from "./../assets/images/onlineshop.svg"
+
+import ProfilePicture from "./../assets/images/Hintergrund.png"
 
 export default function Home() {
   const tools = [
@@ -136,6 +139,8 @@ export default function Home() {
     <>
       <Helmet></Helmet>
       <Flex
+        id="top"
+        position={"relative"}
         paddingX={{ base: "4", md: "20" }}
         paddingY="20"
         gap={{ base: "0", md: "20" }}
@@ -216,49 +221,151 @@ export default function Home() {
           ></chakra.img>
         </Box>
       </Flex>
+      <Box position={"relative"}>
+        <chakra.div
+          position={"absolute"}
+          bottom={0}
+          left={0}
+          w="full"
+          overflow={"hidden"}
+          lineHeight={0}
+          transform={"rotate(180deg)"}
+        >
+          <chakra.svg
+            position={"relative"}
+            display={"block"}
+            width={"calc(100% + 1.3px)"}
+            height={"70px"}
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill={"#1A1423"}
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            ></path>
+          </chakra.svg>
+        </chakra.div>
+      </Box>
       <Flex
         justify={"center"}
         align={"center"}
         minH={{ base: "none", md: "3xl" }}
-        py={{ base: "12" }}
+        py={{ base: "32" }}
         bg="sbg"
+        gap="8"
+        id="about-me"
+        position={"relative"}
       >
-        <VStack maxW="md" spacing={"16"} px="4" color={"textSecondary"}>
+        <VStack maxW="md" spacing={"6"} px="4" color={"textSecondary"}>
           <Heading
             size={"2xl"}
             whiteSpace={{ base: "normal", md: "nowrap" }}
-            textAlign={"center"}
+            textAlign={{ base: "center", md: "left" }}
+            w="full"
           >
-            Ich bringe dir Ergebnisse.
+            Über mich
           </Heading>
+          <Divider></Divider>
           <VStack align={"flex-start"}>
             <Text>
-              I build sites with amazing looks and fast load-times that do one
-              thing:{" "}
-              <chakra.span color={"red"} display={"inline"} fontWeight={"bold"}>
-                Get you results.
+              Hey! Mein Name ist Carsten und ich baue gerne Dinge, die im
+              Internet leben. Mein Interesse für Web Development hat im Jahr
+              2016 angefangen, als ich meinen ersten eigenen Onlineshop eröffnet
+              habe. Aus ein paar kleinen HTML und CSS Anpassungen hat sich über
+              die Zeit ein echtes Interesse immer mehr zu lernen entwickelt.
+            </Text>
+            <Text>
+              In meiner Selbsständigkeit habe ich viele Projekte gestartet. Von
+              Print on Demand T-Shirts, über Energydrinks für Gamer bis hin zu
+              3D gedruckten Keksausstechformen war alles dabei.
+            </Text>
+            <Text>
+              Bei jedem dieser Projekte habe ich immer viel dazugelernt. Egal ob
+              Warenbeschaffung, Online Marketing oder Unternehmensgründungen -
+              Auf meinem Weg war alles dabei.
+            </Text>
+            <Text>
+              Am Ende hat alles zu dem geführt, was ich eigentlich schon die
+              ganze Zeit machen wollte:{" "}
+              <chakra.span fontWeight={"bold"} color="red.500">
+                Digitale Erfahrungen und Produkte erschaffen.
               </chakra.span>
             </Text>
-            <Text>
-              Whatever you have in mind, you should know - I build with a
-              goal-oriented eye for precision.
-            </Text>
-            <Text>
-              When we're done, you will have a site that gets the job done in
-              style.
-            </Text>
           </VStack>
-          <Button colorScheme={"red"} size={"lg"}>
-            See past work
+          <Button colorScheme={"red"} size={"lg"} isFullWidth>
+            Meine Projekte
           </Button>
         </VStack>
+        <Box
+          maxW="md"
+          minH="md"
+          minW="md"
+          position="relative"
+          zIndex="2"
+          transition="all 0.5s ease-out"
+          _hover={{
+            transform: "translate(5px, 5px)",
+            _after: { transform: "translate(10px,10px)" },
+          }}
+          _after={{
+            content: '""',
+            bg: "red.500",
+            rounded: "lg",
+            backgroundPosition: "0 0 ",
+            backgroundSize: "10px 10px",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            transform: "translate(20px,20px)",
+            zIndex: -1,
+            transition: "all 0.5s ease-out",
+          }}
+        >
+          <chakra.img
+            src={ProfilePicture}
+            alt="Ein Bild von mir"
+            rounded={"lg"}
+          ></chakra.img>
+        </Box>
       </Flex>
+      <Box position={"relative"}>
+        <chakra.div
+          position={"absolute"}
+          top={0}
+          left={0}
+          w="full"
+          overflow={"hidden"}
+          lineHeight={0}
+          transform={"rotate(180deg)"}
+        >
+          <chakra.svg
+            position={"relative"}
+            display={"block"}
+            width={"calc(100% + 1.3px)"}
+            height={"70px"}
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              fill={"#1A1423"}
+            ></path>
+          </chakra.svg>
+        </chakra.div>
+      </Box>
       <VStack
-        py={{ base: "12", md: "40" }}
+        py={{ base: "12", md: "32" }}
         spacing={"16"}
         // backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
+        id="toolbox"
       >
-        <Heading size="2xl">My Toolbox</Heading>
+        <Heading size="2xl">Meine Toolbox</Heading>
         {tools.map((area, index) => (
           <Box key={index}>
             <Heading mb="4" textAlign={"center"}>
@@ -278,6 +385,13 @@ export default function Home() {
                   w="32"
                   h="32"
                   color={"textSecondary"}
+                  transition={"all 0.3s ease-out"}
+                  shadow={"lg"}
+                  _hover={{
+                    transform: "scale(1.1) translate(0px, -4px)",
+                    shadow: "dark-lg",
+                    color: "red.500",
+                  }}
                 >
                   <Icon as={tool.icon} w="12" h="12"></Icon>
                   <Text>{tool.name}</Text>
@@ -287,12 +401,41 @@ export default function Home() {
           </Box>
         ))}
       </VStack>
+      <Box position={"relative"}>
+        <chakra.div
+          position={"absolute"}
+          top={0}
+          left={0}
+          w="full"
+          overflow={"hidden"}
+          lineHeight={0}
+          // transform={"rotate(180deg)"}
+        >
+          <chakra.svg
+            position={"relative"}
+            display={"block"}
+            width={"calc(100% + 1.3px)"}
+            height={"56px"}
+            transform={"rotateY(180deg)"}
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              fill="#fefefe"
+            ></path>
+          </chakra.svg>
+        </chakra.div>
+      </Box>
       <VStack
         py={{ base: "4", md: "80" }}
-        spacing={"16"}
-        backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232c2f33' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
         bg={"sbg"}
+        spacing={"16"}
+        backgroundImage={`url("data:image/svg+xml,%3Csvg width='104' height='52' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
         color={"textSecondary"}
+        id="certifications"
       >
         <Heading size="2xl">Zertifikationen</Heading>
         <Flex gap={"8"} wrap={"wrap"} justify={"center"} maxW="1200px">
@@ -309,6 +452,13 @@ export default function Home() {
               height={69}
               width={273}
               alt="FreeCodeCamp - Javascript algorithms and data structures"
+              shadow={"md"}
+              rounded={"lg"}
+              transition={"all 0.3s ease-out"}
+              _hover={{
+                shadow: "dark-lg",
+                transform: "scale(1.05)",
+              }}
             />
           </chakra.a>
           <chakra.a
@@ -324,6 +474,13 @@ export default function Home() {
               height={69}
               width={273}
               alt="FreeCodeCamp - Front end development libraries"
+              shadow={"md"}
+              rounded={"lg"}
+              transition={"all 0.3s ease-out"}
+              _hover={{
+                shadow: "dark-lg",
+                transform: "scale(1.05)",
+              }}
             />
           </chakra.a>
           <chakra.a
@@ -339,6 +496,13 @@ export default function Home() {
               height={69}
               width={273}
               alt="FreeCodeCamp - Back end development and apis"
+              shadow={"md"}
+              rounded={"lg"}
+              transition={"all 0.3s ease-out"}
+              _hover={{
+                shadow: "dark-lg",
+                transform: "scale(1.05)",
+              }}
             />
           </chakra.a>
           <chakra.img
@@ -349,6 +513,13 @@ export default function Home() {
             mb="12px"
             mr="16px"
             alt="Shopify - App development"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
           />
           <chakra.img
             src={ShPf}
@@ -358,6 +529,13 @@ export default function Home() {
             mb="12px"
             mr="16px"
             alt="Shopfy - Product fundamentals"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
           />
           <chakra.img
             src={ShBf}
@@ -367,10 +545,25 @@ export default function Home() {
             mb="12px"
             mr="16px"
             alt="Shopfy - Business fundamentals"
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
           />
+          {/* TODO: CROP OFG IMAGE WITH CSS */}
           <chakra.div
             backgroundImage='url("https://ofg-studium.de/images/certificate/certificate_webdesign_21142.png")'
             backgroundRepeat={"no-repeat"}
+            shadow={"md"}
+            rounded={"lg"}
+            transition={"all 0.3s ease-out"}
+            _hover={{
+              shadow: "dark-lg",
+              transform: "scale(1.05)",
+            }}
           >
             <chakra.a
               href="https://ofg-studium.de"
@@ -392,6 +585,34 @@ export default function Home() {
           </chakra.div>
         </Flex>
       </VStack>
+      <Box position={"relative"}>
+        <chakra.div
+          position={"absolute"}
+          bottom={0}
+          left={0}
+          w="full"
+          overflow={"hidden"}
+          lineHeight={0}
+          transform={"rotate(180deg)"}
+        >
+          <chakra.svg
+            position={"relative"}
+            display={"block"}
+            width={"calc(100% + 1.3px)"}
+            height={"56px"}
+            transform={"rotateY(180deg)"}
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              fill="#fefefe"
+            ></path>
+          </chakra.svg>
+        </chakra.div>
+      </Box>
       <VStack
         spacing={"16"}
         py={{ base: "12", md: "40" }}

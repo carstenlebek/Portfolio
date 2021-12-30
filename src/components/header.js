@@ -1,4 +1,4 @@
-import { Button, Flex, Heading } from "@chakra-ui/react"
+import { Button, Box, Flex, Heading, HStack, Link } from "@chakra-ui/react"
 import React, { useState, useEffect } from "react"
 
 export default function Header() {
@@ -23,6 +23,12 @@ export default function Header() {
     }
   }, [scrollState])
 
+  const navItems = [
+    { name: "Über mich", url: "#about-me" },
+    { name: "Tools", url: "#toolbox" },
+    { name: "Zertifikationen", url: "#certifications" },
+  ]
+
   return (
     <Flex
       align={"center"}
@@ -33,10 +39,29 @@ export default function Header() {
       top="0"
       w="full"
       bg={scrollState ? "bg" : "transparent"}
+      shadow={scrollState ? "sm" : "none"}
       zIndex={1000}
       transition={"all 0.3s ease-in"}
     >
-      <Heading>Carsten Lebek</Heading>
+      <Heading flex={1} as={"a"} href="/#top">
+        Carsten Lebek
+      </Heading>
+      <HStack spacing={"4"} px="8">
+        {navItems.map((item, index) => (
+          <Box key={index}>
+            <Link
+              p="2"
+              href={item.url}
+              _hover={{
+                textDecoration: "none",
+                color: "red.500",
+              }}
+            >
+              {item.name}
+            </Link>
+          </Box>
+        ))}
+      </HStack>
       <Button colorScheme={"red"} display={{ base: "none", md: "inline-flex" }}>
         Lass und zusammenarbeiten!
       </Button>
