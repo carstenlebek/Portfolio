@@ -1,10 +1,12 @@
 import {
+  Badge,
   Box,
   Button,
   chakra,
   Container,
   Divider,
   Flex,
+  GridItem,
   Heading,
   Icon,
   SimpleGrid,
@@ -14,7 +16,7 @@ import {
 } from "@chakra-ui/react"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { FaXing, FaGithub } from "react-icons/fa"
+import { FaXing, FaGithub, FaExternalLinkAlt } from "react-icons/fa"
 import {
   SiCss3,
   SiGatsby,
@@ -66,6 +68,11 @@ import FeaturesImage from "./../assets/images/features.svg"
 import OnlineShopImage from "./../assets/images/onlineshop.svg"
 
 import ProfilePicture from "./../assets/images/Hintergrund.png"
+
+import RsCards from "./../assets/images/rscards.jpg"
+import KrasserStecher from "./../assets/images/krasserstecher.png"
+import Aposto from "./../assets/images/aposto.png"
+import CreatorHub from "./../assets/images/creatorhub.png"
 
 export default function Home() {
   const tools = [
@@ -134,6 +141,68 @@ export default function Home() {
       description:
         "You have an idea. You want to turn it into an online business without all the hassle. Perfect! I'm here to help you set up an e-commerce store that looks amazing and makes you money.",
       image: OnlineShopImage,
+    },
+  ]
+
+  const projects = [
+    {
+      image: RsCards,
+      type: "Onlineshop",
+      title: "RSCards.de",
+      description:
+        "RSCards ist ein Onlineshop für personalisierte Autoquartettkarten im XXL Format. Als headless CMS wird hier Shopify genutzt und die Storefront wurde mit Gatsby.js erstellt.",
+      slug: "rscards",
+      url: "https://rscards.de",
+      stack: [
+        "Shopify",
+        "React.js",
+        "Gatsby.js",
+        "Chakra UI",
+        "Konva.js",
+        "AWS Lambda",
+        "AWS S3",
+      ],
+    },
+    {
+      image: CreatorHub,
+      type: "Shopify App",
+      title: "CreatorHub",
+      description:
+        "CreatorHub gibt Shopbetreibern eine einfache Möglichkeit Influencer zu verwalten. Außerdem bringt die Influencer Marketing in das Frontend und verbessert so die Customer Experience.",
+      slug: "creatorhub",
+      url: "https://apps.shopify.com/creator-code",
+      stack: [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Koa",
+        "Shopify AppBridge",
+        "Polaris",
+        "Recharts",
+        "Firebase",
+        "GraphQL",
+        "Liquid",
+      ],
+    },
+    {
+      image: KrasserStecher,
+      type: "Onlineshop",
+      title: "Krasserstecher.de",
+      description:
+        "Bei Krasser Stecher gibt es personalisierte 3D gedruckte Keksausstechformen. Der Shop wurde mit Shopify erstellt. Die Storefront basiert auf dem Dawn Theme mit eigenen Secions.",
+      slug: "krasserstecher",
+      url: "https://www.krasserstecher.de",
+      stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
+    },
+    {
+      image: Aposto,
+      type: "Onlineshop",
+      title: "Aposto Wuppertal",
+      description:
+        "Leckere Pizza und Pasta kann man im auf Shopify basierenden Shop vom Aposto Wuppertal bestellen. \r\nDer Shop wurde als Alternative zu Lieferando erstellt.",
+      slug: "aposto-wuppertal",
+      url: "https://apostowuppertal.de",
+      stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
     },
   ]
 
@@ -651,6 +720,85 @@ export default function Home() {
           </SimpleGrid>
         ))}
       </VStack>
+      <Flex
+        direction={"column"}
+        py="40"
+        gap={12}
+        align={"center"}
+        justify={"center"}
+      >
+        <Heading size="2xl" textAlign={"center"} w="full">
+          Projekte
+        </Heading>
+        <Flex
+          gap="8"
+          maxW="4xl"
+          justify={"center"}
+          align={"stretch"}
+          wrap={"wrap"}
+        >
+          {projects.map((project, index) => (
+            <Flex
+              key={index}
+              maxW="sm"
+              bg="sbg"
+              color="textSecondary"
+              flex={"1 1 300px"}
+              rounded={"lg"}
+              shadow={"md"}
+              justify={"flex-start"}
+              align={"stretch"}
+              direction={"column"}
+            >
+              <Box>
+                <chakra.img
+                  src={project.image}
+                  alt={`Projekt ${project.title}`}
+                  roundedTop={"lg"}
+                ></chakra.img>
+              </Box>
+              <VStack
+                w="full"
+                h="full"
+                px="6"
+                pt="8"
+                pb="4"
+                spacing={4}
+                alignItems={"flex-start"}
+              >
+                <Box>
+                  <Text fontSize="xs">{project.type}</Text>
+                  <Heading w="full">{project.title}</Heading>
+                </Box>
+                <Flex direction={"row"} wrap={"wrap"} gap={2}>
+                  {project.stack.map((item, index) => (
+                    <Badge key={index}>{item}</Badge>
+                  ))}
+                </Flex>
+                <Text wordBreak={"break-word"} whiteSpace={"pre-wrap"} flex={1}>
+                  {project.description}
+                </Text>
+                <VStack spacing={1} w="full">
+                  <Button colorScheme={"red"} isFullWidth>
+                    Mehr dazu
+                  </Button>
+                  <Button
+                    colorScheme={"red"}
+                    variant={"ghost"}
+                    as="a"
+                    target={"_blank"}
+                    href={project.url}
+                    rightIcon={<FaExternalLinkAlt />}
+                    isFullWidth
+                  >
+                    Zum Projekt
+                  </Button>
+                </VStack>
+              </VStack>
+            </Flex>
+          ))}
+        </Flex>
+      </Flex>
       <a href="https://storyset.com/web">Web illustrations by Storyset</a>
     </>
   )
