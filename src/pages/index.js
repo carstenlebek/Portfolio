@@ -44,7 +44,6 @@ import {
 import { Link, animateScroll as scroll } from "react-scroll"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
-
 import Hero from "./../assets/images/hero.svg"
 
 import WebsiteImage from "./../assets/images/website.svg"
@@ -218,7 +217,7 @@ export default function Home({ data }) {
         id="top"
         position={"relative"}
         paddingX={{ base: "4", md: "20" }}
-        paddingY="20"
+        paddingY="28"
         gap={{ base: "0", md: "20" }}
         align={"center"}
         justify={"center"}
@@ -226,32 +225,36 @@ export default function Home({ data }) {
         wrap={"wrap"}
         backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2f5f5f5' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
       >
-        <VStack spacing={"4"} align={"flex-start"}>
-          <Heading
-            as="h1"
-            size={"4xl"}
-            textAlign={{ base: "center", md: "left" }}
-            w="full"
-          >
-            Freelance
-            <br />
-            Developer
-          </Heading>
+        <VStack spacing={"8"} align={"flex-start"}>
+          <Container pl="0">
+            <Text>Hallo, mein Name ist</Text>
+            <Heading
+              as="h1"
+              size={"4xl"}
+              textAlign={{ base: "left", md: "left" }}
+              w="full"
+            >
+              Carsten Lebek.
+            </Heading>
+          </Container>
           <Container
             maxW="lg"
             pl="0"
-            textAlign={{ base: "center", md: "left" }}
+            textAlign={{ base: "left", md: "left" }}
           >
             <Text>
+              Ich bin ein Webdeveloper und habe mich auf Shopify spezialisiert.
+              <br />
               Ich helfe Menschen Ihre Ideen in Seiten umzusetzen, die
               funktionieren.
-              <br />
-              Professionell und kosteneffektiv.
-              <br />
-              Immer.
             </Text>
           </Container>
-          <Flex w="full" gap="4" wrap={{ base: "wrap", md: "nowrap" }}>
+          <Flex
+            w="full"
+            gap="1"
+            wrap={{ base: "wrap", md: "nowrap" }}
+            justify={"flex-start"}
+          >
             <VStack w="full">
               <Button isFullWidth colorScheme={"red"}>
                 Lass und zusammenarbeiten!

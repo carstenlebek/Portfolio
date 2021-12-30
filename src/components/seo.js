@@ -77,15 +77,15 @@ function Seo({ description, lang, meta, title }) {
         rel="stylesheet"
         media="print"
         onload="this.onload=null;this.removeAttribute('media');"
-        href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
+        href="https://fonts.googleapis.com/css?family=Raleway:300,400,500&amp;display=swap"
       ></link>
       <noscript>
         {`<link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&amp;display=swap"
+          href="https://fonts.googleapis.com/css?family=Raleway:300,400,500&amp;display=swap"
         />`}
       </noscript>
-      
+
     </Helmet>
   )
 }

@@ -2,8 +2,8 @@ import { extendTheme } from "@chakra-ui/react"
 const theme = {
   fonts: {
     heading:
-      "Quicksand,'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
-    body: "Quicksand,'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
+      "Raleway ,'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
+    body: "Raleway, 'Helvetica Neue', 'Arial Nova', Helvetica, Arial, sans-serif",
   },
   styles: {
     global: {
