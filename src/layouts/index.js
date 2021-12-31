@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/react"
+import { AnimatePresence } from "framer-motion"
 import React, { useEffect } from "react"
 import Header from "../components/header"
 import Seo from "../components/seo"
@@ -10,7 +11,9 @@ const Layout = ({ children, location }) => {
       <Seo />
       <Box position={"relative"}>
         <Header location={location} />
-        {children}
+        <AnimatePresence initial={true} exitBeforeEnter>
+          <main>{children}</main>
+        </AnimatePresence>
       </Box>
     </AppProvider>
   )

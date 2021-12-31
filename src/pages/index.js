@@ -1,5 +1,4 @@
 import {
-  Badge,
   Box,
   Button,
   chakra,
@@ -14,7 +13,7 @@ import {
 } from "@chakra-ui/react"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 import { TiWaves } from "react-icons/ti"
 import {
   SiCss3,
@@ -42,7 +41,7 @@ import {
 } from "react-icons/si"
 
 import { Link, animateScroll as scroll } from "react-scroll"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { getImage, StaticImage } from "gatsby-plugin-image"
 
 // import Hero from "./../assets/images/hero.svg"
 import Hero from "./../assets/images/hero.js"
@@ -55,6 +54,11 @@ import OnlineShopImage from "./../assets/images/onlineshop.svg"
 import { graphql } from "gatsby"
 
 import "../styles/global.css"
+import { motion } from "framer-motion"
+import { ProjectCard } from "../components/ProjectCard"
+
+const MotionImage = motion(Box)
+const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 
 export default function Home({ data }) {
   console.log(data)
@@ -99,33 +103,6 @@ export default function Home({ data }) {
         { name: "Illustrator", icon: SiAdobeillustrator },
         { name: "VS Code", icon: SiVisualstudiocode },
       ],
-    },
-  ]
-
-  const wasICanHelpYou = [
-    {
-      heading: "1. Own a Website that Works",
-      description:
-        "You want a website. It must look great and you want it to work... All the time. Well, that's why I'm here! I help you by designing, building, and hosting a beautiful site that'll grow your business. Promise.",
-      image: WebsiteImage,
-    },
-    {
-      heading: "2. Become Famous with SEO",
-      description:
-        "An impressive Google ranking means more people see your fantastic blog post or revolutionary product. I ensure you have a leading ranking with best SEO practices. Give your content the audience it deserves!",
-      image: SeoImage,
-    },
-    {
-      heading: "3. Control the Features",
-      description:
-        "Do you feel restricted by all the drag-and-drop web builders out there? I provide a powerful custom code solution that fits your exact needs. At the end, you'll own a fast, great looking site.",
-      image: FeaturesImage,
-    },
-    {
-      heading: "4. Sell Your Stuff Online",
-      description:
-        "You have an idea. You want to turn it into an online business without all the hassle. Perfect! I'm here to help you set up an e-commerce store that looks amazing and makes you money.",
-      image: OnlineShopImage,
     },
   ]
 
@@ -749,37 +726,6 @@ export default function Home({ data }) {
           </chakra.svg>
         </chakra.div>
       </Box>
-      {/* <VStack
-        spacing={"16"}
-        py={{ base: "12", md: "40" }}
-        px={"4"}
-        id="services"
-        // backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232c2f33' fill-opacity='0.87'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
-      >
-        <Heading size="2xl" textAlign={"center"} w="full">
-          Ways I can help you
-        </Heading>
-        {wasICanHelpYou.map((way, index) => (
-          <SimpleGrid
-            columns={{ base: 1, md: 2 }}
-            maxW="1200px"
-            gap="20"
-            alignItems={"center"}
-          >
-            <VStack flex="1" textAlign={"left"} order={"2"}>
-              <Heading w="full">{way.heading}</Heading>
-              <Text>{way.description}</Text>
-            </VStack>
-            <chakra.img
-              src={way.image}
-              flex="1"
-              alt={way.description}
-              order={{ base: 2, md: index % 2 ? 1 : 2 }}
-              // gridColumn={index % 2 ? 1 : 2}
-            />
-          </SimpleGrid>
-        ))}
-      </VStack> */}
       <Flex
         direction={"column"}
         pt={{ base: "24", md: "40" }}
@@ -805,80 +751,7 @@ export default function Home({ data }) {
               images.find(image => image.name === project.image)
             )
 
-            return (
-              <Flex
-                key={index}
-                maxW="sm"
-                bg="sbg"
-                color="textSecondary"
-                flex={"1 1 300px"}
-                rounded={"lg"}
-                shadow={"2xl"}
-                justify={"flex-start"}
-                align={"stretch"}
-                direction={"column"}
-              >
-                <Box roundedTop={"lg"}>
-                  <GatsbyImage
-                    image={image}
-                    style={{
-                      borderRadius: "0.5rem 0.5rem 0 0",
-                      WebkitBorderRadius: "0.5rem 0.5rem 0 0",
-                      MozBorderRadius: "0.5rem 0.5rem 0 0",
-                    }}
-                    imgStyle={{
-                      borderRadius: "0.5rem 0.5rem 0 0",
-                      WebkitBorderRadius: "0.5rem 0.5rem 0 0",
-                      MozBorderRadius: "0.5rem 0.5rem 0 0",
-                    }}
-                    alt={project.title}
-                  />
-                </Box>
-                <VStack
-                  w="full"
-                  h="full"
-                  px="6"
-                  pt="8"
-                  pb="4"
-                  spacing={4}
-                  alignItems={"flex-start"}
-                >
-                  <Box>
-                    <Text fontSize="xs">{project.type}</Text>
-                    <Heading w="full">{project.title}</Heading>
-                  </Box>
-                  <Flex direction={"row"} wrap={"wrap"} gap={2}>
-                    {project.stack.map((item, index) => (
-                      <Badge key={index}>{item}</Badge>
-                    ))}
-                  </Flex>
-                  <Text
-                    wordBreak={"break-word"}
-                    whiteSpace={"pre-wrap"}
-                    flex={1}
-                  >
-                    {project.description}
-                  </Text>
-                  <VStack spacing={1} w="full">
-                    <Button colorScheme={"red"} isFullWidth>
-                      Mehr dazu
-                    </Button>
-                    <Button
-                      colorScheme={"red"}
-                      variant={"ghost"}
-                      as="a"
-                      target={"_blank"}
-                      rel="noreferrer"
-                      href={project.url}
-                      rightIcon={<FaExternalLinkAlt />}
-                      isFullWidth
-                    >
-                      Zum Projekt
-                    </Button>
-                  </VStack>
-                </VStack>
-              </Flex>
-            )
+            return ProjectCard(index, image, project)
           })}
         </Flex>
       </Flex>
