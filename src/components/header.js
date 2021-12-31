@@ -149,8 +149,8 @@ export default function Header({ location }) {
         <SimpleGrid
           columns={navItems.length + 1}
           py="2"
-          px="2"
-          gap="2"
+          // px="2"
+          // gap="2"
           display={{ base: "grid", md: "none" }}
           color={"red.500"}
           bg="bg"
