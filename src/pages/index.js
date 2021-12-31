@@ -230,7 +230,7 @@ export default function Home({ data }) {
       >
         <VStack spacing={"8"} align={"flex-start"}>
           <Container pl="0">
-            <Text>Hallo, mein Name ist</Text>
+            <Text>Hi, mein Name ist</Text>
             <Heading
               as="h1"
               size={"4xl"}
@@ -248,10 +248,10 @@ export default function Home({ data }) {
           </Container>
           <Container maxW="lg" pl="0" textAlign={{ base: "left", md: "left" }}>
             <Text>
-              Ich bin ein Webdeveloper und habe mich auf Shopify spezialisiert.
+              Ich bin ein Webdeveloper aus Wuppertal.
               <br />
-              Ich helfe Menschen Ihre Ideen in Seiten umzusetzen, die
-              funktionieren.
+              Meine Spezialität ist es Menschen zu helfen ihre Ideen in die
+              Realität umzusetzen.
             </Text>
           </Container>
           <Flex
@@ -782,7 +782,8 @@ export default function Home({ data }) {
       </VStack> */}
       <Flex
         direction={"column"}
-        py={{ base: "12", md: "40" }}
+        pt={{ base: "24", md: "40" }}
+        pb="40"
         px="4"
         gap={24}
         align={"center"}
@@ -916,8 +917,10 @@ export default function Home({ data }) {
         justify={"center "}
       >
         <VStack>
-          <Text >Designed & Built by Carsten Lebek</Text>
-          <chakra.a opacity={0.6} href="https://storyset.com/web">Web illustrations by Storyset</chakra.a>
+          <Text>Designed & Built by Carsten Lebek</Text>
+          <chakra.a opacity={0.6} href="https://storyset.com/web">
+            Web illustrations by Storyset
+          </chakra.a>
         </VStack>
       </Flex>
     </>

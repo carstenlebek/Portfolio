@@ -19,6 +19,12 @@ const theme = {
       h1: {
         fontWeight: 900,
       },
+      br: {
+        display: "block",
+        lineHeight: "1.4rem",
+        marginTop: "0.4rem",
+        content: "''",
+      },
     },
   },
   colors: {
