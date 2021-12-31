@@ -820,7 +820,11 @@ export default function Home({ data }) {
                 <Box roundedTop={"lg"}>
                   <GatsbyImage
                     image={image}
-                    style={{ borderRadius: "0.5rem 0.5rem 0 0" }}
+                    style={{
+                      borderRadius: "0.5rem 0.5rem 0 0",
+                      WebkitBorderRadius: "0.5rem 0.5rem 0 0",
+                      MozBorderRadius: "0.5rem 0.5rem 0 0",
+                    }}
                     alt={project.title}
                   />
                 </Box>
