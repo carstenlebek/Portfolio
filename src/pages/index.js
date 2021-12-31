@@ -204,7 +204,7 @@ export default function Home({ data }) {
       type: "Onlineshop",
       title: "Allkokos.de",
       description:
-        "Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos.de. Der Fokus bei diesem Projekt lag auf der Conversion Optimierung der Produktseite des Kleintiereinstreus.",
+        "Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos. Der Fokus bei diesem Projekt lag auf der Conversion Optimierung der Produktseite des Kleintiereinstreus.",
       slug: "allkokos",
       url: "https://allkokos.de/products/kleintiereinstreu",
       stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
