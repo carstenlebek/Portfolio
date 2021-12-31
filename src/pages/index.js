@@ -464,13 +464,13 @@ export default function Home({ data }) {
       </Box>
       <VStack
         py={{ base: "28", md: "32" }}
-        spacing={"16"}
+        spacing={"24"}
         // backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d8c3a5' fill-opacity='0.4'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
         id="toolbox"
       >
         <Heading size="2xl">Meine Toolbox</Heading>
         {tools.map((area, index) => (
-          <Box key={index}>
+          <VStack spacing={8} key={index}>
             <Heading mb="4" textAlign={"center"}>
               {area.heading}
             </Heading>
@@ -501,7 +501,7 @@ export default function Home({ data }) {
                 </Flex>
               ))}
             </Flex>
-          </Box>
+          </VStack>
         ))}
       </VStack>
       <Box position={"relative"}>
@@ -535,7 +535,7 @@ export default function Home({ data }) {
       <VStack
         py={{ base: "28", md: "80" }}
         bg={"sbg"}
-        spacing={"16"}
+        spacing={"24"}
         backgroundImage={`url("data:image/svg+xml,%3Csvg width='104' height='52' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}
         color={"textSecondary"}
         id="certifications"
@@ -784,7 +784,7 @@ export default function Home({ data }) {
         direction={"column"}
         py={{ base: "12", md: "40" }}
         px="4"
-        gap={12}
+        gap={24}
         align={"center"}
         justify={"center"}
         id="projects"
@@ -794,7 +794,7 @@ export default function Home({ data }) {
         </Heading>
         <Flex
           gap="8"
-          maxW="4xl"
+          maxW="6xl"
           justify={"center"}
           align={"stretch"}
           wrap={"wrap"}
@@ -812,7 +812,7 @@ export default function Home({ data }) {
                 color="textSecondary"
                 flex={"1 1 300px"}
                 rounded={"lg"}
-                shadow={"md"}
+                shadow={"2xl"}
                 justify={"flex-start"}
                 align={"stretch"}
                 direction={"column"}
@@ -881,7 +881,45 @@ export default function Home({ data }) {
           })}
         </Flex>
       </Flex>
-      <a href="https://storyset.com/web">Web illustrations by Storyset</a>
+      <Box position={"relative"}>
+        <chakra.div
+          position={"absolute"}
+          bottom={0}
+          left={0}
+          w="full"
+          overflow={"hidden"}
+          lineHeight={0}
+          transform={"rotate(180deg)"}
+        >
+          <chakra.svg
+            position={"relative"}
+            display={"block"}
+            width={"calc(100% + 1.3px)"}
+            height={"70px"}
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              fill={"#1A1423"}
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            ></path>
+          </chakra.svg>
+        </chakra.div>
+      </Box>
+      <Flex
+        bg="sbg"
+        color="textSecondary"
+        minH="md"
+        align={"center"}
+        justify={"center "}
+      >
+        <VStack>
+          <Text >Designed & Built by Carsten Lebek</Text>
+          <chakra.a opacity={0.6} href="https://storyset.com/web">Web illustrations by Storyset</chakra.a>
+        </VStack>
+      </Flex>
     </>
   )
 }
