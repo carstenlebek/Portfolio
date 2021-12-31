@@ -10,6 +10,7 @@ const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
 const MotionStack = motion(Flex)
 const MotionBadge = motion(Badge)
 const MotionHeading = motion(Heading)
+const MotionContainer = motion(Flex)
 
 export default function RsCards({ location, data }) {
   console.log(location, data)
@@ -55,16 +56,30 @@ export default function RsCards({ location, data }) {
   console.log(location.state)
 
   return (
-    <Flex justify={"center"} py="28" bg="sbg" color="textSecondary" zIndex={-2}>
+    <MotionContainer
+      justify={"center"}
+      py="28"
+      bg="bg"
+      color="textSecondary"
+      zIndex={-2}
+      animate={{ backgroundColor: "var(--chakra-colors-sbg)" }}
+      transition={transition}
+    >
       <Flex
-        minH="5xl"
+        minH="4xl"
         justify={"center"}
         align={"center"}
         w={{ base: "90vw" }}
         direction={{ base: "column", md: "row" }}
       >
         <VStack flex={1} align={"flex-start"}>
-          <MotionHeading size={"3xl"} overflow="hidden">
+          <MotionHeading
+            size={"3xl"}
+            overflow="hidden"
+            opacity={0}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, ...transition }}
+          >
             {"RSCards.de".split("").map((char, index) => (
               <motion.span key={index}>{char}</motion.span>
             ))}
@@ -76,6 +91,7 @@ export default function RsCards({ location, data }) {
             variants={{
               show: {
                 transition: {
+                  delay: 1,
                   delayChildren: 0.5,
                   staggerChildren: 0.04,
                   staggerDirection: 1,
@@ -104,8 +120,8 @@ export default function RsCards({ location, data }) {
           flex={1}
           ref={placeHolderRef}
           bg={"gray.200"}
-          h={400}
-          w={768}
+          w={"full"}
+          style={{ aspectRatio: "48 / 25" }}
           opacity={0}
         ></Box>
         <MotionBox
@@ -149,10 +165,11 @@ export default function RsCards({ location, data }) {
             image={image}
             alt={"RSCards"}
             imgStyle={{ borderRadius: "0.5rem", zIndex: 1 }}
+            loading="eager"
           ></GatsbyImage>
         </MotionBox>
       </Flex>
-    </Flex>
+    </MotionContainer>
   )
 }
 

@@ -467,14 +467,50 @@ export default function Home({ data }) {
                   color={"textSecondary"}
                   transition={"all 0.3s ease-out"}
                   shadow={"lg"}
+                  position={"relative"}
+                  // zIndex={1}
                   _hover={{
-                    transform: "scale(1.1) translate(0px, -4px)",
+                    transform: "translate(-10px, -10px)",
                     shadow: "dark-lg",
-                    color: "red.500",
+                    _after: {
+                      zIndex: -1,
+                      transform: "translate(10px,10px)",
+                    },
+                  }}
+                  _after={{
+                    content: '""',
+                    bg: "red.500",
+                    rounded: "lg",
+                    backgroundPosition: "0 0 ",
+                    backgroundSize: "10px 10px",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    transform: "translate(0px,0px)",
+                    zIndex: -1,
+                    transition: "all 0.3s ease-out",
                   }}
                 >
-                  <Icon as={tool.icon} w="12" h="12"></Icon>
-                  <Text>{tool.name}</Text>
+                  <Flex
+                    direction={"column"}
+                    gap="3"
+                    justify={"center"}
+                    align={"center"}
+                    bg="sbg"
+                    p="6"
+                    rounded={"md"}
+                    w="32"
+                    h="32"
+                    color={"textSecondary"}
+                    transition={"all 0.3s ease-out"}
+                    shadow={"lg"}
+                    position={"relative"}
+                  >
+                    <Icon as={tool.icon} w="12" h="12" zIndex={2}></Icon>
+                    <Text zIndex={3}>{tool.name}</Text>
+                  </Flex>
                 </Flex>
               ))}
             </Flex>

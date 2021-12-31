@@ -27,6 +27,7 @@ import {
   FaTools,
   FaUser,
 } from "react-icons/fa"
+import { navigate } from "gatsby"
 
 export default function Header({ location }) {
   console.log(location)
@@ -68,7 +69,14 @@ export default function Header({ location }) {
       position={{ base: "absolute", md: "fixed" }}
       top="0"
       w="full"
-      bg={scrollState ? "bg" : "transparent"}
+      bg={
+        !scrollState
+          ? "transparent"
+          : location.pathname.includes("projects")
+          ? "sbg"
+          : "bg"
+      }
+      color={location.pathname.includes("projects") ? "bg" : "sbg"}
       shadow={scrollState ? "sm" : "none"}
       zIndex={1000}
       transition={"all 0.3s ease-in"}
@@ -91,9 +99,13 @@ export default function Header({ location }) {
         <Heading
           as={"a"}
           flex={1}
-          href="/#top"
+          onClick={e => {
+            e.preventDefault()
+            navigate("/")
+          }}
           textAlign={{ base: "center", md: "left" }}
           display={{ base: "none", md: "flex" }}
+          cursor={"pointer"}
         >
           Carsten Lebek
         </Heading>
@@ -121,10 +133,14 @@ export default function Header({ location }) {
             ) : (
               <Link
                 p="2"
-                href={item.url}
                 _hover={{
                   textDecoration: "none",
                   color: "red.500",
+                }}
+                onClick={e => {
+                  e.preventDefault()
+
+                  navigate("/" + item.url)
                 }}
               >
                 {item.name}
