@@ -38,8 +38,12 @@ export default function RsCards({ location, data }) {
 
   const [placeHolderPosition, setPlaceHolderPosition] = useState({})
 
+  const isBrowser = typeof window !== undefined
+
   useEffect(() => {
-    setPlaceHolderPosition(placeHolderRef.current.getBoundingClientRect())
+    if (isBrowser) {
+      setPlaceHolderPosition(placeHolderRef.current.getBoundingClientRect())
+    }
   }, [])
 
   const initialImageTransitionPosition =
