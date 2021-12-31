@@ -143,8 +143,8 @@ export default function Header({ location }) {
         zIndex={1000}
         w="full"
         h="auto"
-        bg="bg"
-        shadow={"dark-lg"}
+        px="2"
+        pb="2"
       >
         <SimpleGrid
           columns={navItems.length + 1}
@@ -153,6 +153,9 @@ export default function Header({ location }) {
           gap="2"
           display={{ base: "grid", md: "none" }}
           color={"red.500"}
+          bg="bg"
+          shadow={"dark-lg"}
+          rounded={"md"}
         >
           {location.pathname === "/" ? (
             <SmoothLink
@@ -161,7 +164,13 @@ export default function Header({ location }) {
               smooth={true}
               style={{ width: "100%", cursor: "pointer" }}
             >
-              <VStack py="2" rounded={"md"} spacing={1}>
+              <VStack
+                py="2"
+                rounded={"md"}
+                spacing={1}
+                borderRight={"1px solid"}
+                borderColor={"gray.300"}
+              >
                 <Icon w={6} h={6} as={FaHome} />
                 <Text fontWeight={"bold"} fontSize={"xx-small"}>
                   Home
@@ -177,7 +186,13 @@ export default function Header({ location }) {
                 color: "red.500",
               }}
             >
-              <VStack py="2" rounded={"md"} spacing={1}>
+              <VStack
+                py="2"
+                rounded={"md"}
+                spacing={1}
+                borderRight={"1px groove"}
+                borderColor={"gray.300"}
+              >
                 <Icon w={6} h={6} as={FaHome} />
                 <Text fontWeight={"bold"} fontSize={"xx-small"}>
                   Home
@@ -194,7 +209,15 @@ export default function Header({ location }) {
                   smooth={true}
                   style={{ width: "100%", cursor: "pointer" }}
                 >
-                  <VStack key={index} py="2" rounded={"md"} spacing={1}>
+                  <VStack
+                    key={index}
+                    py="2"
+                    spacing={1}
+                    borderRight={
+                      index !== navItems.length - 1 ? "1px solid" : "none"
+                    }
+                    borderColor={"gray.300"}
+                  >
                     <Icon w={6} h={6} as={item.icon} />
                     <Text fontWeight={"bold"} fontSize={"xx-small"}>
                       {item.name}
@@ -210,7 +233,16 @@ export default function Header({ location }) {
                     color: "red.500",
                   }}
                 >
-                  <VStack key={index} py="2" rounded={"md"} spacing={1}>
+                  <VStack
+                    key={index}
+                    py="2"
+                    rounded={"md"}
+                    spacing={1}
+                    borderRight={
+                      index !== navItems.length - 1 ? "1px solid" : "none"
+                    }
+                    borderColor={"gray.300"}
+                  >
                     <Icon w={6} h={6} as={item.icon} />
                     <Text fontWeight={"bold"} fontSize={"xx-small"}>
                       {item.name}
