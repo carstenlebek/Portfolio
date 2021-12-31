@@ -44,7 +44,8 @@ import {
 import { Link, animateScroll as scroll } from "react-scroll"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
-import Hero from "./../assets/images/hero.svg"
+// import Hero from "./../assets/images/hero.svg"
+import Hero from "./../assets/images/hero.js"
 
 import WebsiteImage from "./../assets/images/website.svg"
 import SeoImage from "./../assets/images/seo.svg"
@@ -52,6 +53,8 @@ import FeaturesImage from "./../assets/images/features.svg"
 import OnlineShopImage from "./../assets/images/onlineshop.svg"
 
 import { graphql } from "gatsby"
+
+import "../styles/global.css"
 
 export default function Home({ data }) {
   console.log(data)
@@ -234,6 +237,11 @@ export default function Home({ data }) {
               textAlign={{ base: "left", md: "left" }}
               w="full"
               fontWeight={900}
+              bg="linear-gradient(120deg, #E53E3E 0%, #E53E3E 100%)"
+              bgRepeat={"no-repeat"}
+              bgSize={"100% 40%"}
+              bgPosition={"0 90%"}
+              display={"inline"}
             >
               Carsten Lebek.
             </Heading>
@@ -294,8 +302,8 @@ export default function Home({ data }) {
             </Stack>
           </Flex>
         </VStack>
-        <Box maxW="xl">
-          <chakra.img
+        <Box maxW="xl" flex={1}>
+          {/* <chakra.img
             minH={{ base: "sm", md: "xl" }}
             minW="sm"
             maxW={{ base: "sm", md: "none" }}
@@ -303,7 +311,8 @@ export default function Home({ data }) {
             alt="Hero"
             id="freepik_stories-static-assets"
             className="animated"
-          ></chakra.img>
+          ></chakra.img> */}
+          <Hero />
         </Box>
       </Flex>
       <Box position={"relative"}>
