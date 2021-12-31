@@ -166,7 +166,6 @@ export default function Header({ location }) {
             >
               <VStack
                 py="2"
-                rounded={"md"}
                 spacing={1}
                 borderRight={"1px solid"}
                 borderColor={"gray.300"}
@@ -190,7 +189,7 @@ export default function Header({ location }) {
                 py="2"
                 rounded={"md"}
                 spacing={1}
-                borderRight={"1px groove"}
+                borderRight={"1px solid"}
                 borderColor={"gray.300"}
               >
                 <Icon w={6} h={6} as={FaHome} />
