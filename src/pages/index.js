@@ -825,6 +825,11 @@ export default function Home({ data }) {
                       WebkitBorderRadius: "0.5rem 0.5rem 0 0",
                       MozBorderRadius: "0.5rem 0.5rem 0 0",
                     }}
+                    imgStyle={{
+                      borderRadius: "0.5rem 0.5rem 0 0",
+                      WebkitBorderRadius: "0.5rem 0.5rem 0 0",
+                      MozBorderRadius: "0.5rem 0.5rem 0 0",
+                    }}
                     alt={project.title}
                   />
                 </Box>
