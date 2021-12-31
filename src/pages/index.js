@@ -262,7 +262,7 @@ export default function Home({ data }) {
           >
             <VStack w="full">
               <Button isFullWidth colorScheme={"red"}>
-                Lass und zusammenarbeiten!
+                Lass uns zusammenarbeiten!
               </Button>
               <Link
                 to="projects"
