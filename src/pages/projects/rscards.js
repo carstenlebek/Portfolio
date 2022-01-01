@@ -64,19 +64,20 @@ export default function RsCards({ location, data }) {
   return (
     <MotionContainer
       justify={"center"}
-      py="28"
+      py={{ base: "16", md: "28" }}
       bg="bg"
       color="textSecondary"
       zIndex={-2}
       animate={{ backgroundColor: "var(--chakra-colors-sbg)" }}
       transition={transition}
+      minH={{ md: "100vh" }}
     >
       <Flex
         minH="4xl"
-        justify={"center"}
-        align={"center"}
+        justify={{ base: "flex-start", md: "center" }}
+        align={{ base: "flex-start", md: "center" }}
         w={{ base: "90vw" }}
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: "column-reverse", md: "row" }}
       >
         <VStack flex={1} align={"flex-start"}>
           <MotionHeading
@@ -123,12 +124,13 @@ export default function RsCards({ location, data }) {
           </MotionStack>
         </VStack>
         <Box
-          flex={1}
+          flex={{ md: 1 }}
           ref={placeHolderRef}
           bg={"gray.200"}
-          w={"full"}
+          w={{ base: "90%", md: "full" }}
           style={{ aspectRatio: "48 / 25" }}
           opacity={0}
+          mb="8"
         ></Box>
         <MotionBox
           animate={{
@@ -186,7 +188,7 @@ export const pageQuery = graphql`
         childImageSharp {
           gatsbyImageData(
             height: 400
-            layout: CONSTRAINED
+            layout: FULL_WIDTH
             placeholder: BLURRED
             width: 768
             formats: [AUTO, WEBP, AVIF]

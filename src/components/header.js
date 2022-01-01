@@ -27,7 +27,7 @@ import {
   FaTools,
   FaUser,
 } from "react-icons/fa"
-import { navigate } from "gatsby"
+import { navigate, Link as GatsbyLink } from "gatsby"
 
 export default function Header({ location }) {
   console.log(location)
@@ -164,7 +164,7 @@ export default function Header({ location }) {
       >
         <SimpleGrid
           columns={navItems.length + 1}
-          py="2"
+          // py="2"
           // px="2"
           // gap="2"
           display={{ base: "grid", md: "none" }}
@@ -172,6 +172,7 @@ export default function Header({ location }) {
           bg="bg"
           shadow={"dark-lg"}
           rounded={"md"}
+          maxH="60px"
         >
           {location.pathname === "/" ? (
             <SmoothLink
@@ -194,11 +195,13 @@ export default function Header({ location }) {
             </SmoothLink>
           ) : (
             <Link
-              p="2"
-              href={"/#top"}
               _hover={{
                 textDecoration: "none",
                 color: "red.500",
+              }}
+              onClick={e => {
+                e.preventDefault()
+                navigate("/")
               }}
             >
               <VStack
@@ -215,9 +218,9 @@ export default function Header({ location }) {
               </VStack>
             </Link>
           )}
-          {navItems.map((item, index) => (
-            <div key={index}>
-              {location.pathname === "/" ? (
+          {navItems.map((item, index) => {
+            if (location.pathname === "/") {
+              return (
                 <SmoothLink
                   to={item.url.slice(1)}
                   w="full"
@@ -239,34 +242,34 @@ export default function Header({ location }) {
                     </Text>
                   </VStack>
                 </SmoothLink>
-              ) : (
-                <Link
-                  p="2"
-                  href={item.url}
-                  _hover={{
-                    textDecoration: "none",
-                    color: "red.500",
-                  }}
+              )
+            }
+
+            return (
+              <Link
+                onClick={e => {
+                  e.preventDefault()
+                  navigate("/" + item.url)
+                }}
+              >
+                <VStack
+                  key={index}
+                  py="2"
+                  rounded={"md"}
+                  spacing={1}
+                  borderRight={
+                    index !== navItems.length - 1 ? "1px solid" : "none"
+                  }
+                  borderColor={"gray.300"}
                 >
-                  <VStack
-                    key={index}
-                    py="2"
-                    rounded={"md"}
-                    spacing={1}
-                    borderRight={
-                      index !== navItems.length - 1 ? "1px solid" : "none"
-                    }
-                    borderColor={"gray.300"}
-                  >
-                    <Icon w={6} h={6} as={item.icon} />
-                    <Text fontWeight={"bold"} fontSize={"xx-small"}>
-                      {item.name}
-                    </Text>
-                  </VStack>
-                </Link>
-              )}
-            </div>
-          ))}
+                  <Icon w={6} h={6} as={item.icon} />
+                  <Text fontWeight={"bold"} fontSize={"xx-small"}>
+                    {item.name}
+                  </Text>
+                </VStack>
+              </Link>
+            )
+          })}
         </SimpleGrid>
       </Box>
     </Flex>

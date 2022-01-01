@@ -38,6 +38,7 @@ import {
   SiHeroku,
   SiNextdotjs,
   SiLinkedin,
+  SiMongodb,
 } from "react-icons/si"
 
 import { Link, animateScroll as scroll } from "react-scroll"
@@ -87,7 +88,7 @@ export default function Home({ data }) {
       tools: [
         { name: "Node", icon: SiNodedotjs },
         { name: "Express", icon: SiExpress },
-        { name: "mySQL", icon: SiMysql },
+        { name: "MongoDB", icon: SiMongodb },
         { name: "Firebase", icon: SiFirebase },
         { name: "AWS", icon: SiAmazonaws },
       ],
