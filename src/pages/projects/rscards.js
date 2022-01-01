@@ -59,7 +59,7 @@ export default function RsCards({ location, data }) {
 
   console.log(location.state)
 
-  if (!isBrowser) return null
+  if (!isBrowser) return <div></div>
 
   return (
     <MotionContainer
