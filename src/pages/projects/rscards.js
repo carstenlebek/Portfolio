@@ -59,6 +59,8 @@ export default function RsCards({ location, data }) {
 
   console.log(location.state)
 
+  if (!isBrowser) return null
+
   return (
     <MotionContainer
       justify={"center"}
