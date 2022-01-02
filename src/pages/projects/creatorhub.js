@@ -29,7 +29,7 @@ export default function CreatorHub({ location, data }) {
   }
 
   const initialImageTransitionPosition = location.state
-    .initialImageTransitionPosition || { bottom: 0, top: 0, left: 0, right: 0 }
+    ?.initialImageTransitionPosition || { bottom: 0, top: 0, left: 0, right: 0 }
 
   const image = getImage(
     data.allFile.nodes.find(
@@ -56,10 +56,8 @@ export const pageQuery = graphql`
       nodes {
         childImageSharp {
           gatsbyImageData(
-            height: 400
             layout: FULL_WIDTH
             placeholder: BLURRED
-            width: 768
             formats: [AUTO, WEBP, AVIF]
             quality: 90
           )
