@@ -26,8 +26,8 @@ export default function RsCards({ location, data }) {
     ],
   }
 
-  const initialImageTransitionPosition =
-    location.state.initialImageTransitionPosition
+  const initialImageTransitionPosition = location.state
+    ?.initialImageTransitionPosition || { bottom: 0, top: 0, left: 0, right: 0 }
 
   const image = getImage(
     data.allFile.nodes.find(
