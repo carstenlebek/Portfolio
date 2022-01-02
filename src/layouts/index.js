@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import { AnimatePresence } from "framer-motion"
 import React, { useEffect } from "react"
+import Footer from "../components/footer"
 import Header from "../components/header"
 import Seo from "../components/seo"
 import { AppProvider } from "./Context"
@@ -14,6 +15,7 @@ const Layout = ({ children, location }) => {
         <AnimatePresence initial={true} exitBeforeEnter>
           <main>{children}</main>
         </AnimatePresence>
+        <Footer />
       </Box>
     </AppProvider>
   )
