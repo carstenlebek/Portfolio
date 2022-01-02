@@ -3,26 +3,28 @@ import { graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import { ProjectHero } from "../../components/ProjectHero"
 
-
-export default function RsCards({ location, data }) {
+export default function CreatorHub({ location, data }) {
   console.log(location, data)
 
   const project = {
-    image: "rscards",
-    type: "Onlineshop",
-    title: "RSCards.de",
+    image: "creatorhub",
+    type: "Shopify App",
+    title: "CreatorHub",
     description:
-      "RSCards ist ein Onlineshop für personalisierte Autoquartettkarten im XXL Format. Als headless CMS wird hier Shopify genutzt und die Storefront wurde mit Gatsby.js erstellt.",
-    slug: "rscards",
-    url: "https://rscards.de",
+      "CreatorHub gibt Shopbetreibern eine einfache Möglichkeit Influencer zu verwalten. Außerdem bringt die App Influencer Marketing in das Frontend und verbessert so die Customer Experience.",
+    slug: "creatorhub",
+    url: "https://apps.shopify.com/creator-code",
     stack: [
-      "Shopify",
       "React.js",
-      "Gatsby.js",
-      "Chakra UI",
-      "Konva.js",
-      "AWS Lambda",
-      "AWS S3",
+      "Next.js",
+      "Node.js",
+      "Koa",
+      "Shopify AppBridge",
+      "Polaris",
+      "Recharts",
+      "Firebase",
+      "GraphQL",
+      "Liquid",
     ],
   }
 
@@ -67,4 +69,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
