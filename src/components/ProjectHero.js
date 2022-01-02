@@ -34,12 +34,18 @@ export function ProjectHero({
 
   const isBrowser = typeof window !== undefined
 
+  const [isMounted, setIsMounted] = useState(false)
+
   useEffect(() => {
     if (isBrowser) {
       setPlaceHolderPosition(placeHolderRef.current.getBoundingClientRect())
+      setTimeout(() => {
+        setIsMounted(true)
+      }, 500)
     }
     return () => {
       setPlaceHolderPosition({})
+      setIsMounted(false)
     }
   }, [])
 
@@ -170,7 +176,9 @@ export function ProjectHero({
             left: 0,
             width: "100%",
             height: "100%",
-            transform: "translate(20px,20px)",
+            transform: isMounted
+              ? "translate(20px,20px)"
+              : "translate(0px, 0px)",
             zIndex: 0,
             transition: "all 0.5s ease-out",
           }}
