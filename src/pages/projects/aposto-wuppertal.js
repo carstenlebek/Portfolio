@@ -5,29 +5,18 @@ import { ProjectHero } from "../../components/ProjectHero"
 import { Flex, Heading } from "@chakra-ui/react"
 import ProjectFeatures from "../../components/ProjectFeatures"
 
-export default function CreatorHub({ location, data }) {
+export default function Aposto({ location, data }) {
   console.log(location, data)
 
   const project = {
-    image: "creatorhub",
-    type: "Shopify App",
-    title: "CreatorHub",
+    image: "aposto",
+    type: "Onlineshop",
+    title: "Aposto Wuppertal",
     description:
-      "CreatorHub gibt Shopbetreibern eine einfache Möglichkeit Influencer zu verwalten. Außerdem bringt die App Influencer Marketing in das Frontend und verbessert so die Customer Experience.",
-    slug: "creatorhub",
-    url: "https://apps.shopify.com/creator-code",
-    stack: [
-      "React.js",
-      "Next.js",
-      "Node.js",
-      "Koa",
-      "Shopify AppBridge",
-      "Polaris",
-      "Recharts",
-      "Firebase",
-      "GraphQL",
-      "Liquid",
-    ],
+      "Leckere Pizza und Pasta kann man im auf Shopify basierenden Shop vom Aposto Wuppertal bestellen. \r\nDer Shop wurde als Alternative zu Lieferando erstellt.",
+    slug: "aposto-wuppertal",
+    url: "https://apostowuppertal.de",
+    stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
   }
 
   const image = getImage(data.file)
@@ -69,7 +58,7 @@ export default function CreatorHub({ location, data }) {
 
 export const pageQuery = graphql`
   query {
-    allFile(filter: { relativeDirectory: { eq: "images/creatorhub" } }) {
+    allFile(filter: { relativeDirectory: { eq: "images/aposto" } }) {
       nodes {
         id
         name
@@ -84,7 +73,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    file(relativePath: { eq: "images/creatorhub.png" }) {
+    file(relativePath: { eq: "images/aposto.png" }) {
       id
       childImageSharp {
         gatsbyImageData(

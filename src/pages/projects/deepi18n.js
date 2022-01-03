@@ -5,29 +5,18 @@ import { ProjectHero } from "../../components/ProjectHero"
 import { Flex, Heading } from "@chakra-ui/react"
 import ProjectFeatures from "../../components/ProjectFeatures"
 
-export default function CreatorHub({ location, data }) {
+export default function DeepI18N({ location, data }) {
   console.log(location, data)
 
   const project = {
-    image: "creatorhub",
-    type: "Shopify App",
-    title: "CreatorHub",
+    image: "deepi18n",
+    type: "Web App",
+    title: "deepi18n",
     description:
-      "CreatorHub gibt Shopbetreibern eine einfache Möglichkeit Influencer zu verwalten. Außerdem bringt die App Influencer Marketing in das Frontend und verbessert so die Customer Experience.",
-    slug: "creatorhub",
-    url: "https://apps.shopify.com/creator-code",
-    stack: [
-      "React.js",
-      "Next.js",
-      "Node.js",
-      "Koa",
-      "Shopify AppBridge",
-      "Polaris",
-      "Recharts",
-      "Firebase",
-      "GraphQL",
-      "Liquid",
-    ],
+      "Deepi18n ermöglicht es Webseiten oder Apps in einem Schritt in bis zu 25 Sprachen zu übersetzen. Zur Übersetzung wird die DeepL API genutzt.",
+    slug: "deepi18n",
+    url: "https://deep-i18n.vercel.app/",
+    stack: ["React.js", "Next.js", "Chakra Ui", "AWS S3"],
   }
 
   const image = getImage(data.file)
@@ -69,7 +58,7 @@ export default function CreatorHub({ location, data }) {
 
 export const pageQuery = graphql`
   query {
-    allFile(filter: { relativeDirectory: { eq: "images/creatorhub" } }) {
+    allFile(filter: { relativeDirectory: { eq: "images/deepi18n" } }) {
       nodes {
         id
         name
@@ -84,7 +73,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    file(relativePath: { eq: "images/creatorhub.png" }) {
+    file(relativePath: { eq: "images/deepi18n.png" }) {
       id
       childImageSharp {
         gatsbyImageData(
