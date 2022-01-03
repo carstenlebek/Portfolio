@@ -150,7 +150,12 @@ export default function Header({ location }) {
           </Box>
         ))}
       </HStack>
-      <Button colorScheme={"red"} display={{ base: "none", md: "inline-flex" }}>
+      <Button
+        colorScheme={"red"}
+        display={{ base: "none", md: "inline-flex" }}
+        as="a"
+        href="mailto:carsten.lebek@gmail.com"
+      >
         Lass uns zusammenarbeiten!
       </Button>
       <Box

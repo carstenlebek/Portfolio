@@ -1,4 +1,5 @@
 import { Box, chakra, Flex, VStack, Text } from "@chakra-ui/react"
+import { Link } from "gatsby"
 import React from "react"
 
 export default function Footer() {
@@ -43,6 +44,7 @@ export default function Footer() {
           <chakra.a opacity={0.6} href="https://storyset.com/web">
             Web illustrations by Storyset
           </chakra.a>
+          <Link to="/legal/impressum">Impressum</Link>
         </VStack>
       </Flex>
     </>

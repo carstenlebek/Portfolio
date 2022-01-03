@@ -233,7 +233,12 @@ export default function Home({ data }) {
             justify={"flex-start"}
           >
             <VStack w="full">
-              <Button isFullWidth colorScheme={"red"}>
+              <Button
+                isFullWidth
+                colorScheme={"red"}
+                as="a"
+                href="mailto:carsten.lebek@gmail.com"
+              >
                 Lass uns zusammenarbeiten!
               </Button>
               <Link

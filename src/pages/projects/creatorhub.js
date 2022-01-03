@@ -58,6 +58,8 @@ export default function CreatorHub({ location, data }) {
             align="center"
             justify={"center"}
             alignSelf={"center"}
+            textAlign={"center"}
+            py="12"
           >
             <Heading>Hier gibt's bald mehr zu sehen.</Heading>
           </Flex>
