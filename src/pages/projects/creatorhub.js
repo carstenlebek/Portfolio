@@ -38,7 +38,7 @@ export default function CreatorHub({ location, data }) {
 
   console.log(location.state)
 
-  return ProjectHero(<ProjectHero project={project} image={image} />)
+  return (<ProjectHero project={project} image={image} />)
 }
 
 export const pageQuery = graphql`

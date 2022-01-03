@@ -12,7 +12,7 @@ const Layout = ({ children, location }) => {
       <Seo />
       <Box position={"relative"}>
         <Header location={location} />
-        <AnimatePresence initial={false} exitBeforeEnter>
+        <AnimatePresence initial={true} exitBeforeEnter>
           <main>{children}</main>
         </AnimatePresence>
         <Footer />

@@ -24,7 +24,9 @@ const MotionText = motion(Text)
 const MotionButton = motion(Button)
 
 export function ProjectHero({
-  props: { project, initialImageTransitionPosition, image },
+  project,
+  initialImageTransitionPosition,
+  image,
 }) {
   console.log("PROJECT =>>", project.description)
 
@@ -97,8 +99,8 @@ export function ProjectHero({
               {project.stack.map((item, index) => (
                 <MotionBadge
                   variants={{
-                    hidden: { y: 50 },
-                    show: { y: 0, transition: transition },
+                    hidden: { y: 50, opacity: 0 },
+                    show: { y: 0, opacity: 1, transition: transition },
                   }}
                   key={index}
                 >
