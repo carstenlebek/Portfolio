@@ -27,40 +27,32 @@ export default function RsCards({ location, data }) {
     ],
   }
 
-  const image = getImage(
-    data.allFile.nodes.find(
-      node =>
-        node.name ===
-        location.pathname.split("/")[location.pathname.split("/").length - 1]
-    )
-  )
+  const image = getImage(data.file)
 
   console.log(location.state)
 
   const features = [
     {
-      heading: "Lorem ipsum",
-      description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      image: image,
+      heading: "Frontend mit Gatsby.js",
+      description: `Das Frontend des Onlineshops wurde auf Basis von Gatsby.js erstellt. Im Vordergrund stand hier die Performance, da Instagram die größte Trafficquelle war.`,
+      image: getImage(data.allFile.nodes[0]),
     },
     {
-      heading: "Lorem ipsum",
-      description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      image: image,
+      heading: "Konstantes UI Design",
+      description: "Als Design Framework wurde Chakra UI genutzt.",
+      image: getImage(data.allFile.nodes[1]),
     },
     {
-      heading: "Lorem ipsum",
+      heading: "Produktkonfigurator mit Konva.js",
       description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      image: image,
+        "Da es keine Produktkonfiguratoren gab, die eine zufriedenstellende Lösung boten, wurde ein eigener entwickelt.",
+      image: getImage(data.allFile.nodes[2]),
     },
     {
-      heading: "Lorem ipsum",
+      heading: "Private Shopify App",
       description:
-        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      image: image,
+        "Teil des Projekts war es die Erstellung der Druckdateien vom Frontend abzukoppeln und serverseitig zu erledigen. Die Druckdateien werden durch AWS Lambda Funktionen erstellt und in einem S3 Bucket gespeichert. Zum einfachen Abrufen der Dateien wurde eine private Shopify App erstellt.",
+      image: getImage(data.allFile.nodes[3]),
     },
   ]
 
@@ -71,14 +63,14 @@ export default function RsCards({ location, data }) {
         align={"flex-start"}
         justify={"center"}
         position={"relative"}
-        py="28"
+        py={{ base: "8", md: "28" }}
         direction={"column"}
-        gap="24"
+        gap={{ base: "20", md: "72" }}
         bg="sbg"
         color="textSecondary"
       >
         {features.map((feature, index) => (
-          <ProjectFeatures feature={feature} index={index} />
+          <ProjectFeatures key={index} feature={feature} index={index} />
         ))}
       </Flex>
     </>
@@ -87,19 +79,30 @@ export default function RsCards({ location, data }) {
 
 export const pageQuery = graphql`
   query {
-    allFile {
+    allFile(filter: { relativeDirectory: { eq: "images/rscards" } }) {
       nodes {
+        id
+        name
+        relativeDirectory
         childImageSharp {
           gatsbyImageData(
-            height: 400
             layout: FULL_WIDTH
             placeholder: BLURRED
-            width: 768
             formats: [AUTO, WEBP, AVIF]
             quality: 90
           )
         }
-        name
+      }
+    }
+    file(relativePath: { eq: "images/rscards.jpg" }) {
+      id
+      childImageSharp {
+        gatsbyImageData(
+          formats: [AUTO, WEBP, AVIF]
+          layout: FULL_WIDTH
+          placeholder: BLURRED
+          quality: 90
+        )
       }
     }
   }

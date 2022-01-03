@@ -17,26 +17,30 @@ export default function ProjectFeatures({ feature, index }) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.8, ...transition }}
+      transition={{ delay: 0.4, ...transition }}
       key={index}
-      //   position={"sticky"}
-      top="20"
-      h="100vh"
       w="90%"
-      //   maxW="8xl"
+      maxW="1600px"
       align={"center"}
-      gap="8"
+      gap={{ base: "8", md: "20" }}
       mx="auto"
     >
-      <Container size="container.md">
-        <VStack spacing={4} flex={1} align={"flex-start"}>
+      {/* <Container size="container.md">
+        <VStack spacing={4} flex={1}</VStack>>
           <Heading>{feature.heading}</Heading>
           <Text>{feature.description}</Text>
+        </VStack>
+      </Container> */}
+      <Container>
+        <VStack spacing={8} align={"flex-start"}>
+          <Heading>{feature.heading}</Heading>
+          <Text textAlign={"left"}>{feature.description}</Text>
         </VStack>
       </Container>
       <Box
         flex={1}
         position={"relative"}
+        w={{ base: "90%", md: "full" }}
         _after={{
           content: '""',
           bg: "red.500",

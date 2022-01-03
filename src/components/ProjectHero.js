@@ -7,11 +7,16 @@ import {
   Text,
   Container,
   Button,
+  Icon,
 } from "@chakra-ui/react"
 import React, { useRef, useState, useEffect } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { motion } from "framer-motion"
-import { FaExternalLinkAlt } from "react-icons/fa"
+import {
+  FaCaretDown,
+  FaExternalLinkAlt,
+  FaLongArrowAltDown,
+} from "react-icons/fa"
 
 const MotionBox = motion(Box)
 const transition = { duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }
@@ -22,6 +27,7 @@ const MotionHeading = motion(Heading)
 const MotionContainer = motion(Flex)
 const MotionText = motion(Text)
 const MotionButton = motion(Button)
+const MotionIcon = motion(Icon)
 
 export function ProjectHero({
   project,
@@ -47,17 +53,19 @@ export function ProjectHero({
 
   return (
     <MotionContainer
-      justify={"center"}
+      justify={"space-between"}
+      align="center"
       py={{ base: "16", md: "28" }}
-      bg="bg"
+      bg="transparent"
       color="textSecondary"
       zIndex={-2}
       animate={{ backgroundColor: "var(--chakra-colors-sbg)" }}
       transition={transition}
       minH={{ md: "100vh" }}
+      direction="column"
     >
       <Flex
-        minH="4xl"
+        minH={{ md: "4xl" }}
         justify={{ base: "flex-start", md: "center" }}
         align={{ base: "flex-start", md: "center" }}
         w={{ base: "90vw" }}
@@ -169,6 +177,28 @@ export function ProjectHero({
           </MotionBox>
         </Box>
       </Flex>
+      <MotionContainer
+        justify={"center"}
+        align={"center"}
+        direction={"column"}
+        gap="4"
+        transition={{ delay: 1.6, ...transition }}
+        opacity={0}
+        animate={{ opacity: 1 }}
+        display={{ base: "none", md: "flex" }}
+      >
+        <Text>Für mehr scrollen</Text>
+        <MotionBox
+          animate={{ y: [0, 10, 0] }}
+          transition={{
+            repeat: Infinity,
+            ease: transition.ease,
+            duration: 2,
+          }}
+        >
+          <MotionIcon h="8" w="8" as={FaLongArrowAltDown}></MotionIcon>
+        </MotionBox>
+      </MotionContainer>
     </MotionContainer>
   )
 }
