@@ -11,11 +11,12 @@ import React, { useRef, useEffect, useState } from "react"
 import { FaExternalLinkAlt } from "react-icons/fa"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link as GatsbyLink, navigate } from "gatsby"
+import { motion } from "framer-motion"
 
+const MotionBox = motion(Box)
+const transition = { duration: 0 }
 
 export function ProjectCard(index, image, project) {
-  const imageRef = useRef()
-
   return (
     <Flex
       key={index}
@@ -28,9 +29,17 @@ export function ProjectCard(index, image, project) {
       justify={"flex-start"}
       align={"stretch"}
       direction={"column"}
-      ref={imageRef}
     >
-      <Box roundedTop={"lg"}>
+      <MotionBox
+        roundedTop={"lg"}
+        layoutId={project.slug}
+        transition={transition}
+        initial={false}
+        animate={{
+          transform: "none",
+          transformOrigin: "50% 50% 0px",
+        }}
+      >
         <GatsbyImage
           image={image}
           style={{
@@ -45,7 +54,7 @@ export function ProjectCard(index, image, project) {
           }}
           alt={project.title}
         />
-      </Box>
+      </MotionBox>
       <VStack
         w="full"
         h="full"
@@ -74,13 +83,7 @@ export function ProjectCard(index, image, project) {
             onClick={e => {
               e.preventDefault()
 
-              navigate(`/projects/${project.slug}`, {
-                state: {
-                  initialImageTransitionPosition: imageRef.current
-                    .querySelector(".gatsby-image-wrapper img")
-                    .getBoundingClientRect(),
-                },
-              })
+              navigate(`/projects/${project.slug}`)
             }}
           >
             Mehr dazu

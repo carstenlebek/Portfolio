@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import { ProjectHero } from "../../components/ProjectHero"
 
-
 export default function RsCards({ location, data }) {
   console.log(location, data)
 
@@ -26,9 +25,6 @@ export default function RsCards({ location, data }) {
     ],
   }
 
-  const initialImageTransitionPosition = location.state
-    ?.initialImageTransitionPosition || { bottom: 0, top: 0, left: 0, right: 0 }
-
   const image = getImage(
     data.allFile.nodes.find(
       node =>
@@ -39,13 +35,7 @@ export default function RsCards({ location, data }) {
 
   console.log(location.state)
 
-  return ProjectHero(
-    <ProjectHero
-      project={project}
-      image={image}
-      initialImageTransitionPosition={initialImageTransitionPosition}
-    />
-  )
+  return ProjectHero(<ProjectHero project={project} image={image} />)
 }
 
 export const pageQuery = graphql`
@@ -67,4 +57,3 @@ export const pageQuery = graphql`
     }
   }
 `
-

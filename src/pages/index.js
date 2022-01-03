@@ -27,7 +27,6 @@ import {
   SiShopify,
   SiNodedotjs,
   SiExpress,
-  SiMysql,
   SiFirebase,
   SiAmazonaws,
   SiGithub,
@@ -46,11 +45,6 @@ import { getImage, StaticImage } from "gatsby-plugin-image"
 
 // import Hero from "./../assets/images/hero.svg"
 import Hero from "./../assets/images/hero.js"
-
-import WebsiteImage from "./../assets/images/website.svg"
-import SeoImage from "./../assets/images/seo.svg"
-import FeaturesImage from "./../assets/images/features.svg"
-import OnlineShopImage from "./../assets/images/onlineshop.svg"
 
 import { graphql } from "gatsby"
 
@@ -647,10 +641,10 @@ export default function Home({ data }) {
             }}
           >
             <StaticImage
-              src="../assets/images/sh_bf.png"
+              src="../assets/images/sh_ad.png"
               width={273}
               height={69}
-              alt="Shopify - Business fundamentals"
+              alt="Shopify - App Development"
               placeholder="blurred"
               layout="fixed"
               formats={["auto", "webp", "avif"]}
@@ -670,10 +664,10 @@ export default function Home({ data }) {
             }}
           >
             <StaticImage
-              src="../assets/images/sh_ad.png"
+              src="../assets/images/sh_bf.png"
               width={273}
               height={69}
-              alt="Shopify - App Development"
+              alt="Shopify - Business fundamentals"
               placeholder="blurred"
               layout="fixed"
               formats={["auto", "webp", "avif"]}

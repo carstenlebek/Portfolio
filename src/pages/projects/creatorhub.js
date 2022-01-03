@@ -28,9 +28,6 @@ export default function CreatorHub({ location, data }) {
     ],
   }
 
-  const initialImageTransitionPosition = location.state
-    ?.initialImageTransitionPosition || { bottom: 0, top: 0, left: 0, right: 0 }
-
   const image = getImage(
     data.allFile.nodes.find(
       node =>
@@ -41,13 +38,7 @@ export default function CreatorHub({ location, data }) {
 
   console.log(location.state)
 
-  return ProjectHero(
-    <ProjectHero
-      project={project}
-      image={image}
-      initialImageTransitionPosition={initialImageTransitionPosition}
-    />
-  )
+  return ProjectHero(<ProjectHero project={project} image={image} />)
 }
 
 export const pageQuery = graphql`

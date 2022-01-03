@@ -132,6 +132,7 @@ export default function Header({ location }) {
               </SmoothLink>
             ) : (
               <Link
+                key={index}
                 p="2"
                 _hover={{
                   textDecoration: "none",
@@ -222,6 +223,7 @@ export default function Header({ location }) {
             if (location.pathname === "/") {
               return (
                 <SmoothLink
+                  key={index}
                   to={item.url.slice(1)}
                   w="full"
                   smooth={true}
@@ -247,13 +249,13 @@ export default function Header({ location }) {
 
             return (
               <Link
+                key={index}
                 onClick={e => {
                   e.preventDefault()
                   navigate("/" + item.url)
                 }}
               >
                 <VStack
-                  key={index}
                   py="2"
                   rounded={"md"}
                   spacing={1}

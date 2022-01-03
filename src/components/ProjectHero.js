@@ -28,23 +28,17 @@ export function ProjectHero({
 }) {
   console.log("PROJECT =>>", project.description)
 
-  const placeHolderRef = useRef()
-
-  const [placeHolderPosition, setPlaceHolderPosition] = useState({})
-
   const isBrowser = typeof window !== undefined
 
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     if (isBrowser) {
-      setPlaceHolderPosition(placeHolderRef.current.getBoundingClientRect())
       setTimeout(() => {
         setIsMounted(true)
       }, 500)
     }
     return () => {
-      setPlaceHolderPosition({})
       setIsMounted(false)
     }
   }, [])
@@ -137,59 +131,41 @@ export function ProjectHero({
         </Box>
         <Box
           flex={{ md: 1 }}
-          ref={placeHolderRef}
-          bg={"gray.200"}
           w={{ base: "90%", md: "full" }}
           style={{ aspectRatio: "48 / 25" }}
-          opacity={0}
           mb="8"
-        ></Box>
-        <MotionBox
-          animate={{
-            top: placeHolderPosition.top,
-            left: placeHolderPosition.left,
-            width: placeHolderPosition.right - placeHolderPosition.left,
-            height: placeHolderPosition.bottom - placeHolderPosition.top,
-            borderRadius: "0.5rem",
-          }}
-          transition={transition}
-          flex={1}
-          position={"absolute"}
-          top={initialImageTransitionPosition.top}
-          left={initialImageTransitionPosition.left}
-          width={
-            initialImageTransitionPosition.right -
-            initialImageTransitionPosition.left
-          }
-          height={
-            initialImageTransitionPosition.bottom -
-            initialImageTransitionPosition.top
-          }
-          _after={{
-            content: '""',
-            bg: "red.500",
-            rounded: "lg",
-            backgroundPosition: "0 0 ",
-            backgroundSize: "10px 10px",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            transform: isMounted
-              ? "translate(20px,20px)"
-              : "translate(0px, 0px)",
-            zIndex: 0,
-            transition: "all 0.5s ease-out",
-          }}
         >
-          <GatsbyImage
-            image={image}
-            alt={"RSCards"}
-            imgStyle={{ borderRadius: "0.5rem", zIndex: 1 }}
-            loading="eager"
-          ></GatsbyImage>
-        </MotionBox>
+          <MotionBox
+            layoutId={project.slug}
+            transition={transition}
+            flex={1}
+            position="relative"
+            _after={{
+              content: '""',
+              bg: "red.500",
+              rounded: "lg",
+              backgroundPosition: "0 0 ",
+              backgroundSize: "10px 10px",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              transform: isMounted
+                ? "translate(20px,20px)"
+                : "translate(0px, 0px)",
+              zIndex: 0,
+              transition: "all 0.5s ease-out",
+            }}
+          >
+            <GatsbyImage
+              image={image}
+              alt={"RSCards"}
+              imgStyle={{ borderRadius: "0.5rem", zIndex: 1 }}
+              loading="eager"
+            ></GatsbyImage>
+          </MotionBox>
+        </Box>
       </Flex>
     </MotionContainer>
   )
