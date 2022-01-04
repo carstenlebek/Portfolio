@@ -351,7 +351,7 @@ export default function Home({ data }) {
             <Text>
               In meiner Selbsständigkeit habe ich viele Projekte gestartet. Von
               Print on Demand T-Shirts, über Energydrinks für Gamer bis hin zu
-              3D gedruckten Keksausstechformen war alles dabei.
+              3D gedruckten Keksausstechformen.
             </Text>
             <Text>
               Bei jedem dieser Projekte habe ich immer viel dazugelernt. Egal ob
