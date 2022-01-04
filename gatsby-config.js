@@ -39,6 +39,18 @@ module.exports = {
         isUsingColorMode: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Carsten Lebek - Webdeveloper aus Wuppertal`,
+        short_name: `C. Lebek - Webdev`,
+        start_url: `/`,
+        background_color: `#fefefe`,
+        theme_color: `#E53E3E`,
+        display: `standalone`,
+        icon: `src/assets/images/favicon.png`,
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-google-fonts`,
     //   options: {
