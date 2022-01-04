@@ -39,7 +39,7 @@ export default function RsCards({ location, data }) {
     },
     {
       heading: "Konstantes UI Design",
-      description: "Als Design Framework wurde Chakra UI genutzt.",
+      description: "Als UI Framework wurde Chakra UI genutzt.",
       image: getImage(data.allFile.nodes.find(node => node.name === "2")),
     },
     {
