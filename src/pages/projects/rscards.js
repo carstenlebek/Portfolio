@@ -35,24 +35,24 @@ export default function RsCards({ location, data }) {
     {
       heading: "Frontend mit Gatsby.js",
       description: `Das Frontend des Onlineshops wurde auf Basis von Gatsby.js erstellt. Im Vordergrund stand hier die Performance, da Instagram die größte Trafficquelle war.`,
-      image: getImage(data.allFile.nodes[0]),
+      image: getImage(data.allFile.nodes.find(node => node.name === "1")),
     },
     {
       heading: "Konstantes UI Design",
       description: "Als Design Framework wurde Chakra UI genutzt.",
-      image: getImage(data.allFile.nodes[1]),
+      image: getImage(data.allFile.nodes.find(node => node.name === "2")),
     },
     {
       heading: "Produktkonfigurator mit Konva.js",
       description:
         "Da es keine Produktkonfiguratoren gab, die eine zufriedenstellende Lösung boten, wurde ein eigener entwickelt.",
-      image: getImage(data.allFile.nodes[2]),
+      image: getImage(data.allFile.nodes.find(node => node.name === "3")),
     },
     {
       heading: "Private Shopify App",
       description:
         "Teil des Projekts war es die Erstellung der Druckdateien vom Frontend abzukoppeln und serverseitig zu erledigen. Die Druckdateien werden durch AWS Lambda Funktionen erstellt und in einem S3 Bucket gespeichert. Zum einfachen Abrufen der Dateien wurde eine private Shopify App erstellt.",
-      image: getImage(data.allFile.nodes[3]),
+      image: getImage(data.allFile.nodes.find(node => node.name === "4")),
     },
   ]
 
