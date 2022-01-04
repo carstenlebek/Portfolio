@@ -70,6 +70,7 @@ function Seo({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        { name: "theme-color", content: "#E53E3E" },
       ].concat(meta)}
     >
       <link rel="preconnect" href="https://use.typekit.net" crossorigin />
