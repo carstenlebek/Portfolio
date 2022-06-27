@@ -4,6 +4,7 @@ specifiers:
   '@astrojs/react': ^0.2.0
   '@astrojs/tailwind': ^0.2.1
   astro: ^1.0.0-beta.57
+  astro-fonts: ^0.2.6
   react: ^18.0.0
   react-dom: ^18.0.0
 
@@ -11,6 +12,7 @@ devDependencies:
   '@astrojs/react': 0.2.0_biqbaboplfbrettd7655fr4n2y
   '@astrojs/tailwind': 0.2.1
   astro: 1.0.0-beta.57
+  astro-fonts: 0.2.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -680,6 +682,13 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       tslib: 2.4.0
+    dev: true
+
+  /astro-fonts/0.2.6:
+    resolution: {integrity: sha512-HtoM4ipmfiH4TREGUP4WbmIHgT1NhPzZn6ICNrJ88jPGc7wtkCWzk3iNYEsN4VUU6mdziGNUVuFZncfkvRXLSQ==}
+    dependencies:
+      https: 1.0.0
+      node-fetch: 3.2.6
     dev: true
 
   /astro/1.0.0-beta.57:
@@ -1738,6 +1747,10 @@ packages:
 
   /html-void-elements/2.0.1:
     resolution: {integrity: sha512-0quDb7s97CfemeJAnW9wC0hw78MtW7NU3hqtCD75g2vFlDLt36llsYD7uB7SUzojLMP24N5IatXf7ylGXiGG9A==}
+    dev: true
+
+  /https/1.0.0:
+    resolution: {integrity: sha512-4EC57ddXrkaF0x83Oj8sM6SLQHAWXw90Skqu2M4AEWENZ3F02dFJE/GARA8igO79tcgYqGrD7ae4f5L3um2lgg==}
     dev: true
 
   /human-signals/3.0.1:
