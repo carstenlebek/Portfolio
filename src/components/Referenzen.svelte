@@ -21,11 +21,11 @@
 			stack: ["Shopify", "Liquid", "JavaScript", "Tailwind CSS"],
 		},
 		{
-			image: "allkokos",
+			image: "sport-park",
 			type: "Website",
 			title: "Sport-Park Onlineanmeldung",
 			description:
-				"Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos. Der Fokus bei diesem Projekt lag auf der Conversion Optimierung der Produktseite des Kleintiereinstreus.",
+				"Um die Nutzererfahrung zu verbessern, wurde die API von Centercom reverse-engineered und die Onlineanmeldung mit Next.js neu aufgesetzt. Das Ergebnis sind deutlich schnellere Ladezeiten und ein kontinuierliches UI Design.",
 			slug: "sport-park-online-anmeldung",
 			url: "https://anmeldung.sport-park.de",
 			stack: ["Next.js", "Tailwind CSS", "Express"],
