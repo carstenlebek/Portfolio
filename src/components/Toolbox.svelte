@@ -75,57 +75,29 @@
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">
 			Favorite Stack
 		</h2>
-		<div class="flex items-start justify-start gap-2 mb-6">
+		<div class={`grid grid-cols-2 sm:grid-cols-${backEndTools.length} gap-4 mb-6`}>
 			{#each favoriteStack as icon}
-				<div
-					class="w-36 self-stretch flex flex-col gap-4 items-center justify-start py-4 px-6 border rounded-md"
-				>
-					<Icon {icon} class="h-16 w-16" />
-					<span
-						>{icon.title === "Tailwind CSS"
-							? icon.title.split(" ")[0]
-							: icon.title}</span
-					>
-				</div>
+				<ToolCard {icon} />
 			{/each}
 		</div>
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">Frontend</h2>
-		<div class="flex items-start justify-start gap-2 mb-6">
+		<div class={`grid grid-cols-2 sm:grid-cols-${backEndTools.length} gap-4 mb-6`}>
 			{#each frontEndTools as icon}
-				<div
-					class="w-36 self-stretch flex flex-col gap-4 items-center justify-start py-4 px-6 border rounded-md"
-				>
-					<Icon {icon} class="h-16 w-16" />
-					<span
-						>{icon.title === "Tailwind CSS"
-							? icon.title.split(" ")[0]
-							: icon.title}</span
-					>
-				</div>
+				<ToolCard {icon} />
 			{/each}
 		</div>
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">Backend</h2>
-		<div class="flex items-start justify-start gap-2 mb-6">
+		<div class={`grid grid-cols-2 sm:grid-cols-${backEndTools.length} gap-4 mb-6`}>
 			{#each backEndTools as icon}
-				<div
-					class="w-36 self-stretch flex flex-col gap-4 items-center justify-start py-4 px-6 border rounded-md"
-				>
-					<Icon {icon} class="h-16 w-16" />
-					<span>{icon.title}</span>
-				</div>
+				<ToolCard {icon} />
 			{/each}
 		</div>
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">
 			General Tools
 		</h2>
-		<div class="flex items-start justify-start gap-2 ">
+		<div class={`grid grid-cols-2 sm:grid-cols-${generalTools.length} gap-4 mb-6`}>
 			{#each generalTools as icon}
-				<div
-					class="w-36 self-stretch flex flex-col gap-4 items-center justify-start py-4 px-6 border rounded-md"
-				>
-					<Icon {icon} class="h-16 w-16" />
-					<span>{icon.title}</span>
-				</div>
+				<ToolCard {icon} />
 			{/each}
 		</div>
 	</div>

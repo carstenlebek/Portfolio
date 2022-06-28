@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.svelte';
 import AboutMe from '../components/AboutMe.svelte';
 import Toolbox from '../components/Toolbox.svelte';
-
-
+import Zertifikate from '../components/Zertifikate.svelte';
+import Referenzen from '../components/Referenzen.svelte';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,6 +12,8 @@ import Toolbox from '../components/Toolbox.svelte';
 		<Hero />
 		<AboutMe />
 		<Toolbox client:idle />
+		<Zertifikate />
+		<Referenzen />
 	</main>
 </Layout>
 

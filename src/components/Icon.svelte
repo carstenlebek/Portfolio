@@ -15,7 +15,7 @@
 	role="img"
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 24 24"
-	class={"h-6 w-6 " + className}
+	class={"text-base-content fill-base-content " + className}
 >
 	<path d={icon.path} />
 </svg>

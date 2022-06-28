@@ -7,19 +7,39 @@ module.exports = {
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],
 	daisyui: {
 		themes: [
+			"lofi",
 			{
-				light: {
-					primary: "#1d4ed8",
-					secondary: "#0d91d8",
-					accent: "#d34904",
-					neutral: "#000000",
-					"base-100": "#ffffff",
-					info: "#94B9E5",
-					success: "#52EBD4",
-					warning: "#F8CB25",
-					error: "#be123c",
+				darkModeee: {
+					primary: "#22d3ee",
+					secondary: "#343232",
+					accent: "#343232",
+					"base-100": "#000000",
+					"base-200": "#0D0D0D",
+					"base-300": "#1A1919",
+					neutral: "#272626",
+					"neutral-focus": "#343232",
+					info: "#0000ff",
+					success: "#008000",
+					warning: "#ffff00",
+					error: "#ff0000",
+					"--rounded-box": "0.25rem",
+					"--rounded-btn": "0.125rem",
+					"--rounded-badge": "0.125rem",
+					"--animation-btn": "0",
+					"--animation-input": "0",
+					"--btn-focus-scale": "1",
+					"--tab-radius": "0",
 				},
 			},
 		],
 	},
+	safelist: [
+		{
+			pattern: /grid-cols-[0-9]+/i,
+			variants: ["base", "sm", "md", "lg"],
+		},
+		{
+			pattern: /data-theme$/,
+		},
+	],
 };

@@ -9,10 +9,15 @@
 		source: string;
 		hex: string;
 	};
-	console.log(icon);
 </script>
 
-<div class="">
-	<Icon {icon} class="h-12 w-12" />
-	<span>{icon.title}</span>
+<div
+	class="text-center self-stretch flex flex-col gap-4 items-center justify-start py-4 px-6 border border-base-content rounded-md"
+>
+	<Icon {icon} class="h-16 w-16" />
+	<span
+		>{icon.title === "Tailwind CSS"
+			? icon.title.split(" ")[0]
+			: icon.title}</span
+	>
 </div>
