@@ -60,7 +60,9 @@
 				{/each}
 			</ul>
 		</div>
-		<a class="btn btn-ghost normal-case text-xl" href="/">CarstenLebek</a>
+		<div class="hidden xs:block">
+			<a class="btn btn-ghost normal-case text-xl" href="/">CarstenLebek</a>
+		</div>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal p-0">
@@ -124,15 +126,19 @@
 				<Icon icon={siLinkedin} class="h-6" />
 			</a>
 		</div>
-		<div
-			class="fixed bottom-6 left-0 w-full z-50 px-4 md:relative md:bottom-0 md:w-auto"
-		>
+		<div class="hidden md:relative md:bottom-0 md:w-auto">
 			<a
 				class="btn btn-primary btn-md w-full"
 				href="mailto:carsten.lebek@gmail.com">Lass uns zusammenarbeiten!</a
 			>
 		</div>
 	</div>
+</div>
+
+<div class="fixed bottom-6 left-0 w-full z-50 px-4 md:hidden">
+	<a class="btn btn-primary btn-md w-full" href="mailto:carsten.lebek@gmail.com"
+		>Lass uns zusammenarbeiten!</a
+	>
 </div>
 
 <style>
