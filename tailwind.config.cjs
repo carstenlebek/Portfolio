@@ -3,13 +3,43 @@ module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
 	theme: {
 		screens: {
-			xs: "360px"
-		}
+			xs: "360px",
+		},
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],
 	daisyui: {
 		themes: [
-			"lofi",
+			{
+				lofi: {
+					primary: "#22d3ee",
+					"primary-content": "#ffffff",
+					secondary: "#1A1919",
+					"secondary-content": "#ffffff",
+					accent: "#262626",
+					"accent-content": "#ffffff",
+					neutral: "#000000",
+					"neutral-content": "#ffffff",
+					"base-100": "#ffffff",
+					"base-200": "#F2F2F2",
+					"base-300": "#E6E5E5",
+					"base-content": "#000000",
+					info: "#0070F3",
+					"info-content": "#ffffff",
+					success: "#21CC51",
+					"success-content": "#ffffff",
+					warning: "#FF6154",
+					"warning-content": "#ffffff",
+					error: "#DE1C8D",
+					"error-content": "#ffffff",
+					"--rounded-box": "0.25rem",
+					"--rounded-btn": "0.125rem",
+					"--rounded-badge": "0.125rem",
+					"--animation-btn": "0",
+					"--animation-input": "0",
+					"--btn-focus-scale": "1",
+					"--tab-radius": "0",
+				},
+			},
 			{
 				darkModeee: {
 					primary: "#22d3ee",
