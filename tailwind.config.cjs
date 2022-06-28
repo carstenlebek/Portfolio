@@ -2,8 +2,10 @@
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
 	theme: {
-		screens: {
-			xs: "360px",
+		extend: {
+			screens: {
+				xs: "360px",
+			},
 		},
 	},
 	plugins: [require("@tailwindcss/typography"), require("daisyui")],

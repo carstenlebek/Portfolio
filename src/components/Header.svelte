@@ -126,7 +126,7 @@
 				<Icon icon={siLinkedin} class="h-6" />
 			</a>
 		</div>
-		<div class="hidden md:relative md:bottom-0 md:w-auto">
+		<div class="hidden md:block">
 			<a
 				class="btn btn-primary btn-md w-full"
 				href="mailto:carsten.lebek@gmail.com">Lass uns zusammenarbeiten!</a

@@ -75,19 +75,19 @@
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">
 			Favorite Stack
 		</h2>
-		<div class={`grid grid-cols-2 sm:grid-cols-${backEndTools.length} gap-4 mb-6`}>
+		<div class={`grid grid-cols-2 sm:grid-cols-3  md:grid-cols-${backEndTools.length} gap-4 mb-6`}>
 			{#each favoriteStack as icon}
 				<ToolCard {icon} />
 			{/each}
 		</div>
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">Frontend</h2>
-		<div class={`grid grid-cols-2 sm:grid-cols-${backEndTools.length} gap-4 mb-6`}>
+		<div class={`grid grid-cols-2 sm:grid-cols-3  md:grid-cols-${backEndTools.length} gap-4 mb-6`}>
 			{#each frontEndTools as icon}
 				<ToolCard {icon} />
 			{/each}
 		</div>
 		<h2 class="text-4xl font-bold mb-6 max-w-5xl mx-auto px-4">Backend</h2>
-		<div class={`grid grid-cols-2 sm:grid-cols-${backEndTools.length} gap-4 mb-6`}>
+		<div class={`grid grid-cols-2 sm:grid-cols-3  md:grid-cols-${backEndTools.length} gap-4 mb-6`}>
 			{#each backEndTools as icon}
 				<ToolCard {icon} />
 			{/each}
