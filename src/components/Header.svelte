@@ -60,7 +60,7 @@
 				{/each}
 			</ul>
 		</div>
-		<a class="btn btn-ghost normal-case text-xl" href="/">Carsten Lebek</a>
+		<a class="btn btn-ghost normal-case text-xl" href="/">CarstenLebek</a>
 	</div>
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal p-0">

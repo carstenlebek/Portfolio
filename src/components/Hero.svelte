@@ -34,7 +34,7 @@
 				Ich bin ein Fullstack Webdeveloper aus Wuppertal. Mithilfe von modernen
 				Technolgien helfe ich Menschen ihre Ideen in die Realität umzusetzen.
 			</p>
-			<button class="btn btn-outline">Referenzen</button>
+			<a href="#referenzen" class="btn btn-outline">Referenzen</a>
 		</div>
 		<div class="flex-1 relative aspect-square w-full p-4">
 			<div class="w-full aspect-square relative">
