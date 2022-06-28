@@ -75,7 +75,8 @@
 				class="btn btn-square btn-ghost"
 				data-toggle-theme="darkModeee,lofi"
 				data-act-class="ACTIVECLASS"
-				on:click={() => (theme === "lofi" ? (theme = "darkModeee") : "lofi")}
+				on:click={() =>
+					theme === "lofi" ? (theme = "darkModeee") : (theme = "lofi")}
 			>
 				{#if theme === "lofi"}
 					<svg
