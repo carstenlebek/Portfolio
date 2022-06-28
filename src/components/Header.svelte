@@ -21,7 +21,7 @@
 		},
 	];
 	let y;
-	let theme;
+	let theme = "darkModeee";
 	onMount(() => {
 		theme = document.documentElement.getAttribute("data-theme");
 		console.log(theme);

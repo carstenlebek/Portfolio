@@ -38,8 +38,5 @@ module.exports = {
 			pattern: /grid-cols-[0-9]+/i,
 			variants: ["base", "sm", "md", "lg"],
 		},
-		{
-			pattern: /data-theme$/,
-		},
 	],
 };

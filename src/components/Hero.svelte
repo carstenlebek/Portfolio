@@ -36,7 +36,7 @@
 			</p>
 			<button class="btn btn-outline">Referenzen</button>
 		</div>
-		<div class="flex-1 relative aspect-square w-full">
+		<div class="flex-1 relative aspect-square w-full p-4">
 			<div class="w-full aspect-square relative">
 				<div
 					class="w-full h-full absolute animate-[spin_20s_linear_infinite] border border-primary rounded-full"

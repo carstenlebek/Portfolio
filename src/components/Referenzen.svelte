@@ -104,7 +104,7 @@
 
 <Section id="referenzen" title="Referenzen">
 	<div slot="content" class="flex flex-col gap-8 relative">
-		<div class="absolute -left-[16rem] -bottom-[16rem] h-[60rem] aspect-square">
+		<div class="absolute -translate-x-[16rem] -translate-y-[16rem] h-[60rem] aspect-square">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				version="1.1"
@@ -145,7 +145,7 @@
 				></svg
 			>
 		</div>
-		<div class="absolute -right-[16rem] -top-[16rem] h-[60rem] aspect-square">
+		<div class="absolute translate-x-[40%] translate-y-[90%] h-[60rem] aspect-square">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				version="1.1"
