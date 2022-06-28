@@ -1,19 +1,23 @@
 {
-  "name": "@example/basics",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "devDependencies": {
-    "@astrojs/react": "^0.2.0",
-    "@astrojs/tailwind": "^0.2.1",
-    "astro": "^1.0.0-beta.57",
-    "astro-fonts": "^0.2.6",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  }
+	"name": "@example/basics",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"devDependencies": {
+		"@astrojs/react": "^0.2.0",
+		"@astrojs/tailwind": "^0.2.1",
+		"@astrojs/svelte": "^0.2.0",
+		"astro": "^1.0.0-beta.57",
+		"astro-fonts": "^0.2.6",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"simple-icons": "^7.3.0",
+		"@tailwindcss/typography": "^0.5.2",
+		"daisyui": "^2.17.0"
+	}
 }
