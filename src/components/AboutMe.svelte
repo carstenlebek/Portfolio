@@ -36,7 +36,26 @@
 			</p>
 		</div>
 		<div class="flex-1">
-			<img class="rounded-lg shadow-lg" src="/assets/images/portrait.webp" alt="Carsten Lebek" />
+			<div class="img-bg">
+				<img
+					class="rounded-lg shadow-lg"
+					src="/assets/images/portrait.webp"
+					alt="Carsten Lebek"
+				/>
+			</div>
 		</div>
 	</div>
 </Section>
+
+<style lang="postcss">
+	.img-bg {
+		@apply relative z-10;
+		width: calc(100% - 20px);
+	}
+	.img-bg::after {
+		@apply content-[""] absolute top-0 left-0 w-full h-full bg-primary rounded-lg  bg-left-top;
+		background-size: 10px 10px;
+		transform: translate(20px,20px);
+		z-index: -1;
+	}
+</style>

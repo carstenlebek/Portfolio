@@ -24,6 +24,7 @@
 			<img
 				src="/assets/images/certificate_webdesign_21142.webp"
 				alt="OfG Zertifikat"
+				class="-mr-[10px]"
 			/>
 		</div>
 	</div>
