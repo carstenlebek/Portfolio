@@ -4,8 +4,9 @@
 </script>
 
 <footer class="footer items-center p-4 bg-neutral text-neutral-content">
-	<div class="items-center grid-flow-col">
+	<div class="grid-flow-col flex flex-col items-start">
 		<p>Copyright © 2022 | Carsten Lebek</p>
+		<a class="text-primary underline" href="/impressum">Impressum</a>
 	</div>
 	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
 		<a
