@@ -80,16 +80,6 @@
 			stack: ["React.js", "Next.js", "Chakra Ui", "AWS S3"],
 		},
 		{
-			image: "krasserstecher",
-			type: "Onlineshop",
-			title: "Krasserstecher.de",
-			description:
-				"Bei Krasser Stecher gibt es personalisierte 3D gedruckte Keksausstechformen. Der Shop wurde mit Shopify erstellt. Die Storefront basiert auf dem Dawn Theme mit eigenen Sections.",
-			slug: "krasserstecher",
-			url: "https://www.krasserstecher.de",
-			stack: ["Shopify", "Liquid", "HTML", "CSS", "JavaScript"],
-		},
-		{
 			image: "aposto",
 			type: "Onlineshop",
 			title: "Aposto Wuppertal",
