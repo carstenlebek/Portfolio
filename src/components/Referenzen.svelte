@@ -104,7 +104,9 @@
 
 <Section id="referenzen" title="Referenzen">
 	<div slot="content" class="flex flex-col gap-8 relative">
-		<div class="absolute -translate-x-[16rem] -translate-y-[16rem] h-[60rem] aspect-square">
+		<div
+			class="absolute -translate-x-[16rem] -translate-y-[16rem] h-[60rem] aspect-square"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				version="1.1"
@@ -145,7 +147,9 @@
 				></svg
 			>
 		</div>
-		<div class="absolute translate-x-[40%] translate-y-[90%] h-[60rem] aspect-square">
+		<div
+			class="absolute translate-x-[40%] translate-y-[90%] h-[60rem] aspect-square"
+		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				version="1.1"
@@ -234,23 +238,8 @@
 
 <style>
 	.glasss {
-		border: none;
-		-webkit-backdrop-filter: blur(var(--glass-blur, 40px));
-		backdrop-filter: blur(var(--glass-blur, 40px));
-		background-color: transparent;
-		background-image: linear-gradient(
-				135deg,
-				rgb(255 255 255 / var(--glass-opacity, 30%)) 0%,
-				rgb(0 0 0 / 0%) 100%
-			),
-			linear-gradient(
-				var(--glass-reflex-degree, 100deg),
-				rgb(255 255 255 / var(--glass-reflex-opacity, 10%)) 25%,
-				rgb(0 0 0 / 0%) 25%
-			);
-		box-shadow: 0 0 0 1px rgb(255 255 255 / var(--glass-border-opacity, 10%))
-				inset,
-			0 0 0 2px rgb(0 0 0 / 5%);
-		text-shadow: 0 1px rgb(0 0 0 / var(--glass-text-shadow-opacity, 5%));
+		backdrop-filter: saturate(180%) blur(10px);
+		box-shadow: rgba(2, 1, 1, 0.1) 0px 5px 20px -5px;
+		background-color:  transparent !important;
 	}
 </style>
