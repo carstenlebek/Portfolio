@@ -31,7 +31,7 @@
 <svelte:window bind:scrollY={y} />
 <div
 	class="navbar bg-transparent sticky top-0 z-50 transition-all"
-	class:glass={y > 100}
+	class:glasss={y > 100}
 	class:shadow-md={y > 100}
 >
 	<div class="navbar-start">
@@ -126,7 +126,7 @@
 				<Icon icon={siLinkedin} class="h-6" />
 			</a>
 		</div>
-		<div class="hidden md:block">
+		<div class="hidden md:block ml-4">
 			<a
 				class="btn btn-primary btn-md w-full"
 				href="mailto:carsten.lebek@gmail.com">Lass uns zusammenarbeiten!</a
@@ -142,7 +142,7 @@
 </div>
 
 <style>
-	.glass {
+	.glasss {
 		backdrop-filter: saturate(180%) blur(10px);
 		box-shadow: rgba(2, 1, 1, 0.1) 0px 5px 20px -5px;
 	}

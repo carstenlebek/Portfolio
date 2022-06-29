@@ -13,7 +13,7 @@ module.exports = {
 		themes: [
 			{
 				lofi: {
-					primary: "#22d3ee",
+					primary: "#0891b2",
 					"primary-content": "#ffffff",
 					secondary: "#1A1919",
 					"secondary-content": "#ffffff",

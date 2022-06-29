@@ -15,7 +15,7 @@
 			type: "Onlineshop",
 			title: "Allkokos.de",
 			description:
-				"Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos. Der Fokus bei diesem Projekt lag auf der Conversion Optimierung der Produktseite des Kleintiereinstreus.",
+				"Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos. Das Projekt umfasste ein komplettes Redesign des Onlineshops.",
 			slug: "allkokos",
 			url: "https://allkokos.de",
 			stack: ["Shopify", "Liquid", "JavaScript", "Tailwind CSS"],
