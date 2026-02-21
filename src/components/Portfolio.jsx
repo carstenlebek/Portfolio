@@ -79,6 +79,27 @@ const GlobalStyles = createGlobalStyle`
     );
     pointer-events: none;
   }
+
+  @media (max-width: 600px) {
+    .desktop-pad {
+      padding: 4px !important;
+      padding-bottom: 44px !important;
+    }
+
+    .toolbar-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      flex-wrap: nowrap !important;
+    }
+
+    .cert-card {
+      width: calc(50% - 8px) !important;
+    }
+
+    .about-portrait {
+      width: 100px !important;
+    }
+  }
 `;
 
 const projects = [
@@ -158,11 +179,11 @@ export default function Portfolio() {
     <ThemeProvider theme={original}>
       <GlobalStyles />
 
-      <div style={{ padding: "16px", paddingBottom: "48px", maxWidth: 820, margin: "0 auto" }}>
+      <div className="desktop-pad" style={{ padding: 16, paddingBottom: 48, maxWidth: 820, margin: "0 auto" }}>
         {/* About Dialog */}
         {aboutOpen && (
           <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.3)" }} onClick={() => setAboutOpen(false)}>
-            <Window style={{ width: 340 }} onClick={(e) => e.stopPropagation()}>
+            <Window style={{ width: "90%", maxWidth: 340 }} onClick={(e) => e.stopPropagation()}>
               <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span>Ueber portfolio.exe</span>
                 <Button size="sm" square onClick={() => setAboutOpen(false)}>
@@ -193,7 +214,7 @@ export default function Portfolio() {
             <span>portfolio.exe</span>
           </WindowHeader>
 
-          <Toolbar>
+          <Toolbar className="toolbar-scroll" style={{ display: "flex", flexWrap: "nowrap" }}>
             <Button variant="menu" size="sm" onClick={() => window.location.href = "mailto:carsten.lebek@gmail.com"}>
               E-Mail
             </Button>
@@ -212,29 +233,29 @@ export default function Portfolio() {
             </Button>
           </Toolbar>
 
-          <WindowContent>
+          <WindowContent style={{ padding: "8px" }}>
             <Tabs value={activeTab} onChange={(val) => setActiveTab(val)}>
-              <Tab value={0}>Ueber mich</Tab>
+              <Tab value={0}>Info</Tab>
               <Tab value={1}>Projekte</Tab>
               <Tab value={2}>Zertifikate</Tab>
               <Tab value={3}>Links</Tab>
             </Tabs>
 
-            <TabBody style={{ minHeight: 300 }}>
+            <TabBody style={{ minHeight: 260 }}>
               {/* TAB 0: About */}
               {activeTab === 0 && (
                 <div>
                   <GroupBox label="Ueber mich">
-                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                    <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                       <div className="crt-wrapper">
                         <img
                           src="/assets/images/portrait.webp"
                           alt="Carsten Lebek"
                           width={150}
-                          className="crt-img"
+                          className="crt-img about-portrait"
                         />
                       </div>
-                      <div style={{ flex: 1, minWidth: 200 }}>
+                      <div style={{ flex: 1, minWidth: 160 }}>
                         <p style={{ marginTop: 0 }}><strong>Carsten Lebek</strong></p>
                         <p>Fullstack-Entwickler, Wuppertal</p>
                         <Separator />
@@ -257,14 +278,14 @@ export default function Portfolio() {
               {/* TAB 1: Projects */}
               {activeTab === 1 && (
                 <div>
-                  <GroupBox label="Projekte – Doppelklick zum Oeffnen">
-                    <div style={{ overflowX: "auto" }}>
+                  <GroupBox label="Projekte">
+                    <p style={{ fontSize: 12, color: "#808080", margin: "0 0 6px" }}>Antippen zum Auswaehlen, Oeffnen-Button zum Besuchen.</p>
+                    <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
                       <Table>
                         <TableHead>
                           <TableRow>
                             <TableHeadCell>Name</TableHeadCell>
                             <TableHeadCell>Typ</TableHeadCell>
-                            <TableHeadCell>Beschreibung</TableHeadCell>
                           </TableRow>
                         </TableHead>
                         <TableBody>
@@ -281,23 +302,29 @@ export default function Portfolio() {
                             >
                               <TableDataCell style={{ whiteSpace: "nowrap" }}>{p.name}</TableDataCell>
                               <TableDataCell style={{ whiteSpace: "nowrap" }}>{p.type}</TableDataCell>
-                              <TableDataCell>{p.desc}</TableDataCell>
                             </TableRow>
                           ))}
                         </TableBody>
                       </Table>
                     </div>
-                    <div style={{ marginTop: 8, display: "flex", gap: 8 }}>
+                    {selectedProject !== null && (
+                      <Frame variant="well" style={{ padding: 6, marginTop: 8, fontSize: 12 }}>
+                        <strong>{projects[selectedProject].name}</strong>
+                        <br />
+                        {projects[selectedProject].desc}
+                      </Frame>
+                    )}
+                    <div style={{ marginTop: 8, display: "flex", gap: 8, flexWrap: "wrap" }}>
                       <Button
                         disabled={selectedProject === null}
                         onClick={() => selectedProject !== null && window.open(projects[selectedProject].url, "_blank")}
                       >
                         Oeffnen
                       </Button>
-                      <span style={{ lineHeight: "28px", fontSize: 12, color: "#808080" }}>
+                      <span style={{ lineHeight: "28px", fontSize: 11, color: "#808080", wordBreak: "break-all" }}>
                         {selectedProject !== null
                           ? projects[selectedProject].url
-                          : "Waehle ein Projekt aus"}
+                          : ""}
                       </span>
                     </div>
                   </GroupBox>
@@ -308,12 +335,13 @@ export default function Portfolio() {
               {activeTab === 2 && (
                 <div>
                   <GroupBox label="Zertifikate">
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center" }}>
                       {certificates.map((c) => (
                         <Frame
                           key={c.name}
                           variant="well"
-                          style={{ padding: 4, textAlign: "center", width: 180 }}
+                          className="cert-card"
+                          style={{ padding: 4, textAlign: "center", width: 170 }}
                         >
                           <div className="crt-wrapper" style={{ width: "100%" }}>
                             <img
@@ -323,7 +351,7 @@ export default function Portfolio() {
                               style={{ width: "100%", height: "auto" }}
                             />
                           </div>
-                          <p style={{ fontSize: 11, margin: "4px 0 0", lineHeight: 1.3 }}>{c.name}</p>
+                          <p style={{ fontSize: 10, margin: "4px 0 0", lineHeight: 1.2 }}>{c.name}</p>
                         </Frame>
                       ))}
                     </div>
@@ -360,8 +388,8 @@ export default function Portfolio() {
 
       {/* Taskbar */}
       <AppBar style={{ position: "fixed", bottom: 0, top: "auto", left: 0, right: 0, zIndex: 100 }}>
-        <Toolbar style={{ justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: 4, alignItems: "center", position: "relative" }} ref={startRef}>
+        <Toolbar style={{ justifyContent: "space-between", padding: "2px 4px" }}>
+          <div style={{ display: "flex", gap: 3, alignItems: "center", position: "relative", overflow: "hidden", flex: 1, minWidth: 0 }} ref={startRef}>
             {/* Start Menu */}
             {startOpen && (
               <MenuList
@@ -375,7 +403,7 @@ export default function Portfolio() {
                 }}
               >
                 <MenuListItem onClick={() => { setActiveTab(0); setStartOpen(false); window.scrollTo(0, 0); }}>
-                  Ueber mich
+                  Info
                 </MenuListItem>
                 <MenuListItem onClick={() => { setActiveTab(1); setStartOpen(false); window.scrollTo(0, 0); }}>
                   Projekte
@@ -397,7 +425,7 @@ export default function Portfolio() {
             )}
 
             <Button
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "bold", flexShrink: 0 }}
               active={startOpen}
               onClick={() => setStartOpen(!startOpen)}
             >
@@ -406,22 +434,21 @@ export default function Portfolio() {
             <Separator orientation="vertical" size="35px" />
             <Button
               active
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "bold", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               portfolio.exe
             </Button>
             <Button
+              style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
               onClick={() => window.location.href = "/impressum"}
             >
               impressum.txt
             </Button>
           </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Frame variant="well" style={{ padding: "2px 8px", fontSize: 12 }}>
-              {clock}
-            </Frame>
-          </div>
+          <Frame variant="well" style={{ padding: "2px 6px", fontSize: 11, flexShrink: 0, marginLeft: 4 }}>
+            {clock}
+          </Frame>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

@@ -75,6 +75,13 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     min-height: 100vh;
   }
+
+  @media (max-width: 600px) {
+    .desktop-pad {
+      padding: 4px !important;
+      padding-bottom: 44px !important;
+    }
+  }
 `;
 
 function useClickOutside(ref, handler) {
@@ -112,7 +119,7 @@ export default function Impressum() {
     <ThemeProvider theme={original}>
       <GlobalStyles />
 
-      <div style={{ padding: "16px", paddingBottom: "48px", maxWidth: 620, margin: "0 auto" }}>
+      <div className="desktop-pad" style={{ padding: 16, paddingBottom: 48, maxWidth: 620, margin: "0 auto" }}>
         <Window style={{ width: "100%" }}>
           <WindowHeader>
             <span>impressum.txt – Editor</span>
@@ -175,8 +182,8 @@ export default function Impressum() {
       </div>
 
       <AppBar style={{ position: "fixed", bottom: 0, top: "auto", left: 0, right: 0, zIndex: 100 }}>
-        <Toolbar style={{ justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: 4, alignItems: "center", position: "relative" }} ref={startRef}>
+        <Toolbar style={{ justifyContent: "space-between", padding: "2px 4px" }}>
+          <div style={{ display: "flex", gap: 3, alignItems: "center", position: "relative", overflow: "hidden", flex: 1, minWidth: 0 }} ref={startRef}>
             {startOpen && (
               <MenuList
                 style={{
@@ -205,29 +212,30 @@ export default function Impressum() {
             )}
 
             <Button
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "bold", flexShrink: 0 }}
               active={startOpen}
               onClick={() => setStartOpen(!startOpen)}
             >
               Start
             </Button>
             <Separator orientation="vertical" size="35px" />
-            <Button onClick={() => window.location.href = "/"}>
+            <Button
+              style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+              onClick={() => window.location.href = "/"}
+            >
               portfolio.exe
             </Button>
             <Button
               active
-              style={{ fontWeight: "bold" }}
+              style={{ fontWeight: "bold", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               impressum.txt
             </Button>
           </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Frame variant="well" style={{ padding: "2px 8px", fontSize: 12 }}>
-              {clock}
-            </Frame>
-          </div>
+          <Frame variant="well" style={{ padding: "2px 6px", fontSize: 11, flexShrink: 0, marginLeft: 4 }}>
+            {clock}
+          </Frame>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
