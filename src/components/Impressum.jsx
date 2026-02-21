@@ -8,14 +8,48 @@ import {
   Button,
   Toolbar,
   AppBar,
-  GroupBox,
   Separator,
-  Anchor,
   Frame,
   MenuList,
   MenuListItem,
+  ScrollView,
 } from "react95";
 import original from "react95/dist/themes/original";
+
+const impressumText = `Impressum
+=========
+
+Angaben gemaess § 5 TMG
+------------------------
+Carsten Lebek
+Loehrerlen 19G
+42279 Wuppertal
+
+
+Kontakt
+-------
+E-Mail: carsten.lebek@gmail.com
+
+
+Umsatzsteuer-ID
+---------------
+Umsatzsteuer-Identifikationsnummer
+gemaess § 27 a Umsatzsteuergesetz:
+DE311134429
+
+
+Verbraucherstreitbeilegung /
+Universalschlichtungsstelle
+----------------------------
+Wir sind nicht bereit oder verpflichtet,
+an Streitbeilegungsverfahren vor einer
+Verbraucherschlichtungsstelle
+teilzunehmen.
+
+
+---
+Quelle: eRecht24 (https://www.e-recht24.de)
+`;
 
 const GlobalStyles = createGlobalStyle`
   ${styleReset}
@@ -56,6 +90,7 @@ function useClickOutside(ref, handler) {
 
 export default function Impressum() {
   const [startOpen, setStartOpen] = useState(false);
+  const [wordWrap, setWordWrap] = useState(true);
   const [clock, setClock] = useState(
     new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })
   );
@@ -70,6 +105,9 @@ export default function Impressum() {
     return () => clearInterval(timer);
   }, []);
 
+  const lines = impressumText.split("\n").length;
+  const chars = impressumText.length;
+
   return (
     <ThemeProvider theme={original}>
       <GlobalStyles />
@@ -81,54 +119,58 @@ export default function Impressum() {
           </WindowHeader>
 
           <Toolbar>
-            <Button variant="menu" size="sm" onClick={() => window.location.href = "/"}>
-              Zurueck
+            <Button
+              variant="menu"
+              size="sm"
+              onClick={() => window.location.href = "mailto:carsten.lebek@gmail.com"}
+            >
+              E-Mail senden
             </Button>
             <Separator orientation="vertical" size="22px" />
-            <Button variant="menu" size="sm" onClick={() => window.location.href = "mailto:carsten.lebek@gmail.com"}>
-              E-Mail
+            <Button
+              variant="menu"
+              size="sm"
+              onClick={() => setWordWrap(!wordWrap)}
+            >
+              {wordWrap ? "Zeilenumbruch: An" : "Zeilenumbruch: Aus"}
             </Button>
           </Toolbar>
 
-          <WindowContent>
-            <GroupBox label="Angaben gemaess § 5 TMG">
-              <p style={{ margin: "4px 0" }}>Carsten Lebek</p>
-              <p style={{ margin: "4px 0" }}>Loehrerlen 19G</p>
-              <p style={{ margin: "4px 0" }}>42279 Wuppertal</p>
-            </GroupBox>
-
-            <br />
-
-            <GroupBox label="Kontakt">
-              <p style={{ margin: "4px 0" }}>
-                E-Mail: <Anchor href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</Anchor>
-              </p>
-            </GroupBox>
-
-            <br />
-
-            <GroupBox label="Umsatzsteuer-ID">
-              <p style={{ margin: "4px 0" }}>
-                Umsatzsteuer-Identifikationsnummer gemaess § 27 a Umsatzsteuergesetz:
-              </p>
-              <p style={{ margin: "4px 0" }}><strong>DE311134429</strong></p>
-            </GroupBox>
-
-            <br />
-
-            <GroupBox label="Verbraucherstreitbeilegung">
-              <p style={{ margin: "4px 0" }}>
-                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
-                vor einer Verbraucherschlichtungsstelle teilzunehmen.
-              </p>
-            </GroupBox>
-
-            <Separator style={{ margin: "16px 0" }} />
-
-            <p style={{ fontSize: 11, color: "#808080" }}>
-              Quelle: <Anchor href="https://www.e-recht24.de" target="_blank">eRecht24</Anchor>
-            </p>
+          <WindowContent style={{ padding: 0 }}>
+            <textarea
+              readOnly
+              value={impressumText}
+              style={{
+                width: "100%",
+                height: 420,
+                border: "none",
+                padding: 8,
+                fontFamily: "'Courier New', Courier, monospace",
+                fontSize: 13,
+                lineHeight: 1.4,
+                resize: "none",
+                outline: "none",
+                background: "#fff",
+                color: "#000",
+                whiteSpace: wordWrap ? "pre-wrap" : "pre",
+                overflowX: wordWrap ? "hidden" : "auto",
+                boxSizing: "border-box",
+              }}
+            />
           </WindowContent>
+
+          <div style={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: "2px 4px",
+            borderTop: "1px solid #888",
+            fontSize: 11,
+            background: "#c0c0c0",
+          }}>
+            <Frame variant="well" style={{ padding: "1px 6px", flex: 1 }}>
+              Zeilen: {lines} | Zeichen: {chars}
+            </Frame>
+          </div>
         </Window>
       </div>
 
@@ -170,6 +212,9 @@ export default function Impressum() {
               Start
             </Button>
             <Separator orientation="vertical" size="35px" />
+            <Button onClick={() => window.location.href = "/"}>
+              portfolio.exe
+            </Button>
             <Button
               active
               style={{ fontWeight: "bold" }}

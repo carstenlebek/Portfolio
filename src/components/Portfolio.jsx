@@ -422,6 +422,11 @@ export default function Portfolio() {
             >
               portfolio.exe
             </Button>
+            <Button
+              onClick={() => window.location.href = "/impressum"}
+            >
+              impressum.txt
+            </Button>
             {!showCounter && (
               <Button
                 onClick={() => setShowCounter(true)}
