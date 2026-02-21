@@ -1,6 +1,4 @@
 ---
-import Header from '../components/Header.svelte';
-import Footer from '../components/Footer.svelte';
 export interface Props {
   title: string;
   description: string;
@@ -10,34 +8,40 @@ const { title, description } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang="de" data-theme="darkModeee">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="stylesheet" href="/assets/fonts/Inter/Inter.css" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 </head>
 
 <body>
-  <Header client:load />
-  <main class="py-8 lg:py-12">
-    <slot />
-  </main>
-  <Footer />
+  <slot />
 </body>
 
 </html>
 
-<style>
-  html {
-    font-family: Inter, sans-serif;
+<style is:global>
+  @font-face {
+    font-family: 'ms_sans_serif';
+    src: url('/assets/fonts/ms_sans_serif.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
   }
 
-  main {
-    overflow: hidden;
+  @font-face {
+    font-family: 'ms_sans_serif';
+    src: url('/assets/fonts/ms_sans_serif_bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'ms_sans_serif', Arial, sans-serif;
   }
 </style>

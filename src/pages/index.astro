@@ -1,22 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.svelte';
-import AboutMe from '../components/AboutMe.svelte';
-import Toolbox from '../components/Toolbox.svelte';
-import Zertifikate from '../components/Zertifikate.svelte';
-import Referenzen from '../components/Referenzen.svelte';
+import Portfolio from '../components/Portfolio.jsx';
 ---
 
-<Layout title="Carsten Lebek | Webdeveloper Wuppertal" description="Freelance Webdeveloper in Wuppertal.">
-	<Hero />
-	<AboutMe />
-	<Toolbox client:idle />
-	<Zertifikate />
-	<Referenzen />
+<Layout title="Carsten Lebek - Webentwickler" description="Portfolio von Carsten Lebek, Webentwickler aus Wuppertal.">
+  <Portfolio client:only="react" />
 </Layout>
-
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4F39FA, #DA62C4);
-	}
-</style>
