@@ -1,57 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Impressum from '../components/Impressum.jsx';
 ---
 
 <Layout title="Impressum - Carsten Lebek" description="Impressum von Carsten Lebek.">
-
-<div class="desktop">
-
-  <div class="window" style="width: 100%;">
-    <div class="title-bar">
-      <div class="title-bar-text">C:\Eigene Dateien\Portfolio\impressum.txt - Editor</div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimize"></button>
-        <button aria-label="Maximize"></button>
-        <button aria-label="Close"></button>
-      </div>
-    </div>
-    <div class="window-body">
-
-      <p><a href="/">← Zurueck zur Startseite</a></p>
-
-      <fieldset>
-        <legend>Impressum</legend>
-
-        <h4>Angaben gemaess &sect; 5 TMG</h4>
-        <p>
-          Carsten Lebek<br />
-          Loehrerlen 19G<br />
-          42279 Wuppertal
-        </p>
-
-        <h4>Kontakt</h4>
-        <p>E-Mail: <a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a></p>
-
-        <h4>Umsatzsteuer-ID</h4>
-        <p>Umsatzsteuer-Identifikationsnummer gemaess &sect; 27 a Umsatzsteuergesetz:<br />
-        DE311134429</p>
-
-        <h4>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h4>
-        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-        Verbraucherschlichtungsstelle teilzunehmen.</p>
-
-        <hr />
-        <p style="font-size: 11px;">Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
-      </fieldset>
-
-    </div>
-
-    <div class="status-bar">
-      <p class="status-bar-field">Bereit</p>
-      <p class="status-bar-field">impressum.txt</p>
-    </div>
-  </div>
-
-</div>
-
+  <Impressum client:only="react" />
 </Layout>

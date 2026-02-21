@@ -9,6 +9,11 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"astro": "^1.0.0-beta.57"
+		"@astrojs/react": "^4.4.2",
+		"astro": "^5.17.3",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4",
+		"react95": "^4.0.0",
+		"styled-components": "^6.3.11"
 	}
 }
