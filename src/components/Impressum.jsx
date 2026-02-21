@@ -195,7 +195,7 @@ export default function Impressum() {
 
       <AppBar style={{ position: "fixed", bottom: 0, top: "auto", left: 0, right: 0, zIndex: 100 }}>
         <Toolbar style={{ justifyContent: "space-between", padding: "2px 4px" }}>
-          <div style={{ display: "flex", gap: 3, alignItems: "center", position: "relative", overflow: "hidden", flex: 1, minWidth: 0 }} ref={startRef}>
+          <div style={{ display: "flex", gap: 3, alignItems: "center", position: "relative", flex: 1, minWidth: 0 }} ref={startRef}>
             {startOpen && (
               <MenuList
                 style={{
