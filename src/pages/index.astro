@@ -1,22 +1,429 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.svelte';
-import AboutMe from '../components/AboutMe.svelte';
-import Toolbox from '../components/Toolbox.svelte';
-import Zertifikate from '../components/Zertifikate.svelte';
-import Referenzen from '../components/Referenzen.svelte';
 ---
 
-<Layout title="Carsten Lebek | Webdeveloper Wuppertal" description="Freelance Webdeveloper in Wuppertal.">
-	<Hero />
-	<AboutMe />
-	<Toolbox client:idle />
-	<Zertifikate />
-	<Referenzen />
-</Layout>
+<Layout title="~*~ Carsten Lebek's Homepage ~*~ Webdeveloper aus Wuppertal ~*~" description="Willkommen auf der persoenlichen Homepage von Carsten Lebek - Webdeveloper aus Wuppertal.">
 
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4F39FA, #DA62C4);
-	}
-</style>
+<!-- ====== TOP CONSTRUCTION BANNER ====== -->
+<div class="construction-banner">
+	<span class="construction-text">&#9888; ACHTUNG: Diese Seite ist staendig under construction! &#9888;</span>
+</div>
+
+<!-- ====== MARQUEE WELCOME ====== -->
+<marquee bgcolor="#800080" scrollamount="4" style="padding: 8px; font-size: 18px; color: #FFFFFF; border-top: 2px solid #FF00FF; border-bottom: 2px solid #FF00FF;">
+	&#9733; Willkommen auf meiner Homepage! &#9733; Du bist Besucher Nr. 008.341 &#9733; Letzte Aktualisierung: 14. Maerz 1995 &#9733; Am besten mit Netscape Navigator 1.1 anschauen! &#9733; Aufloesung: 800x600 &#9733;
+</marquee>
+
+<!-- ====== MAIN TABLE LAYOUT ====== -->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="100%">
+
+	<!-- ====== HEADER / TITLE ====== -->
+	<div style="text-align: center; padding: 24px 16px 8px 16px;">
+		<span style="font-size: 12px; color: #FFFF00;">&#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span>
+		<h1 style="font-size: 42px; color: #00FFFF; text-shadow: 3px 3px #FF00FF; margin: 8px 0; letter-spacing: 2px;">
+			Carsten Lebek
+		</h1>
+		<h2 style="font-size: 20px; color: #FFFF00; margin: 0;">
+			~ Webdeveloper aus Wuppertal ~
+		</h2>
+		<p style="font-size: 14px; color: #FF6600; margin-top: 8px;">
+			<span class="blink">&#9829;</span> Fullstack Entwickler <span class="blink">&#9829;</span> Webdesigner <span class="blink">&#9829;</span> Internet-Enthusiast <span class="blink">&#9829;</span>
+		</p>
+		<span style="font-size: 12px; color: #FFFF00;">&#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;</span>
+	</div>
+
+	<hr />
+
+	<!-- ====== NAVIGATION ====== -->
+	<div style="text-align: center; padding: 8px; background-color: #000066; border: 2px ridge #808080;">
+		<span style="font-size: 16px;">
+			[ <a href="#ueber-mich">Ueber mich</a> ]
+			&nbsp;|&nbsp;
+			[ <a href="#projekte">Meine Projekte</a> ]
+			&nbsp;|&nbsp;
+			[ <a href="#zertifikate">Zertifikate</a> ]
+			&nbsp;|&nbsp;
+			[ <a href="mailto:carsten.lebek@gmail.com">E-Mail</a> ]
+			&nbsp;|&nbsp;
+			[ <a href="/impressum">Impressum</a> ]
+		</span>
+	</div>
+
+	<hr />
+
+	<!-- ====== ABOUT ME ====== -->
+	<a id="ueber-mich"></a>
+	<table width="100%" cellpadding="12" cellspacing="0">
+	<tr>
+		<td colspan="2" style="text-align: center;">
+			<h2 style="color: #FF00FF; font-size: 28px; text-decoration: underline; margin-bottom: 4px;">
+				&#9733; Ueber mich &#9733;
+			</h2>
+		</td>
+	</tr>
+	<tr>
+		<td width="200" style="text-align: center; padding: 12px;">
+			<img
+				src="/assets/images/portrait.webp"
+				alt="Das bin ich!"
+				width="160"
+				style="border: 4px ridge #C0C0C0;"
+			/>
+			<br />
+			<span style="font-size: 11px; color: #C0C0C0;"><i>Das bin ich! :-)</i></span>
+		</td>
+		<td style="padding: 12px;">
+			<p style="color: #00FF00; font-size: 15px; line-height: 1.6;">
+				<b style="color: #FFFF00; font-size: 16px;">Hallo und herzlich willkommen!</b>
+				<br /><br />
+				Mein Name ist <b style="color: #00FFFF;">Carsten</b> und ich baue gerne Dinge, die im Internet leben.
+				Mein Interesse fuer Web Development hat im Jahr 2016 angefangen, als ich meinen ersten eigenen Onlineshop eroeffnet habe. Aus ein paar kleinen HTML und CSS Anpassungen hat sich ueber die Zeit ein echtes Interesse immer mehr zu lernen entwickelt.
+				<br /><br />
+				In meiner Selbststaendigkeit habe ich viele Projekte gestartet. Von Print on Demand T-Shirts, ueber Energydrinks fuer Gamer bis hin zu 3D gedruckten Keksausstechformen war alles dabei.
+				<br /><br />
+				Am Ende hat alles zu dem gefuehrt, was ich eigentlich schon die ganze Zeit machen wollte:
+				<b style="color: #FF6600;" class="rainbow">Digitale Erfahrungen und Produkte erschaffen.</b>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<div class="star-divider">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</div>
+
+	<hr />
+
+	<!-- ====== PROJECTS ====== -->
+	<a id="projekte"></a>
+	<div style="text-align: center;">
+		<h2 style="color: #FF00FF; font-size: 28px; text-decoration: underline; margin-bottom: 4px;">
+			&#9733; Meine Projekte &#9733;
+		</h2>
+		<p style="color: #C0C0C0; font-size: 13px;"><i>Klicke auf die Links um die Projekte zu besuchen!</i></p>
+	</div>
+
+	<!-- Project: Crazy JUMP -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://www.crazy-jump.de" target="_blank">Crazy JUMP Wuppertal</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Trampolinpark]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Crazy JUMP ist ein Trampolinpark in Wuppertal mit verschiedenen Sprung- und Bouncing-Attraktionen.
+				Von Basketball-Dunking bis Dodgeball - hier ist fuer jeden was dabei! Die Webseite informiert ueber
+				Preise, Angebote fuer Kindergeburtstage, Schulklassen und Sportvereine.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://www.crazy-jump.de" target="_blank">https://www.crazy-jump.de</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: Alte Papierfabrik -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://www.altepapierfabrik.eu" target="_blank">Alte Papierfabrik Wuppertal</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Event-Location]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Die Alte Papierfabrik Wuppertal - eine historische Location fuer Events, Veranstaltungen und mehr.
+				Ein einzigartiger Ort mit industriellem Charme mitten in Wuppertal.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://www.altepapierfabrik.eu" target="_blank">https://www.altepapierfabrik.eu</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: KOKORO Einstreu -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://kokoro-einstreu.de" target="_blank">KOKORO Einstreu</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Onlineshop]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				KOKORO bietet Premium-Kokosfaser-Einstreu fuer Pferde. Hochabsorbierend, staubfrei und kompostierbar -
+				hergestellt in Deutschland. Erhaeltlich in verschiedenen Groessen mit Abo-Option und 10% Rabatt.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://kokoro-einstreu.de" target="_blank">https://kokoro-einstreu.de</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: Markflow -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://markflow.app" target="_blank">Markflow</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Chrome Extension]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Markflow ist eine Chrome Extension fuer Entwickler und Designer. Kopiere Web-Elemente von ueberall
+				und exportiere sie nach Figma, React, Webflow, Svelte, CodePen oder HTML.
+				Element-Inspektion, Farbpaletten-Extraktion, Asset-Downloads und vieles mehr!
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://markflow.app" target="_blank">https://markflow.app</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: Allkokos -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://allkokos.de" target="_blank">Allkokos.de</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Onlineshop]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Das wohl beliebteste Kleintiereinstreu Deutschlands gibt es bei Allkokos.
+				Das Projekt umfasste ein komplettes Redesign des Onlineshops.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://allkokos.de" target="_blank">https://allkokos.de</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: Sport-Park -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://anmeldung.sport-park.de" target="_blank">Sport-Park Onlineanmeldung</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Website]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Um die Nutzererfahrung zu verbessern, wurde die API von Centercom reverse-engineered und die
+				Onlineanmeldung mit Next.js neu aufgesetzt. Das Ergebnis sind deutlich schnellere Ladezeiten
+				und ein kontinuierliches UI Design.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://anmeldung.sport-park.de" target="_blank">https://anmeldung.sport-park.de</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: RSCards -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://rscards.de" target="_blank">RSCards.de</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Onlineshop]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				RSCards ist ein Onlineshop fuer personalisierte Autoquartettkarten im XXL Format.
+				Als headless CMS wird hier Shopify genutzt und die Storefront wurde mit Gatsby.js erstellt.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://rscards.de" target="_blank">https://rscards.de</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: CreatorHub -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://apps.shopify.com/creator-code" target="_blank">CreatorHub</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Shopify App]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				CreatorHub gibt Shopbetreibern eine einfache Moeglichkeit Influencer zu verwalten.
+				Ausserdem bringt die App Influencer Marketing in das Frontend und verbessert so die Customer Experience.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://apps.shopify.com/creator-code" target="_blank">https://apps.shopify.com/creator-code</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: deepi18n -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://deep-i18n.vercel.app/" target="_blank">deepi18n</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Web App]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Deepi18n ermoeglicht es Webseiten oder Apps in einem Schritt in bis zu 25 Sprachen zu uebersetzen.
+				Zur Uebersetzung wird die DeepL API genutzt.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://deep-i18n.vercel.app/" target="_blank">https://deep-i18n.vercel.app/</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<!-- Project: Aposto -->
+	<table width="100%" cellpadding="8" cellspacing="0" style="border: 2px ridge #808080; margin-bottom: 12px; background-color: #000066;">
+	<tr>
+		<td style="padding: 12px;">
+			<h3 style="color: #00FFFF; font-size: 20px; margin: 0 0 4px 0;">
+				&#9658; <a href="https://apostowuppertal.de" target="_blank">Aposto Wuppertal</a>
+			</h3>
+			<span style="color: #FF6600; font-size: 12px; font-weight: bold;">[Onlineshop]</span>
+			<p style="color: #00FF00; font-size: 14px; line-height: 1.5; margin-top: 8px;">
+				Leckere Pizza und Pasta kann man im auf Shopify basierenden Shop vom Aposto Wuppertal bestellen.
+				Der Shop wurde als Alternative zu Lieferando erstellt.
+			</p>
+			<p style="font-size: 12px; color: #C0C0C0;">
+				&#9658; <a href="https://apostowuppertal.de" target="_blank">https://apostowuppertal.de</a>
+			</p>
+		</td>
+	</tr>
+	</table>
+
+	<div class="star-divider">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</div>
+
+	<hr />
+
+	<!-- ====== CERTIFICATES ====== -->
+	<a id="zertifikate"></a>
+	<div style="text-align: center;">
+		<h2 style="color: #FF00FF; font-size: 28px; text-decoration: underline; margin-bottom: 4px;">
+			&#9733; Zertifikate &#9733;
+		</h2>
+		<p style="color: #C0C0C0; font-size: 13px;"><i>Meine Auszeichnungen und Zertifizierungen</i></p>
+	</div>
+
+	<table width="100%" cellpadding="8" cellspacing="4">
+	<tr>
+		<td style="text-align: center;" width="33%">
+			<img src="/assets/images/fcc_js_aads_badge.webp" alt="FreeCodeCamp Zertifikat" style="max-width: 200px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+		<td style="text-align: center;" width="33%">
+			<img src="/assets/images/fcc_fedl.webp" alt="FreeCodeCamp Zertifikat" style="max-width: 200px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+		<td style="text-align: center;" width="33%">
+			<img src="/assets/images/fcc_bedaa.webp" alt="FreeCodeCamp Zertifikat" style="max-width: 200px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: center;" width="33%">
+			<img src="/assets/images/sh_ad.webp" alt="Shopify Zertifikat" style="max-width: 200px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+		<td style="text-align: center;" width="33%">
+			<img src="/assets/images/sh_bf.webp" alt="Shopify Zertifikat" style="max-width: 200px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+		<td style="text-align: center;" width="33%">
+			<img src="/assets/images/sh_pf.webp" alt="Shopify Zertifikat" style="max-width: 200px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" style="text-align: center;">
+			<img src="/assets/images/certificate_webdesign_21142.webp" alt="OfG Zertifikat" style="max-width: 300px; width: 100%; border: 3px ridge #C0C0C0;" />
+		</td>
+	</tr>
+	</table>
+
+	<div class="star-divider">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</div>
+
+	<hr />
+
+	<!-- ====== LINKS ====== -->
+	<div style="text-align: center; padding: 12px;">
+		<h2 style="color: #FF00FF; font-size: 28px; text-decoration: underline; margin-bottom: 12px;">
+			&#9733; Links &#9733;
+		</h2>
+		<table cellpadding="6" cellspacing="0" style="margin: 0 auto; border: 2px ridge #808080; background-color: #000066;">
+		<tr>
+			<td style="padding: 8px 16px;">&#9658; <a href="https://github.com/carstenlebek" target="_blank">Mein GitHub Profil</a></td>
+		</tr>
+		<tr>
+			<td style="padding: 8px 16px;">&#9658; <a href="https://www.linkedin.com/in/carsten-lebek-634899229/" target="_blank">Mein LinkedIn Profil</a></td>
+		</tr>
+		<tr>
+			<td style="padding: 8px 16px;">&#9658; <a href="mailto:carsten.lebek@gmail.com">Schreib mir eine E-Mail!</a></td>
+		</tr>
+		</table>
+	</div>
+
+	<hr />
+
+	<!-- ====== GUESTBOOK ====== -->
+	<div style="text-align: center; padding: 16px;">
+		<table cellpadding="12" cellspacing="0" style="margin: 0 auto; border: 3px double #FFFF00; background-color: #000044;">
+		<tr>
+			<td style="text-align: center;">
+				<span style="font-size: 22px; color: #FFFF00;" class="rainbow">&#9998; Gaestebuch &#9998;</span>
+				<br />
+				<span style="font-size: 14px; color: #00FF00;">
+					Trag dich in mein Gaestebuch ein!<br />
+					<a href="mailto:carsten.lebek@gmail.com?subject=Gaestebuch-Eintrag">&#9658; Hier klicken! &#9668;</a>
+				</span>
+			</td>
+		</tr>
+		</table>
+	</div>
+
+	<hr />
+
+	<!-- ====== FOOTER ====== -->
+	<div style="text-align: center; padding: 12px; background-color: #000044; border-top: 2px solid #808080;">
+		<p style="font-size: 12px; color: #808080;">
+			&copy; 1995 Carsten Lebek. Alle Rechte vorbehalten.
+		</p>
+		<p style="font-size: 11px; color: #808080;">
+			Diese Seite wurde mit <span style="color: #FF0000;">&#9829;</span> und einem Texteditor erstellt.
+		</p>
+		<p style="font-size: 11px; color: #808080;">
+			Am besten angeschaut mit
+			<b style="color: #00FF00;">Netscape Navigator 1.1</b>
+			bei einer Aufloesung von
+			<b style="color: #00FF00;">800x600</b>
+		</p>
+		<p style="font-size: 11px; color: #C0C0C0;">
+			<a href="/impressum">Impressum</a>
+		</p>
+		<br />
+		<!-- Hit Counter -->
+		<table cellpadding="4" cellspacing="0" style="margin: 0 auto; border: 1px solid #808080; background-color: #000000;">
+		<tr>
+			<td style="text-align: center;">
+				<span style="font-size: 10px; color: #808080;">Besucher seit 01.01.1995:</span>
+				<br />
+				<span style="font-family: 'Courier New', monospace; font-size: 20px; color: #00FF00; letter-spacing: 4px; background-color: #111111; padding: 4px 8px; border: 1px inset #333333; display: inline-block;">
+					008341
+				</span>
+			</td>
+		</tr>
+		</table>
+		<br />
+		<span style="font-size: 10px; color: #808080;">
+			&#9733; Du bist der <span style="color: #FFFF00;" class="sparkle">8.341.</span> Besucher! &#9733;
+		</span>
+	</div>
+
+	<!-- ====== BOTTOM MARQUEE ====== -->
+	<marquee bgcolor="#800000" scrollamount="3" direction="right" style="padding: 6px; font-size: 14px; color: #FFFF00; border-top: 2px solid #FF0000;">
+		&#9733; Danke fuer deinen Besuch! &#9733; Komm bald wieder! &#9733; Letzte Aktualisierung: 14. Maerz 1995 &#9733; E-Mail: carsten.lebek@gmail.com &#9733;
+	</marquee>
+
+</td>
+</tr>
+</table>
+
+</Layout>

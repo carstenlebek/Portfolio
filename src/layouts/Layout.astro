@@ -1,6 +1,4 @@
 ---
-import Header from '../components/Header.svelte';
-import Footer from '../components/Footer.svelte';
 export interface Props {
   title: string;
   description: string;
@@ -10,34 +8,132 @@ const { title, description } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
-<html lang="de" data-theme="darkModeee">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="stylesheet" href="/assets/fonts/Inter/Inter.css" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 </head>
 
-<body>
-  <Header client:load />
-  <main class="py-8 lg:py-12">
-    <slot />
-  </main>
-  <Footer />
+<body bgcolor="#000080" text="#00FF00" link="#FFFF00" vlink="#FF00FF" alink="#FF0000">
+  <slot />
 </body>
 
 </html>
 
-<style>
-  html {
-    font-family: Inter, sans-serif;
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000080;
+    color: #00FF00;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0L8 16M0 8L16 8' stroke='%23000066' stroke-width='1'/%3E%3C/svg%3E");
   }
 
-  main {
-    overflow: hidden;
+  a {
+    color: #FFFF00;
+    font-weight: bold;
+  }
+
+  a:visited {
+    color: #FF00FF;
+  }
+
+  a:hover {
+    color: #FF0000;
+    text-decoration: underline;
+  }
+
+  hr {
+    border: none;
+    height: 4px;
+    background: linear-gradient(90deg, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3);
+    margin: 16px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  marquee {
+    padding: 4px 0;
+  }
+
+  @keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  .blink {
+    animation: blink 1s step-start infinite;
+  }
+
+  @keyframes rainbow {
+    0% { color: #FF0000; }
+    16% { color: #FF7F00; }
+    33% { color: #FFFF00; }
+    50% { color: #00FF00; }
+    66% { color: #0000FF; }
+    83% { color: #4B0082; }
+    100% { color: #FF0000; }
+  }
+
+  .rainbow {
+    animation: rainbow 3s linear infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .sparkle {
+    animation: sparkle 0.5s ease-in-out infinite;
+  }
+
+  .star-divider {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: #FFFF00;
+    padding: 8px 0;
+  }
+
+  .construction-banner {
+    background-color: #FFFF00;
+    color: #000000;
+    text-align: center;
+    padding: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #000000 10px,
+      #000000 12px
+    );
+  }
+
+  .construction-text {
+    background-color: #FFFF00;
+    padding: 2px 8px;
+    display: inline-block;
+  }
+
+  img {
+    border: 2px solid #FFFFFF;
   }
 </style>
