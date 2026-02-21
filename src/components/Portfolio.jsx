@@ -251,14 +251,16 @@ export default function Portfolio() {
                         <p>Senior Fullstack-Entwickler, Wuppertal</p>
                         <Separator />
                         <p>
-                          Senior Fullstack-Entwickler bei <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a> — einer
-                          Loyalty-Plattform fuer E-Commerce, die Shopbetreibern Kundenbindung
-                          ueber echtes Shopguthaben, VIP-Stufen, Bewertungs-Rewards und
-                          Empfehlungsprogramme ermoeglicht. Shopify Plus Partner mit 400+ Kunden.
+                          Bin 2016 ueber meinen ersten Onlineshop zum Programmieren gekommen.
+                          Erst ein paar CSS-Anpassungen, dann eigene Themes, dann ganze
+                          Shopify-Apps. Nebenbei alles Moegliche ausprobiert — Print on Demand,
+                          Energydrinks fuer Gamer, 3D-gedruckte Keksausstechformen. Hat alles
+                          nicht geklappt, aber dabei gelernt wie man Produkte baut.
                         </p>
                         <p>
+                          Heute Senior Fullstack-Entwickler bei <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a> — einer
+                          Loyalty-Plattform fuer E-Commerce (Shopify Plus Partner, 400+ Kunden).
                           Stack: React, Next.js, TypeScript, Shopify.
-                          Schwerpunkte: Headless Commerce, Shopify-Apps, API-Integrationen.
                         </p>
                       </div>
                     </div>
