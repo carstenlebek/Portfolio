@@ -4,32 +4,54 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Impressum - Carsten Lebek" description="Impressum von Carsten Lebek.">
 
-<p><a href="/">Zurueck zur Startseite</a></p>
+<div class="desktop">
 
-<h1>Impressum</h1>
+  <div class="window" style="width: 100%;">
+    <div class="title-bar">
+      <div class="title-bar-text">C:\Eigene Dateien\Portfolio\impressum.txt - Editor</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body">
 
-<h2>Angaben gemaess &sect; 5 TMG</h2>
+      <p><a href="/">← Zurueck zur Startseite</a></p>
 
-<p>Carsten Lebek<br />
-Loehrerlen 19G<br />
-42279 Wuppertal</p>
+      <fieldset>
+        <legend>Impressum</legend>
 
-<h2>Kontakt</h2>
+        <h4>Angaben gemaess &sect; 5 TMG</h4>
+        <p>
+          Carsten Lebek<br />
+          Loehrerlen 19G<br />
+          42279 Wuppertal
+        </p>
 
-<p>E-Mail: <a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a></p>
+        <h4>Kontakt</h4>
+        <p>E-Mail: <a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a></p>
 
-<h2>Umsatzsteuer-ID</h2>
+        <h4>Umsatzsteuer-ID</h4>
+        <p>Umsatzsteuer-Identifikationsnummer gemaess &sect; 27 a Umsatzsteuergesetz:<br />
+        DE311134429</p>
 
-<p>Umsatzsteuer-Identifikationsnummer gemaess &sect; 27 a Umsatzsteuergesetz:<br />
-DE311134429</p>
+        <h4>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h4>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle teilzunehmen.</p>
 
-<h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+        <hr />
+        <p style="font-size: 11px;">Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
+      </fieldset>
 
-<p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
-Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </div>
 
-<hr />
+    <div class="status-bar">
+      <p class="status-bar-field">Bereit</p>
+      <p class="status-bar-field">impressum.txt</p>
+    </div>
+  </div>
 
-<p>Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
+</div>
 
 </Layout>

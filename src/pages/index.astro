@@ -2,109 +2,212 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Carsten Lebek - Webentwickler" description="Homepage von Carsten Lebek, Webentwickler aus Wuppertal.">
+<Layout title="Carsten Lebek - Webentwickler" description="Portfolio von Carsten Lebek, Webentwickler aus Wuppertal.">
 
-<h1>Carsten Lebek</h1>
+<div class="desktop">
 
-<p>Webentwickler aus Wuppertal. Fullstack-Entwicklung, E-Commerce und digitale Produkte.</p>
+  <!-- ====== MAIN WINDOW ====== -->
+  <div class="window" style="width: 100%;">
+    <div class="title-bar">
+      <div class="title-bar-text">C:\Eigene Dateien\Portfolio\carsten_lebek.exe</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body">
 
-<p>Kontakt: <a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a>.
-Siehe auch: eine <a href="#ueber-mich">Beschreibung meiner Person</a>,
-eine <a href="#projekte">Liste meiner Projekte</a>,
-meine <a href="#zertifikate">Zertifikate</a>,
-und das <a href="/impressum">Impressum</a>.</p>
+      <!-- TABS -->
+      <menu role="tablist">
+        <li role="tab" aria-selected="true"><a href="#ueber-mich">Ueber mich</a></li>
+        <li role="tab"><a href="#projekte">Projekte</a></li>
+        <li role="tab"><a href="#zertifikate">Zertifikate</a></li>
+        <li role="tab"><a href="#links">Links</a></li>
+      </menu>
 
-<hr />
+      <!-- TAB CONTENT AREA -->
+      <div class="window" role="tabpanel" style="margin: 0;">
+        <div class="window-body">
 
-<h2><a id="ueber-mich"></a>Ueber mich</h2>
+          <!-- ====== ABOUT ME ====== -->
+          <fieldset id="ueber-mich">
+            <legend>Ueber mich</legend>
+            <div style="display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap;">
+              <div class="crt-wrapper">
+                <img
+                  src="/assets/images/portrait.webp"
+                  alt="Carsten Lebek"
+                  width="140"
+                  class="crt"
+                />
+              </div>
+              <div style="flex: 1; min-width: 200px;">
+                <p><strong>Carsten Lebek</strong></p>
+                <p>Webentwickler aus Wuppertal</p>
+                <p>Mein Interesse fuer Web Development hat 2016 angefangen, als ich meinen
+                ersten eigenen Onlineshop eroeffnet habe. Aus ein paar kleinen HTML- und
+                CSS-Anpassungen hat sich ueber die Zeit ein echtes Interesse entwickelt,
+                immer mehr zu lernen.</p>
+                <p>In meiner Selbststaendigkeit habe ich viele Projekte gestartet &mdash; von
+                Print on Demand T-Shirts, ueber Energydrinks fuer Gamer bis hin zu
+                3D-gedruckten Keksausstechformen. Am Ende hat alles zu dem gefuehrt, was ich
+                eigentlich schon die ganze Zeit machen wollte: digitale Erfahrungen und
+                Produkte erschaffen.</p>
+              </div>
+            </div>
+          </fieldset>
 
-<p>Mein Name ist Carsten und ich baue gerne Dinge, die im Internet leben.
-Mein Interesse fuer Web Development hat im Jahr 2016 angefangen, als ich meinen
-ersten eigenen Onlineshop eroeffnet habe. Aus ein paar kleinen HTML- und
-CSS-Anpassungen hat sich ueber die Zeit ein echtes Interesse entwickelt, immer
-mehr zu lernen.</p>
+          <br />
 
-<p>In meiner Selbststaendigkeit habe ich viele Projekte gestartet. Von Print on
-Demand T-Shirts, ueber Energydrinks fuer Gamer bis hin zu 3D-gedruckten
-Keksausstechformen war alles dabei.</p>
+          <!-- ====== PROJECTS ====== -->
+          <fieldset id="projekte">
+            <legend>Projekte</legend>
+            <p>Doppelklicken Sie auf ein Projekt, um die Webseite zu oeffnen:</p>
+            <div class="sunken-panel" style="width: 100%; height: 280px;">
+              <table class="interactive">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Typ</th>
+                    <th>Beschreibung</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="project-link" href="https://www.crazy-jump.de" target="_blank">Crazy JUMP Wuppertal</a></td>
+                    <td>Webseite</td>
+                    <td>Trampolinpark mit Sprung- und Bouncing-Attraktionen</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://www.altepapierfabrik.eu" target="_blank">Alte Papierfabrik</a></td>
+                    <td>Webseite</td>
+                    <td>Historische Event-Location in Wuppertal</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://kokoro-einstreu.de" target="_blank">KOKORO Einstreu</a></td>
+                    <td>Onlineshop</td>
+                    <td>Premium-Kokosfaser-Einstreu fuer Pferde</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://markflow.app" target="_blank">Markflow</a></td>
+                    <td>Chrome Extension</td>
+                    <td>Web-Elemente kopieren und exportieren</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://allkokos.de" target="_blank">Allkokos.de</a></td>
+                    <td>Onlineshop</td>
+                    <td>Kleintiereinstreu &mdash; komplettes Redesign</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://anmeldung.sport-park.de" target="_blank">Sport-Park</a></td>
+                    <td>Web App</td>
+                    <td>Onlineanmeldung mit Next.js, reverse-engineerte API</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://rscards.de" target="_blank">RSCards.de</a></td>
+                    <td>Onlineshop</td>
+                    <td>Personalisierte Autoquartettkarten, Shopify + Gatsby.js</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://apps.shopify.com/creator-code" target="_blank">CreatorHub</a></td>
+                    <td>Shopify App</td>
+                    <td>Influencer-Verwaltung fuer Shopbetreiber</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://deep-i18n.vercel.app/" target="_blank">deepi18n</a></td>
+                    <td>Web App</td>
+                    <td>Webseiten in bis zu 25 Sprachen uebersetzen (DeepL API)</td>
+                  </tr>
+                  <tr>
+                    <td><a class="project-link" href="https://apostowuppertal.de" target="_blank">Aposto Wuppertal</a></td>
+                    <td>Onlineshop</td>
+                    <td>Pizza und Pasta &mdash; Shopify-Alternative zu Lieferando</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </fieldset>
 
-<p>Am Ende hat alles zu dem gefuehrt, was ich eigentlich schon die ganze Zeit
-machen wollte: digitale Erfahrungen und Produkte erschaffen.</p>
+          <br />
 
-<hr />
+          <!-- ====== CERTIFICATES ====== -->
+          <fieldset id="zertifikate">
+            <legend>Zertifikate</legend>
+            <div class="cert-grid">
+              <div class="crt-wrapper">
+                <img src="/assets/images/fcc_js_aads_badge.webp" alt="FreeCodeCamp - JS Algorithms" class="crt" />
+              </div>
+              <div class="crt-wrapper">
+                <img src="/assets/images/fcc_fedl.webp" alt="FreeCodeCamp - Front End Dev" class="crt" />
+              </div>
+              <div class="crt-wrapper">
+                <img src="/assets/images/fcc_bedaa.webp" alt="FreeCodeCamp - Back End Dev" class="crt" />
+              </div>
+              <div class="crt-wrapper">
+                <img src="/assets/images/sh_ad.webp" alt="Shopify - App Development" class="crt" />
+              </div>
+              <div class="crt-wrapper">
+                <img src="/assets/images/sh_bf.webp" alt="Shopify - Business Fundamentals" class="crt" />
+              </div>
+              <div class="crt-wrapper">
+                <img src="/assets/images/sh_pf.webp" alt="Shopify - Product Fundamentals" class="crt" />
+              </div>
+              <div class="crt-wrapper" style="width: 240px;">
+                <img src="/assets/images/certificate_webdesign_21142.webp" alt="OfG - Webdesign" class="crt" />
+              </div>
+            </div>
+          </fieldset>
 
-<h2><a id="projekte"></a>Projekte</h2>
+          <br />
 
-<dl>
-<dt><a href="https://www.crazy-jump.de">Crazy JUMP Wuppertal</a>
-<dd>Trampolinpark in Wuppertal. Webseite mit Informationen zu Preisen, Angeboten
-fuer Kindergeburtstage, Schulklassen und Sportvereine.
+          <!-- ====== LINKS ====== -->
+          <fieldset id="links">
+            <legend>Links</legend>
+            <ul class="tree-view">
+              <li>
+                <details open>
+                  <summary>Carsten Lebek</summary>
+                  <ul>
+                    <li><a href="https://github.com/carstenlebek" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/carsten-lebek-634899229/" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:carsten.lebek@gmail.com">E-Mail senden</a></li>
+                    <li><a href="/impressum">Impressum</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </fieldset>
 
-<dt><a href="https://www.altepapierfabrik.eu">Alte Papierfabrik Wuppertal</a>
-<dd>Historische Event-Location mit industriellem Charme mitten in Wuppertal.
+        </div>
+      </div>
+    </div>
 
-<dt><a href="https://kokoro-einstreu.de">KOKORO Einstreu</a>
-<dd>Onlineshop fuer Premium-Kokosfaser-Einstreu fuer Pferde. Hochabsorbierend,
-staubfrei und kompostierbar.
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <p class="status-bar-field">Bereit</p>
+      <p class="status-bar-field">Projekte: 10</p>
+      <p class="status-bar-field">Wuppertal, DE</p>
+    </div>
+  </div>
 
-<dt><a href="https://markflow.app">Markflow</a>
-<dd>Chrome Extension fuer Entwickler und Designer. Web-Elemente kopieren und
-nach Figma, React, Webflow, Svelte oder HTML exportieren.
+</div>
 
-<dt><a href="https://allkokos.de">Allkokos.de</a>
-<dd>Onlineshop fuer Kleintiereinstreu. Komplettes Redesign des bestehenden Shops.
-
-<dt><a href="https://anmeldung.sport-park.de">Sport-Park Onlineanmeldung</a>
-<dd>Neuaufbau der Onlineanmeldung mit Next.js. Die Centercom-API wurde
-reverse-engineered fuer schnellere Ladezeiten und ein einheitliches UI.
-
-<dt><a href="https://rscards.de">RSCards.de</a>
-<dd>Onlineshop fuer personalisierte Autoquartettkarten im XXL-Format. Shopify
-als headless CMS, Storefront mit Gatsby.js.
-
-<dt><a href="https://apps.shopify.com/creator-code">CreatorHub</a>
-<dd>Shopify App zur Verwaltung von Influencern. Bringt Influencer Marketing ins
-Frontend und verbessert die Customer Experience.
-
-<dt><a href="https://deep-i18n.vercel.app/">deepi18n</a>
-<dd>Web App zur Uebersetzung von Webseiten und Apps in bis zu 25 Sprachen
-mithilfe der DeepL API.
-
-<dt><a href="https://apostowuppertal.de">Aposto Wuppertal</a>
-<dd>Shopify-basierter Onlineshop fuer Pizza und Pasta. Als Alternative zu
-Lieferando erstellt.
-</dl>
-
-<hr />
-
-<h2><a id="zertifikate"></a>Zertifikate</h2>
-
-<ul>
-<li>FreeCodeCamp - JavaScript Algorithms and Data Structures
-<li>FreeCodeCamp - Front End Development Libraries
-<li>FreeCodeCamp - Back End Development and APIs
-<li>Shopify - App Development
-<li>Shopify - Business Fundamentals
-<li>Shopify - Product Fundamentals
-<li>OfG - Webdesign (Zertifikat Nr. 21142)
-</ul>
-
-<hr />
-
-<h2>Links</h2>
-
-<ul>
-<li><a href="https://github.com/carstenlebek">GitHub</a>
-<li><a href="https://www.linkedin.com/in/carsten-lebek-634899229/">LinkedIn</a>
-<li><a href="mailto:carsten.lebek@gmail.com">E-Mail</a>
-</ul>
-
-<hr />
-
-<address>
-Carsten Lebek, Wuppertal<br />
-<a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a> |
-<a href="/impressum">Impressum</a>
-</address>
+<!-- ====== TASKBAR ====== -->
+<div class="taskbar">
+  <div class="window" style="width: 100%;">
+    <div class="window-body" style="margin: 0; padding: 2px 4px; display: flex; align-items: center; gap: 4px;">
+      <button style="font-weight: bold; padding: 2px 6px; min-width: 54px;">Start</button>
+      <div style="border: none; background: none; flex: 1; display: flex; gap: 2px;">
+        <button style="text-align: left; flex: 0 1 auto; padding: 2px 6px; font-weight: bold;">
+          carsten_lebek.exe
+        </button>
+      </div>
+      <div class="status-bar-field" style="padding: 2px 8px; font-size: 11px;">
+        14:03
+      </div>
+    </div>
+  </div>
+</div>
 
 </Layout>

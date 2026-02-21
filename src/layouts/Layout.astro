@@ -7,10 +7,14 @@ export interface Props {
 const { title, description } = Astro.props as Props;
 ---
 
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/98.css" />
   <title>{title}</title>
   <meta name="description" content={description} />
 </head>
@@ -20,3 +24,117 @@ const { title, description } = Astro.props as Props;
 </body>
 
 </html>
+
+<style is:global>
+  body {
+    background-color: #008080;
+    margin: 0;
+    padding: 16px;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+  }
+
+  .desktop {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .window {
+    margin-bottom: 12px;
+  }
+
+  .window-body {
+    padding: 8px;
+  }
+
+  .window-body p {
+    margin: 4px 0;
+  }
+
+  .crt {
+    image-rendering: pixelated;
+    filter:
+      contrast(1.1)
+      brightness(0.95)
+      saturate(1.3);
+    position: relative;
+    border: 3px ridge;
+  }
+
+  .crt-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .crt-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+  }
+
+  .project-link {
+    display: block;
+    padding: 2px 4px;
+  }
+
+  .project-link:hover {
+    background-color: #000080;
+    color: #ffffff;
+  }
+
+  .sunken-panel {
+    overflow: auto;
+  }
+
+  .cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .cert-grid .crt-wrapper {
+    width: 180px;
+  }
+
+  .cert-grid .crt {
+    width: 100%;
+    height: auto;
+  }
+
+  .taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .taskbar .window {
+    margin: 0;
+  }
+
+  .taskbar .title-bar {
+    display: none;
+  }
+
+  a {
+    color: #0000ff;
+  }
+
+  a:visited {
+    color: #800080;
+  }
+</style>
