@@ -21,7 +21,6 @@ import {
   GroupBox,
   Frame,
   Separator,
-  Counter,
   MenuList,
   MenuListItem,
 } from "react95";
@@ -105,15 +104,22 @@ const certificates = [
   { name: "OfG – Webdesign (Nr. 21142)", img: "/assets/images/certificate_webdesign_21142.webp" },
 ];
 
+const linkUrls = {
+  github: "https://github.com/carstenlebek",
+  linkedin: "https://www.linkedin.com/in/carsten-lebek-634899229/",
+  email: "mailto:carsten.lebek@gmail.com",
+  impressum: "/impressum",
+};
+
 const treeData = [
   {
     id: "links",
     label: "Carsten Lebek",
-    children: [
-      { id: "github", label: "GitHub", url: "https://github.com/carstenlebek" },
-      { id: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/carsten-lebek-634899229/" },
-      { id: "email", label: "E-Mail senden", url: "mailto:carsten.lebek@gmail.com" },
-      { id: "impressum", label: "Impressum", url: "/impressum" },
+    items: [
+      { id: "github", label: "GitHub" },
+      { id: "linkedin", label: "LinkedIn" },
+      { id: "email", label: "E-Mail senden" },
+      { id: "impressum", label: "Impressum" },
     ],
   },
 ];
@@ -132,7 +138,6 @@ function useClickOutside(ref, handler) {
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
-  const [showCounter, setShowCounter] = useState(true);
   const [startOpen, setStartOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [clock, setClock] = useState(
@@ -231,20 +236,17 @@ export default function Portfolio() {
                       </div>
                       <div style={{ flex: 1, minWidth: 200 }}>
                         <p style={{ marginTop: 0 }}><strong>Carsten Lebek</strong></p>
-                        <p>Webentwickler aus Wuppertal</p>
+                        <p>Fullstack-Entwickler, Wuppertal</p>
                         <Separator />
                         <p>
-                          Mein Interesse fuer Web Development hat 2016 angefangen, als ich meinen
-                          ersten eigenen Onlineshop eroeffnet habe. Aus ein paar kleinen HTML- und
-                          CSS-Anpassungen hat sich ueber die Zeit ein echtes Interesse entwickelt,
-                          immer mehr zu lernen.
+                          Ich baue Webanwendungen und Onlineshops. Angefangen habe ich 2016
+                          mit E-Commerce — erst als Shopbetreiber, dann zunehmend auf der
+                          technischen Seite. Heute arbeite ich hauptsaechlich mit React,
+                          Next.js, TypeScript und Shopify.
                         </p>
                         <p>
-                          In meiner Selbststaendigkeit habe ich viele Projekte gestartet — von
-                          Print on Demand T-Shirts, ueber Energydrinks fuer Gamer bis hin zu
-                          3D-gedruckten Keksausstechformen. Am Ende hat alles zu dem gefuehrt, was
-                          ich eigentlich schon die ganze Zeit machen wollte: digitale Erfahrungen
-                          und Produkte erschaffen.
+                          Schwerpunkte: Headless Commerce, individuelle Shopify-Apps,
+                          Fullstack-Webentwicklung und API-Integrationen.
                         </p>
                       </div>
                     </div>
@@ -335,12 +337,14 @@ export default function Portfolio() {
                   <GroupBox label="Links">
                     <TreeView
                       tree={treeData}
-                      onNodeSelect={(node) => {
-                        if (node.url) {
-                          if (node.url.startsWith("mailto:") || node.url.startsWith("/")) {
-                            window.location.href = node.url;
+                      defaultExpanded={["links"]}
+                      onNodeSelect={(e, id) => {
+                        const url = linkUrls[id];
+                        if (url) {
+                          if (url.startsWith("mailto:") || url.startsWith("/")) {
+                            window.location.href = url;
                           } else {
-                            window.open(node.url, "_blank");
+                            window.open(url, "_blank");
                           }
                         }
                       }}
@@ -352,21 +356,6 @@ export default function Portfolio() {
           </WindowContent>
         </Window>
 
-        {/* Visitor Counter Window */}
-        {showCounter && (
-          <Window style={{ width: 260, margin: "0 auto", marginTop: 12 }}>
-            <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span>besucher.exe</span>
-              <Button size="sm" square onClick={() => setShowCounter(false)}>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>×</span>
-              </Button>
-            </WindowHeader>
-            <WindowContent style={{ textAlign: "center" }}>
-              <p style={{ fontSize: 12, marginTop: 0 }}>Besucher seit 01.01.1995:</p>
-              <Counter value={8341} minLength={6} />
-            </WindowContent>
-          </Window>
-        )}
       </div>
 
       {/* Taskbar */}
@@ -427,13 +416,6 @@ export default function Portfolio() {
             >
               impressum.txt
             </Button>
-            {!showCounter && (
-              <Button
-                onClick={() => setShowCounter(true)}
-              >
-                besucher.exe
-              </Button>
-            )}
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Frame variant="well" style={{ padding: "2px 8px", fontSize: 12 }}>
