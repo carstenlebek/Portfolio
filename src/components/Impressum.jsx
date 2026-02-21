@@ -80,6 +80,14 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
+  a {
+    color: #0000ff;
+  }
+
+  a:visited {
+    color: #800080;
+  }
+
   @media (max-width: 600px) {
     .desktop-pad {
       padding: 4px !important;

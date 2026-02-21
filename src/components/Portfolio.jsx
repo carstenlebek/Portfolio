@@ -55,6 +55,43 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
+  a {
+    color: #0000ff;
+  }
+
+  a:visited {
+    color: #800080;
+  }
+
+  .bsod {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #0000aa;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .bsod-inner {
+    max-width: 600px;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .bsod-title {
+    background: #aaaaaa;
+    color: #0000aa;
+    padding: 2px 8px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
   .crt-img {
     image-rendering: pixelated;
     filter: contrast(1.1) brightness(0.92) saturate(1.4);
@@ -165,6 +202,7 @@ export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [startOpen, setStartOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [bsod, setBsod] = useState(false);
   const [clock, setClock] = useState(
     new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })
   );
@@ -182,6 +220,25 @@ export default function Portfolio() {
   return (
     <ThemeProvider theme={original}>
       <GlobalStyles />
+
+      {/* BSOD Easter Egg */}
+      {bsod && (
+        <div className="bsod" onClick={() => setBsod(false)}>
+          <div className="bsod-inner">
+            <span className="bsod-title">Windows</span>
+            <br /><br />
+            Ein schwerwiegender Ausnahmefehler ist in PORTFOLIO.EXE aufgetreten.
+            Die aktuelle Anwendung wird beendet.
+            <br /><br />
+            * Druecken Sie eine beliebige Taste, um die Anwendung zu beenden.
+            <br />
+            * Druecken Sie STRG+ALT+ENTF, um den Computer neu zu starten.
+            Alle nicht gespeicherten Daten gehen dabei verloren.
+            <br /><br />
+            Druecken Sie eine beliebige Taste, um fortzufahren _
+          </div>
+        </div>
+      )}
 
       <div className="desktop-pad" style={{ padding: 16, paddingBottom: 48, maxWidth: 820, margin: "0 auto" }}>
         {/* About Dialog */}
@@ -251,16 +308,17 @@ export default function Portfolio() {
                         <p>Senior Fullstack-Entwickler, Wuppertal</p>
                         <Separator />
                         <p>
-                          Bin 2016 ueber meinen ersten Onlineshop zum Programmieren gekommen.
-                          Erst ein paar CSS-Anpassungen, dann eigene Themes, dann ganze
-                          Shopify-Apps. Nebenbei alles Moegliche ausprobiert — Print on Demand,
-                          Energydrinks fuer Gamer, 3D-gedruckte Keksausstechformen. Hat alles
-                          nicht geklappt, aber dabei gelernt wie man Produkte baut.
+                          2016 mit E-Commerce gestartet — eigene Onlineshops aufgebaut
+                          und dabei schrittweise vom Shopbetreiber zum Entwickler geworden.
+                          Ueber die Jahre verschiedene Projekte umgesetzt: Print on Demand,
+                          Shopify-Themes, Chrome Extensions, eigene Shopify-Apps und
+                          diverse Kundenauftraege im E-Commerce-Bereich.
                         </p>
                         <p>
-                          Heute Senior Fullstack-Entwickler bei <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a> — einer
-                          Loyalty-Plattform fuer E-Commerce (Shopify Plus Partner, 400+ Kunden).
-                          Stack: React, Next.js, TypeScript, Shopify.
+                          Aktuell Senior Fullstack-Entwickler bei{" "}
+                          <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a>,
+                          einer Loyalty-Plattform fuer E-Commerce mit 400+ Kunden
+                          (Shopify Plus Partner). Stack: React, Next.js, TypeScript, Shopify.
                         </p>
                       </div>
                     </div>
@@ -406,6 +464,17 @@ export default function Portfolio() {
                 </MenuListItem>
                 <MenuListItem onClick={() => { setActiveTab(3); setStartOpen(false); window.scrollTo(0, 0); }}>
                   Links
+                </MenuListItem>
+                <Separator />
+                <MenuListItem onClick={() => { window.location.href = "/impressum"; setStartOpen(false); }}>
+                  Impressum
+                </MenuListItem>
+                <MenuListItem onClick={() => { setAboutOpen(true); setStartOpen(false); }}>
+                  Hilfe
+                </MenuListItem>
+                <Separator />
+                <MenuListItem onClick={() => { setBsod(true); setStartOpen(false); }}>
+                  Herunterfahren...
                 </MenuListItem>
               </MenuList>
             )}
