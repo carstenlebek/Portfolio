@@ -260,14 +260,14 @@ export default function Portfolio() {
                         <p>Fullstack-Entwickler, Wuppertal</p>
                         <Separator />
                         <p>
-                          Ich baue Webanwendungen und Onlineshops. Angefangen habe ich 2016
-                          mit E-Commerce — erst als Shopbetreiber, dann zunehmend auf der
-                          technischen Seite. Heute arbeite ich hauptsaechlich mit React,
-                          Next.js, TypeScript und Shopify.
+                          Fullstack-Entwickler bei <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a> — einer
+                          Loyalty-Plattform fuer E-Commerce, die Shopbetreibern Kundenbindung
+                          ueber echtes Shopguthaben, VIP-Stufen, Bewertungs-Rewards und
+                          Empfehlungsprogramme ermoeglicht. Shopify Plus Partner mit 400+ Kunden.
                         </p>
                         <p>
-                          Schwerpunkte: Headless Commerce, individuelle Shopify-Apps,
-                          Fullstack-Webentwicklung und API-Integrationen.
+                          Stack: React, Next.js, TypeScript, Shopify.
+                          Schwerpunkte: Headless Commerce, Shopify-Apps, API-Integrationen.
                         </p>
                       </div>
                     </div>
