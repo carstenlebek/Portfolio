@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import {
   styleReset,
@@ -12,6 +12,8 @@ import {
   Separator,
   Anchor,
   Frame,
+  MenuList,
+  MenuListItem,
 } from "react95";
 import original from "react95/dist/themes/original";
 
@@ -41,41 +43,54 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
+function useClickOutside(ref, handler) {
+  useEffect(() => {
+    const listener = (e) => {
+      if (!ref.current || ref.current.contains(e.target)) return;
+      handler();
+    };
+    document.addEventListener("mousedown", listener);
+    return () => document.removeEventListener("mousedown", listener);
+  }, [ref, handler]);
+}
+
 export default function Impressum() {
+  const [startOpen, setStartOpen] = useState(false);
+  const [clock, setClock] = useState(
+    new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })
+  );
+
+  const startRef = useRef(null);
+  useClickOutside(startRef, () => setStartOpen(false));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setClock(new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }));
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <ThemeProvider theme={original}>
       <GlobalStyles />
 
       <div style={{ padding: "16px", paddingBottom: "48px", maxWidth: 620, margin: "0 auto" }}>
         <Window style={{ width: "100%" }}>
-          <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <WindowHeader>
             <span>impressum.txt – Editor</span>
-            <div style={{ display: "flex", gap: "2px" }}>
-              <Button size="sm" square>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>_</span>
-              </Button>
-              <Button size="sm" square>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>□</span>
-              </Button>
-              <Button size="sm" square>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>×</span>
-              </Button>
-            </div>
           </WindowHeader>
 
           <Toolbar>
-            <Button variant="menu" size="sm">Datei</Button>
-            <Button variant="menu" size="sm">Bearbeiten</Button>
-            <Button variant="menu" size="sm">Hilfe</Button>
+            <Button variant="menu" size="sm" onClick={() => window.location.href = "/"}>
+              Zurueck
+            </Button>
+            <Separator orientation="vertical" size="22px" />
+            <Button variant="menu" size="sm" onClick={() => window.location.href = "mailto:carsten.lebek@gmail.com"}>
+              E-Mail
+            </Button>
           </Toolbar>
 
           <WindowContent>
-            <div style={{ marginBottom: 12 }}>
-              <Button onClick={() => window.location.href = "/"}>
-                ← Zurueck zur Startseite
-              </Button>
-            </div>
-
             <GroupBox label="Angaben gemaess § 5 TMG">
               <p style={{ margin: "4px 0" }}>Carsten Lebek</p>
               <p style={{ margin: "4px 0" }}>Loehrerlen 19G</p>
@@ -119,16 +134,53 @@ export default function Impressum() {
 
       <AppBar style={{ position: "fixed", bottom: 0, top: "auto", left: 0, right: 0, zIndex: 100 }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-            <Button style={{ fontWeight: "bold" }}>Start</Button>
+          <div style={{ display: "flex", gap: 4, alignItems: "center", position: "relative" }} ref={startRef}>
+            {startOpen && (
+              <MenuList
+                style={{
+                  position: "absolute",
+                  bottom: "100%",
+                  left: 0,
+                  marginBottom: 4,
+                  width: 200,
+                  zIndex: 200,
+                }}
+              >
+                <MenuListItem onClick={() => { window.location.href = "/"; setStartOpen(false); }}>
+                  Portfolio
+                </MenuListItem>
+                <Separator />
+                <MenuListItem onClick={() => { window.location.href = "mailto:carsten.lebek@gmail.com"; setStartOpen(false); }}>
+                  E-Mail senden
+                </MenuListItem>
+                <MenuListItem onClick={() => { window.open("https://github.com/carstenlebek", "_blank"); setStartOpen(false); }}>
+                  GitHub
+                </MenuListItem>
+                <MenuListItem onClick={() => { window.open("https://www.linkedin.com/in/carsten-lebek-634899229/", "_blank"); setStartOpen(false); }}>
+                  LinkedIn
+                </MenuListItem>
+              </MenuList>
+            )}
+
+            <Button
+              style={{ fontWeight: "bold" }}
+              active={startOpen}
+              onClick={() => setStartOpen(!startOpen)}
+            >
+              Start
+            </Button>
             <Separator orientation="vertical" size="35px" />
-            <Button active style={{ fontWeight: "bold" }}>
+            <Button
+              active
+              style={{ fontWeight: "bold" }}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               impressum.txt
             </Button>
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Frame variant="well" style={{ padding: "2px 8px", fontSize: 12 }}>
-              {new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })}
+              {clock}
             </Frame>
           </div>
         </Toolbar>

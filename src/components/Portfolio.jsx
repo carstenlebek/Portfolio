@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import {
   styleReset,
@@ -21,10 +21,9 @@ import {
   GroupBox,
   Frame,
   Separator,
-  Anchor,
-  Panel,
   Counter,
-  ScrollView,
+  MenuList,
+  MenuListItem,
 } from "react95";
 import original from "react95/dist/themes/original";
 
@@ -119,37 +118,93 @@ const treeData = [
   },
 ];
 
+function useClickOutside(ref, handler) {
+  useEffect(() => {
+    const listener = (e) => {
+      if (!ref.current || ref.current.contains(e.target)) return;
+      handler();
+    };
+    document.addEventListener("mousedown", listener);
+    return () => document.removeEventListener("mousedown", listener);
+  }, [ref, handler]);
+}
+
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showCounter, setShowCounter] = useState(true);
+  const [startOpen, setStartOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [clock, setClock] = useState(
+    new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })
+  );
+
+  const startRef = useRef(null);
+  useClickOutside(startRef, () => setStartOpen(false));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setClock(new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" }));
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <ThemeProvider theme={original}>
       <GlobalStyles />
 
       <div style={{ padding: "16px", paddingBottom: "48px", maxWidth: 820, margin: "0 auto" }}>
+        {/* About Dialog */}
+        {aboutOpen && (
+          <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 200, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.3)" }} onClick={() => setAboutOpen(false)}>
+            <Window style={{ width: 340 }} onClick={(e) => e.stopPropagation()}>
+              <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span>Ueber portfolio.exe</span>
+                <Button size="sm" square onClick={() => setAboutOpen(false)}>
+                  <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>×</span>
+                </Button>
+              </WindowHeader>
+              <WindowContent>
+                <div style={{ textAlign: "center" }}>
+                  <p style={{ fontSize: 16, fontWeight: "bold" }}>portfolio.exe</p>
+                  <p>Version 95.0</p>
+                  <Separator style={{ margin: "8px 0" }} />
+                  <p>Erstellt von Carsten Lebek</p>
+                  <p>Webentwickler aus Wuppertal</p>
+                  <p style={{ fontSize: 11, color: "#808080", marginTop: 8 }}>
+                    Gebaut mit React95 + Astro
+                  </p>
+                  <Separator style={{ margin: "8px 0" }} />
+                  <Button onClick={() => setAboutOpen(false)}>OK</Button>
+                </div>
+              </WindowContent>
+            </Window>
+          </div>
+        )}
+
         {/* Main Window */}
         <Window style={{ width: "100%" }}>
-          <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <WindowHeader>
             <span>portfolio.exe</span>
-            <div style={{ display: "flex", gap: "2px" }}>
-              <Button size="sm" square>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>_</span>
-              </Button>
-              <Button size="sm" square>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>□</span>
-              </Button>
-              <Button size="sm" square>
-                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>×</span>
-              </Button>
-            </div>
           </WindowHeader>
 
           <Toolbar>
-            <Button variant="menu" size="sm">Datei</Button>
-            <Button variant="menu" size="sm">Bearbeiten</Button>
-            <Button variant="menu" size="sm">Ansicht</Button>
-            <Button variant="menu" size="sm">Hilfe</Button>
+            <Button variant="menu" size="sm" onClick={() => window.location.href = "mailto:carsten.lebek@gmail.com"}>
+              E-Mail
+            </Button>
+            <Button variant="menu" size="sm" onClick={() => window.open("https://github.com/carstenlebek", "_blank")}>
+              GitHub
+            </Button>
+            <Button variant="menu" size="sm" onClick={() => window.open("https://www.linkedin.com/in/carsten-lebek-634899229/", "_blank")}>
+              LinkedIn
+            </Button>
+            <Button variant="menu" size="sm" onClick={() => window.location.href = "/impressum"}>
+              Impressum
+            </Button>
+            <Separator orientation="vertical" size="22px" />
+            <Button variant="menu" size="sm" onClick={() => setAboutOpen(true)}>
+              Hilfe
+            </Button>
           </Toolbar>
 
           <WindowContent>
@@ -298,33 +353,86 @@ export default function Portfolio() {
         </Window>
 
         {/* Visitor Counter Window */}
-        <Window style={{ width: 260, margin: "0 auto", marginTop: 12 }}>
-          <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span>besucher.exe</span>
-            <Button size="sm" square>
-              <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>×</span>
-            </Button>
-          </WindowHeader>
-          <WindowContent style={{ textAlign: "center" }}>
-            <p style={{ fontSize: 12, marginTop: 0 }}>Besucher seit 01.01.1995:</p>
-            <Counter value={8341} minLength={6} />
-          </WindowContent>
-        </Window>
+        {showCounter && (
+          <Window style={{ width: 260, margin: "0 auto", marginTop: 12 }}>
+            <WindowHeader style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <span>besucher.exe</span>
+              <Button size="sm" square onClick={() => setShowCounter(false)}>
+                <span style={{ fontWeight: "bold", transform: "translateY(-1px)", display: "inline-block" }}>×</span>
+              </Button>
+            </WindowHeader>
+            <WindowContent style={{ textAlign: "center" }}>
+              <p style={{ fontSize: 12, marginTop: 0 }}>Besucher seit 01.01.1995:</p>
+              <Counter value={8341} minLength={6} />
+            </WindowContent>
+          </Window>
+        )}
       </div>
 
       {/* Taskbar */}
       <AppBar style={{ position: "fixed", bottom: 0, top: "auto", left: 0, right: 0, zIndex: 100 }}>
         <Toolbar style={{ justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-            <Button style={{ fontWeight: "bold" }}>Start</Button>
+          <div style={{ display: "flex", gap: 4, alignItems: "center", position: "relative" }} ref={startRef}>
+            {/* Start Menu */}
+            {startOpen && (
+              <MenuList
+                style={{
+                  position: "absolute",
+                  bottom: "100%",
+                  left: 0,
+                  marginBottom: 4,
+                  width: 200,
+                  zIndex: 200,
+                }}
+              >
+                <MenuListItem onClick={() => { setActiveTab(0); setStartOpen(false); window.scrollTo(0, 0); }}>
+                  Ueber mich
+                </MenuListItem>
+                <MenuListItem onClick={() => { setActiveTab(1); setStartOpen(false); window.scrollTo(0, 0); }}>
+                  Projekte
+                </MenuListItem>
+                <MenuListItem onClick={() => { setActiveTab(2); setStartOpen(false); window.scrollTo(0, 0); }}>
+                  Zertifikate
+                </MenuListItem>
+                <MenuListItem onClick={() => { setActiveTab(3); setStartOpen(false); window.scrollTo(0, 0); }}>
+                  Links
+                </MenuListItem>
+                <Separator />
+                <MenuListItem onClick={() => { window.location.href = "mailto:carsten.lebek@gmail.com"; setStartOpen(false); }}>
+                  E-Mail senden
+                </MenuListItem>
+                <MenuListItem onClick={() => { window.location.href = "/impressum"; setStartOpen(false); }}>
+                  Impressum
+                </MenuListItem>
+              </MenuList>
+            )}
+
+            <Button
+              style={{ fontWeight: "bold" }}
+              active={startOpen}
+              onClick={() => setStartOpen(!startOpen)}
+            >
+              Start
+            </Button>
             <Separator orientation="vertical" size="35px" />
-            <Button active style={{ fontWeight: "bold" }}>
+            <Button
+              active
+              style={{ fontWeight: "bold" }}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               portfolio.exe
             </Button>
+            {!showCounter && (
+              <Button
+                onClick={() => setShowCounter(true)}
+              >
+                besucher.exe
+              </Button>
+            )}
           </div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Frame variant="well" style={{ padding: "2px 8px", fontSize: 12 }}>
-              {new Date().toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })}
+              {clock}
             </Frame>
           </div>
         </Toolbar>
