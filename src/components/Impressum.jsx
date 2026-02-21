@@ -68,6 +68,10 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
+  html, body {
+    overscroll-behavior: none;
+  }
+
   body {
     font-family: 'ms_sans_serif', Arial, sans-serif;
     background-color: #008080;

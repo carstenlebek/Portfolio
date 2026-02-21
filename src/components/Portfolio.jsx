@@ -43,6 +43,10 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
+  html, body {
+    overscroll-behavior: none;
+  }
+
   body {
     font-family: 'ms_sans_serif', Arial, sans-serif;
     background-color: #008080;
@@ -214,20 +218,7 @@ export default function Portfolio() {
             <span>portfolio.exe</span>
           </WindowHeader>
 
-          <Toolbar className="toolbar-scroll" style={{ display: "flex", flexWrap: "nowrap" }}>
-            <Button variant="menu" size="sm" onClick={() => window.location.href = "mailto:carsten.lebek@gmail.com"}>
-              E-Mail
-            </Button>
-            <Button variant="menu" size="sm" onClick={() => window.open("https://github.com/carstenlebek", "_blank")}>
-              GitHub
-            </Button>
-            <Button variant="menu" size="sm" onClick={() => window.open("https://www.linkedin.com/in/carsten-lebek-634899229/", "_blank")}>
-              LinkedIn
-            </Button>
-            <Button variant="menu" size="sm" onClick={() => window.location.href = "/impressum"}>
-              Impressum
-            </Button>
-            <Separator orientation="vertical" size="22px" />
+          <Toolbar>
             <Button variant="menu" size="sm" onClick={() => setAboutOpen(true)}>
               Hilfe
             </Button>
@@ -257,10 +248,10 @@ export default function Portfolio() {
                       </div>
                       <div style={{ flex: 1, minWidth: 160 }}>
                         <p style={{ marginTop: 0 }}><strong>Carsten Lebek</strong></p>
-                        <p>Fullstack-Entwickler, Wuppertal</p>
+                        <p>Senior Fullstack-Entwickler, Wuppertal</p>
                         <Separator />
                         <p>
-                          Fullstack-Entwickler bei <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a> — einer
+                          Senior Fullstack-Entwickler bei <a href="https://memberr.de" target="_blank" rel="noopener">memberr</a> — einer
                           Loyalty-Plattform fuer E-Commerce, die Shopbetreibern Kundenbindung
                           ueber echtes Shopguthaben, VIP-Stufen, Bewertungs-Rewards und
                           Empfehlungsprogramme ermoeglicht. Shopify Plus Partner mit 400+ Kunden.
@@ -413,13 +404,6 @@ export default function Portfolio() {
                 </MenuListItem>
                 <MenuListItem onClick={() => { setActiveTab(3); setStartOpen(false); window.scrollTo(0, 0); }}>
                   Links
-                </MenuListItem>
-                <Separator />
-                <MenuListItem onClick={() => { window.location.href = "mailto:carsten.lebek@gmail.com"; setStartOpen(false); }}>
-                  E-Mail senden
-                </MenuListItem>
-                <MenuListItem onClick={() => { window.location.href = "/impressum"; setStartOpen(false); }}>
-                  Impressum
                 </MenuListItem>
               </MenuList>
             )}
