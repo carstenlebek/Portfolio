@@ -1,8 +1,103 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Portfolio from '../components/Portfolio.jsx';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Carsten Lebek - Webentwickler" description="Portfolio von Carsten Lebek, Webentwickler aus Wuppertal.">
-  <Portfolio client:only="react" />
+<Layout
+  title="Carsten Lebek — Webentwickler"
+  description="Carsten Lebek, Senior Fullstack-Entwickler aus Wuppertal."
+>
+  <h1>Carsten Lebek</h1>
+  <p class="role">Senior Fullstack-Entwickler aus Wuppertal</p>
+
+  <p>
+    Hey! Ich baue gerne Dinge, die im Internet leben. Angefangen hat das 2016,
+    als ich meinen ersten eigenen Onlineshop eröffnet habe. Aus ein paar kleinen
+    HTML- und CSS-Anpassungen wurde mit der Zeit ein echtes Interesse, immer mehr
+    zu lernen.
+  </p>
+  <p>
+    In meiner Selbstständigkeit habe ich viele Projekte gestartet — von
+    Print-on-Demand-T-Shirts über Energydrinks für Gamer bis hin zu
+    3D-gedruckten Keksausstechformen war alles dabei. Bei jedem dieser Projekte
+    habe ich viel gelernt: Warenbeschaffung, Online-Marketing,
+    Unternehmensgründung.
+  </p>
+  <p>
+    Heute bin ich Senior Fullstack-Entwickler bei
+    <a href="https://memberr.de" rel="noopener">memberr</a>, einer
+    Loyalty-Plattform für E-Commerce mit über 400 Kunden und Shopify-Plus-Partner.
+    Mein Stack: React, Next.js, TypeScript und Shopify.
+  </p>
+
+  <hr />
+
+  <h2>Projekte</h2>
+  <ul>
+    <li>
+      <a href="https://www.crazy-jump.de" rel="noopener">Crazy JUMP Wuppertal</a>
+      — Webseite für einen Trampolinpark mit Sprung- und Bouncing-Attraktionen.
+    </li>
+    <li>
+      <a href="https://www.altepapierfabrik.eu" rel="noopener">Alte Papierfabrik</a>
+      — Webseite für eine historische Event-Location in Wuppertal.
+    </li>
+    <li>
+      <a href="https://kokoro-einstreu.de" rel="noopener">KOKORO Einstreu</a>
+      — Onlineshop für Premium-Kokosfaser-Einstreu für Pferde.
+    </li>
+    <li>
+      <a href="https://markflow.app" rel="noopener">Markflow</a>
+      — Chrome-Extension zum Kopieren und Exportieren von Web-Elementen.
+    </li>
+    <li>
+      <a href="https://allkokos.de" rel="noopener">Allkokos.de</a>
+      — Onlineshop für Kleintiereinstreu (komplettes Redesign).
+    </li>
+    <li>
+      <a href="https://anmeldung.sport-park.de" rel="noopener">Sport-Park</a>
+      — Web-App zur Onlineanmeldung, gebaut mit Next.js.
+    </li>
+    <li>
+      <a href="https://rscards.de" rel="noopener">RSCards.de</a>
+      — Onlineshop für Autoquartettkarten (Shopify + Gatsby.js).
+    </li>
+    <li>
+      <a href="https://apps.shopify.com/creator-code" rel="noopener">CreatorHub</a>
+      — Shopify-App zur Influencer-Verwaltung für Shopbetreiber.
+    </li>
+    <li>
+      <a href="https://deep-i18n.vercel.app/" rel="noopener">deepi18n</a>
+      — Web-App, die Webseiten in 25 Sprachen übersetzt.
+    </li>
+    <li>
+      <a href="https://apostowuppertal.de" rel="noopener">Aposto Wuppertal</a>
+      — Onlineshop für Pizza und Pasta als Alternative zu Lieferando.
+    </li>
+  </ul>
+
+  <h2>Zertifikate</h2>
+  <ul>
+    <li>freeCodeCamp — JavaScript Algorithms and Data Structures</li>
+    <li>freeCodeCamp — Front End Development Libraries</li>
+    <li>freeCodeCamp — Back End Development and APIs</li>
+    <li>Shopify — App Development</li>
+    <li>Shopify — Business Fundamentals</li>
+    <li>Shopify — Product Fundamentals</li>
+    <li>Online-Schule für Gestaltung (OfG) — Webdesign (Nr. 21142)</li>
+  </ul>
+
+  <h2>Kontakt</h2>
+  <ul>
+    <li><a href="https://github.com/carstenlebek" rel="noopener">GitHub</a></li>
+    <li>
+      <a href="https://www.linkedin.com/in/carsten-lebek-634899229/" rel="noopener"
+        >LinkedIn</a
+      >
+    </li>
+    <li><a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a></li>
+  </ul>
+
+  <footer>
+    <a href="/impressum">Impressum</a>
+  </footer>
 </Layout>

@@ -1,8 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Impressum from '../components/Impressum.jsx';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Impressum - Carsten Lebek" description="Impressum von Carsten Lebek.">
-  <Impressum client:only="react" />
+<Layout title="Impressum — Carsten Lebek" description="Impressum von Carsten Lebek.">
+  <h1>Impressum</h1>
+
+  <h2>Angaben gemäß § 5 TMG</h2>
+  <p>
+    Carsten Lebek<br />
+    Löhrerlen 19G<br />
+    42279 Wuppertal
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail: <a href="mailto:carsten.lebek@gmail.com">carsten.lebek@gmail.com</a>
+  </p>
+
+  <h2>Umsatzsteuer-ID</h2>
+  <p>
+    Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+    DE311134429
+  </p>
+
+  <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+  <p>
+    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
+    einer Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+
+  <p class="muted">
+    Quelle: <a href="https://www.e-recht24.de" rel="noopener">eRecht24</a>
+  </p>
+
+  <hr />
+
+  <p><a href="/">← Zurück zur Startseite</a></p>
 </Layout>
