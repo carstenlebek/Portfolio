@@ -1,6 +1,6 @@
 {
-	"name": "@example/basics",
-	"version": "0.0.1",
+	"name": "portfolio",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
@@ -9,11 +9,6 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"@astrojs/react": "^4.4.2",
-		"astro": "^5.17.3",
-		"react": "^19.2.4",
-		"react-dom": "^19.2.4",
-		"react95": "^4.0.0",
-		"styled-components": "^6.3.11"
+		"astro": "^5.17.3"
 	}
 }

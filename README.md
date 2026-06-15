@@ -1,42 +1,28 @@
-# Welcome to [Astro](https://astro.build)
+# Portfolio — Carsten Lebek
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+A minimal, plain-HTML personal website. Built with [Astro](https://astro.build),
+which compiles the pages down to static HTML — no client-side framework.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Structure
 
 ```
 /
-├── public/
-│   └── favicon.ico
+├── public/            Static assets served from the site root
 ├── src/
-│   ├── components/
-│   │   └── Layout.astro
+│   ├── layouts/
+│   │   └── Layout.astro    Shared HTML shell + global styles
 │   └── pages/
-│       └── index.astro
+│       ├── index.astro     Home / portfolio
+│       └── impressum.astro  Legal notice (Impressum)
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Commands
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| `pnpm install`    | Install dependencies                         |
+| `pnpm dev`        | Start the local dev server                   |
+| `pnpm build`      | Build the static site to `./dist/`           |
+| `pnpm preview`    | Preview the production build locally         |
